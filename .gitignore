@@ -1,0 +1,17 @@
+# Dependency directories
+node_modules
+
+# Storybook build outputs
+.out
+.storybook-out
+storybook-static
+
+# Caching
+.cache
+
+# IDE
+.vscode
+
+
+.parcel-cache
+dist

@@ -1,0 +1,57 @@
+html, body, #page-canvas {
+    padding: 0;
+    margin: 0;
+    font-family: 'Dosis', sans-serif;
+}
+
+#page-canvas {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+
+    #main-scalable-content {
+        background-color: #fff;
+        width: 1920px;
+        height: 1080px;
+        position: absolute;
+        transform-origin: 0 0;
+    }
+    div {
+        position: absolute;
+    }
+
+    .intro-title {
+        font-size: 90px;
+        font-weight: 400;
+        top: 170px;
+        left: 150px;
+        color: #fff;
+    }
+    .intro-subtitle {
+        font-size: 50px;
+        top: 350px;
+        left: 150px;
+        color: #fff;
+       }
+
+    .intro-background {
+        background-color: #193C57;
+        width: 1920px;
+        height: calc(1080 - 290);
+    }
+
+    .viz-container {
+        display: none;
+    }
+}
+
+#fullpage {
+    background-color: rgba(0, 0, 0, 0);
+
+    .section {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
