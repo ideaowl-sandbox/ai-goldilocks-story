@@ -11,6 +11,10 @@ export const config = {
                 {
                     id: 'initial-thank-you',
                     title: 'Thank You'
+                },
+                {
+                    id: 'organization-thank-you',
+                    title: 'Thank You'
                 }
             ]
         },
@@ -21,12 +25,12 @@ export const config = {
                     id: 'cover',
                     title: 'Introduction'
                 },
+                // {
+                //     id: 'goldilocks-walking',
+                //     title: 'Goldilocks in the Woods'
+                // },
                 {
-                    id: 'goldilocks-walking',
-                    title: 'Goldilocks in the Woods'
-                },
-                {
-                    id: 'goldilocks-finds-house',
+                    id: 'goldilocks-finds-cabin',
                     title: 'Goldilocks Finds a Cabin'
                 },
                 {

@@ -35,54 +35,105 @@ export function transitionValue({
 
 export function formatTransitionValue( {key, value} ) {
 
-  if (key === 'top' || key === 'bottom') {
-    return value + 'px';
-  } else if (key === 'left' || key === 'right') {
+  let pxKeys = ['top', 'left', 'right', 'bottom', 'width', 'height'];
+
+  if (pxKeys.includes(key)) {
     return value + 'px';
   }
-  
+
   return value;
 }
 
 
 export function slideTransition(typedPieceSets) {
-  console.log(typedPieceSets);
+  
+  // get exit max delay
+  let exitMaxDelay = 0;
+  let exitSet = typedPieceSets.filter(d => d.transitionType === 'exit');
+  if (exitSet.length > 0) {
+    const exitPieces = exitSet[0].pieces;
+    exitMaxDelay = Math.max(exitMaxDelay, ...exitPieces.map(d => d.states[0].delay + d.states[0].duration));
+  }
+  
   for (let typedPieceSet of typedPieceSets) {
-    localFns.transitionPieces(typedPieceSet)
+    localFns.transitionPieces(typedPieceSet, exitMaxDelay)
   }
 
 }
 
 
-export function transitionPieces({ pieces, transitionType }){
+export function transitionPieces({ pieces, transitionType }, exitMaxDelay){
+
+
 
   pieces.forEach((piece) => {
     const pieceState = piece.states[0];
 
-    const pieceBeforeTransition = d3.select(piece.selector);
-  
-    // Before transitions setup styles for entering
-    if (transitionType === 'enter') {
+    const pieceBeforeTransition = d3.selectAll(piece.selector);
+
+    if (pieceState.exitType === 'fade') {
+
+      console.log(exitMaxDelay);
+      if (transitionType === 'enter') {
+        pieceBeforeTransition
+          .style('display', 'block')
+          .style('opacity', 0)
+          .transition()
+          .duration(pieceState.duration)
+          .delay(pieceState.delay + exitMaxDelay)
+          .style('opacity', 1)
+      }
+
+      if (transitionType === 'exit') {
+        pieceBeforeTransition
+          .transition()
+          .duration(pieceState.duration)
+          .delay(pieceState.delay + exitMaxDelay)
+          .style('opacity', 0)
+          .on('end', () => {
+            pieceBeforeTransition.style('display', 'none')
+          });
+      }
+
+
+
+    } else {
+
+
+      // Initial state styles for entering
+      if (transitionType === 'enter') {
+        localFns.applyEachStyleToPiece({
+          d3Obj: pieceBeforeTransition,
+          pieceState,
+          transitionType,
+          targetIntendedState: false
+        })
+      }
+
+      if (pieceState.toggleClasses) {
+        pieceState.toggleClasses.forEach((toggleClass) => {
+          pieceBeforeTransition.classed(toggleClass.class, toggleClass.toggle);
+        })
+      }
+
+      // Transitions to apply
+      const transitioningPiece =
+        pieceBeforeTransition
+          .transition()
+          .duration(pieceState.duration)
+          .delay(pieceState.delay);
+
       localFns.applyEachStyleToPiece({
-        d3Obj: pieceBeforeTransition,
+        d3Obj: transitioningPiece,
         pieceState,
         transitionType,
-        targetIntendedState: false
+        targetIntendedState: transitionType !== 'exit'
       })
+
+
     }
-
-    const transitioningPiece =
-      pieceBeforeTransition
-        .transition()
-        .duration(pieceState.duration)
-        .delay(pieceState.delay);
-
-    localFns.applyEachStyleToPiece({
-      d3Obj: transitioningPiece, 
-      pieceState, 
-      transitionType,
-      targetIntendedState: transitionType !== 'exit'
-    })
+  
+    
 
   })
 }
