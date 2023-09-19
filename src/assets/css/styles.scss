@@ -26,14 +26,16 @@ html, body, #page-canvas {
     .intro-title {
         font-size: 90px;
         font-weight: 400;
-        top: 170px;
-        left: 150px;
+        width: 1800px;
+        // top: 170px;
+        // left: 150px;
         color: #fff;
     }
     .intro-subtitle {
         font-size: 50px;
-        top: 350px;
-        left: 150px;
+        width: 1800px;
+        // top: 350px;
+        // left: 150px;
         color: #fff;
        }
 
@@ -41,6 +43,14 @@ html, body, #page-canvas {
         background-color: #193C57;
         width: 1920px;
         height: calc(1080 - 290);
+    }
+
+    .intro-right-side-note {
+        font-size: 32px;
+        width: 540px;
+        right: 150px;
+        top: 665px;
+        color: white;
     }
 
     .viz-container {
