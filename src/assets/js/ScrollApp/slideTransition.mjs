@@ -7,29 +7,41 @@ export function transitionValue({
   exitType, key, value, transitionType, targetIntendedState
 }) {
 
-  let valToggle = (transitionType === 'enter' ? 1 : -1);
+  let valToggle = (transitionType === 'enter' ?-1 : -1);
   
   if (targetIntendedState) {
-    return value + 'px';
+    return formatTransitionValue({ key, value });
   }
 
   if (exitType === 'fly-top') {
     if (key === 'top') {
-      return ((1080 + value) * valToggle ) + 'px';
+      return formatTransitionValue({ key, value: (1080 + value) * valToggle });
     }
   } else if (exitType === 'fly-left') {
     if (key === 'left') {
-      return ((1920 + value) * valToggle) + 'px';
+      return formatTransitionValue({ key, value: (1920 + value) * valToggle });
     }
   } else if (exitType === 'fly-right') {
     if (key === 'right') {
-      return ((1920 + value) * valToggle) + 'px';
+      return formatTransitionValue({ key, value: (1920 + value) * valToggle });
     }
   } else if (exitType === 'fly-bottom') {
     if (key === 'bottom') {
-      return ((1080 + value) * valToggle) + 'px';
+      return formatTransitionValue({ key, value: (1080 + value) * valToggle });
     }
   }
+  return formatTransitionValue({ key, value});
+}
+
+export function formatTransitionValue( {key, value} ) {
+
+  if (key === 'top' || key === 'bottom') {
+    return value + 'px';
+  } else if (key === 'left' || key === 'right') {
+    return value + 'px';
+  }
+  
+  return value;
 }
 
 
