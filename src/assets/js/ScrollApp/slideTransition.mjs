@@ -52,7 +52,7 @@ export function slideTransition(typedPieceSets) {
   let exitSet = typedPieceSets.filter(d => d.transitionType === 'exit');
   if (exitSet.length > 0) {
     const exitPieces = exitSet[0].pieces;
-    exitMaxDelay = Math.max(exitMaxDelay, ...exitPieces.map(d => d.states[0].delay + d.states[0].duration));
+    exitMaxDelay = Math.max(exitMaxDelay, ...exitPieces.map(d => d.states[0].delay));
   }
   
   for (let typedPieceSet of typedPieceSets) {
@@ -80,7 +80,7 @@ export function transitionPieces({ pieces, transitionType }, exitMaxDelay){
           .style('opacity', 0)
           .transition()
           .duration(pieceState.duration)
-          .delay(pieceState.delay + exitMaxDelay)
+          .delay(pieceState.delay + 0)
           .style('opacity', 1)
       }
 
@@ -88,7 +88,7 @@ export function transitionPieces({ pieces, transitionType }, exitMaxDelay){
         pieceBeforeTransition
           .transition()
           .duration(pieceState.duration)
-          .delay(pieceState.delay + exitMaxDelay)
+          .delay(pieceState.delay + 0)
           .style('opacity', 0)
           .on('end', () => {
             pieceBeforeTransition.style('display', 'none')
@@ -121,7 +121,7 @@ export function transitionPieces({ pieces, transitionType }, exitMaxDelay){
         pieceBeforeTransition
           .transition()
           .duration(pieceState.duration)
-          .delay(pieceState.delay);
+          .delay((transitionType === 'exit' ? 0 : pieceState.delay) + (transitionType === 'enter' ? exitMaxDelay : 0));
 
       localFns.applyEachStyleToPiece({
         d3Obj: transitioningPiece,

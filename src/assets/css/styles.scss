@@ -124,7 +124,75 @@ html, body, #page-canvas {
         height: 100%;
     }
 
+    .puzzle-fully-centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        scale: 2.5;
+    }
 
+    .white-background {
+        background-color: white;
+        width: 1920px;
+        height: 1080px;
+        top: 0px; height: 0px;
+    }
+
+
+
+    .witnessPuzzleContainer {
+        outline: none;
+        border: none;
+        rect {
+            outline: none;
+            border: none;
+        }
+        .backgroundRect {
+            fill: rgba(0,0,0,0);
+        }
+    }
+
+    .puzzle-test {
+        bottom: -1080px;
+    }
+
+    .puzzle-intro-easy {
+        // bottom: 540px;
+        // left: 400px;
+        transform: translate(-50%, -50%);
+        scale: 1.75;
+    }
+    .puzzle-intro-hard { 
+        // bottom: 540px;
+        // left: 960px;
+        transform: translate(-50%, -50%);
+        scale: 1.75;
+    }
+    .puzzle-intro-medium {
+        // bottom: 540px;
+        // left: 1520px;
+        transform: translate(-50%, -50%);
+        scale: 1.75;
+    }
+
+    .img-robot-looking-down {
+        width: 600px;
+        top: -300px;
+        transform: translate(-50%, -50%);
+    }
+
+    .section-title {
+        font-size: 200px;
+        top: 40%;
+        left: -900px;
+        transform: translateY(-50%);
+    }
+
+    .section-subtitle {
+        font-size: 80px;
+        margin-top: 30px;
+    }
 
 
     .faded-item {
@@ -144,9 +212,13 @@ html, body, #page-canvas {
     .section {
         background-color: rgba(0, 0, 0, 0);
     }
+
 }
 
 
+#fp-nav a.chapter-first-page span {
+    background-color: rgb(120,0,0);
+}
 
 
 

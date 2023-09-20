@@ -12,6 +12,7 @@ const KEYCODE_S = 83;
 const KEYCODE_D = 68;
 
 
+
 class WitnessPuzzle_Visualization {
     constructor(core, properties) {
         let self = this;
@@ -543,7 +544,7 @@ class WitnessPuzzle_Visualization {
         svg.select('.witnessPuzzle').selectAll('.bounceSnakeLine').remove();
         puzzle.history.lastMoveAttemptedToCrossPosition;
         // debugger;
-        if (puzzle.history.moveAttempts.length > 0 || puzzle.history.lastMoveAttemptedToCrossPosition || puzzle.history.lastMoveAttemptedToCrossPartlyBrokenPosition) {
+        if (puzzle.history.lastMoveAttemptedToCrossPosition || puzzle.history.lastMoveAttemptedToCrossPartlyBrokenPosition) {
             let bounceSnakeLine = svg.select('.witnessPuzzle').selectAll('.bounceSnakeLine')
                 .data([[puzzle.history.lastSnakePosition, puzzle.history.moveAttempts[puzzle.history.moveAttempts.length-1].userMove]])
                 .enter()

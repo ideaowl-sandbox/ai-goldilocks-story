@@ -1,6 +1,7 @@
 let defaultDuration = 1000;
 
 export const pieces = [
+
     {
         selector: '.intro-background',
         states: [{
@@ -14,6 +15,7 @@ export const pieces = [
             }
         }]
     },
+
     {
         selector: '.intro-title',        
         states: [{
@@ -27,6 +29,7 @@ export const pieces = [
             }
         }]
     },
+
     {
         selector: '.intro-subtitle',
         states: [{
@@ -40,6 +43,7 @@ export const pieces = [
             }
         }]
     },
+
     {
         selector: '.intro-names',
         states: [{
@@ -53,12 +57,13 @@ export const pieces = [
             }
         }]
     },
+
     {
         selector: '.intro-portrait-eugene',
         states: [{
             inPages: ['start'],
             exitType: 'fly-bottom',
-            delay: 300,
+            delay: 0,
             duration: defaultDuration,
             styles: {
                 bottom: 110,
@@ -66,12 +71,13 @@ export const pieces = [
             }
         }]
     },
+
     {
         selector: '.intro-portrait-nathan',
         states: [{
             inPages: ['start'],
             exitType: 'fly-bottom',
-            delay: 400,
+            delay: 100,
             duration: defaultDuration,
             styles: {
                 bottom: 110,
@@ -97,7 +103,7 @@ export const pieces = [
             inPages: ['organization-thank-you'],
             exitType: 'fly-bottom',
             delay: 0,
-            duration: defaultDuration,
+            duration: defaultDuration / 2,
             styles: {
                 bottom: 500,
                 left: 460,
@@ -112,7 +118,7 @@ export const pieces = [
         states: [{
             inPages: ['start'],
             exitType: 'fly-bottom',
-            delay: 500,
+            delay: 200,
             duration: defaultDuration,
             styles: {
                 bottom: 110,
@@ -136,8 +142,8 @@ export const pieces = [
         },{
             inPages: ['organization-thank-you'],
             exitType: 'fly-bottom',
-            delay: 200,
-            duration: defaultDuration,
+            delay: 0,
+            duration: defaultDuration / 2,
             styles: {
                 bottom: 500,
                 left: 460+400+200,
@@ -147,12 +153,13 @@ export const pieces = [
             }
         }]
     },
+
     {
         selector: '.intro-logos-section',
         states: [{
             inPages: ['start', 'initial-thank-you'],
             exitType: 'fly-bottom',
-            delay: 500,
+            delay: 0,
             duration: defaultDuration,
             styles: {
                 bottom: 100,
@@ -171,6 +178,7 @@ export const pieces = [
             }
         }]
     },
+
     {
         selector: '.intro-right-side-note',
         states: [
@@ -186,6 +194,7 @@ export const pieces = [
             }
         }]
     },
+
     {
         selector: '.page-cover-allElements',
         states: [
@@ -196,6 +205,7 @@ export const pieces = [
             duration: defaultDuration
         }]
     },
+
     {
         selector: '.storybook-img-finds-cabin',
         states: [
@@ -206,5 +216,207 @@ export const pieces = [
             duration: defaultDuration
         }]
     },
+
+    {
+        selector: '.storybook-img-soup',
+        states: [
+        {
+            inPages: ['goldilocks-finds-soup'],
+            delay: 0,
+            exitType: 'fade',
+            duration: defaultDuration
+        }]
+    },
+
+    {
+        selector: '.storybook-img-two-beds',
+        states: [
+        {
+            inPages: ['goldilocks-finds-two-beds'],
+            delay: 0,
+            exitType: 'fade',
+            duration: defaultDuration
+        }]
+    },
+
+    {
+        selector: '.storybook-img-good-bed',
+        states: [
+        {
+            inPages: ['goldilocks-finds-good-bed'],
+            delay: 0,
+            exitType: 'fade',
+            duration: defaultDuration
+        }]
+    },
+
+    {
+        selector: '.storybook-img-laptop',
+        states: [
+        {
+            inPages: ['goldilocks-finds-laptop'],
+            delay: 0,
+            exitType: 'fade',
+            duration: defaultDuration
+        }]
+    },
+
+    {
+        selector: '.page-structure-and-goals-allElements',
+        states: [
+        {
+            inPages: ['structure-and-goals'],
+            delay: 0,
+            exitType: 'fade',
+            duration: defaultDuration
+        }]
+    },
+
+    {
+        selector: '.page-square-color-constraints-allElements',
+        states: [
+        {
+            inPages: ['square-color-constraints'],
+            delay: 0,
+            exitType: 'fade',
+            duration: defaultDuration
+        }]
+    },
+
+    // {
+    //     selector: '.page-puzzles-to-solve-allElements',
+    //     states: [
+    //     {
+    //         inPages: ['puzzles-to-solve'],
+    //         delay: 500,
+    //         exitType: 'fade',
+    //         duration: defaultDuration
+    //     }]
+    // },
+
+
+
+
+    {
+        selector: '.puzzle-intro-easy',
+        states: [
+        {
+            inPages: ['puzzles-to-solve', 'test-puzzles'],
+            exitType: 'fly-bottom',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                bottom: 540-300,
+                left: 400,
+            }
+        }, {
+            inPages: ['use-ai-goldilocks'],
+            exitType: 'fly-bottom',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                bottom: 10,
+                left: 400,
+            }
+        }]
+    },
+
+    {
+        selector: '.puzzle-intro-hard',
+        states: [
+        {
+            inPages: ['puzzles-to-solve', 'test-puzzles'],
+            exitType: 'fly-bottom',
+            delay: 100,
+            duration: defaultDuration,
+            styles: {
+                bottom: 540 - 300,
+                left: 960,
+            }
+        },
+        {
+            inPages: ['use-ai-goldilocks'],
+            exitType: 'fly-bottom',
+            delay: 100,
+            duration: defaultDuration,
+            styles: {
+                bottom: 10,
+                left: 960,
+            }
+        }]
+    },
+
+    {
+        selector: '.puzzle-intro-medium',
+        states: [
+        {
+            inPages: ['puzzles-to-solve', 'test-puzzles'],
+            exitType: 'fly-bottom',
+            delay: 200,
+            duration: defaultDuration,
+            styles: {
+                bottom: 540-300,
+                left: 1520,
+            }
+        },
+        {
+            inPages: ['use-ai-goldilocks'],
+            exitType: 'fly-bottom',
+            delay: 200,
+            duration: defaultDuration,
+            styles: {
+                bottom: 10,
+                left: 1520,
+            }
+        }]
+    },
+
+    {
+        selector: '.puzzle-intro-background',
+        states: [
+        {
+            inPages: ['puzzles-to-solve'],
+            exitType: 'fly-top',
+            delay: 200,
+            duration: defaultDuration,
+            styles: {
+                top: 0,
+                left: 0,
+            }
+        }]
+    },
+
+
+    {
+        selector: '.img-robot-looking-down',
+        states: [{
+            inPages: ['use-ai-goldilocks'],
+            exitType: 'fly-top',
+            delay: -700,
+            duration: defaultDuration,
+            styles: {
+                top: 280,
+                left: 1920/2
+            }
+        }]
+    },
+
+
+    {
+        selector: '.but-why-text',
+        states: [{
+            inPages: ['but-why'],
+            exitType: 'fly-left',
+            delay: -0,
+            duration: defaultDuration,
+            styles: {
+                left: 300
+            }
+        }]
+    },
+
+
+
+
 
 ]

@@ -38,12 +38,16 @@ export const config = {
                     title: 'Goldilocks Sees Three Bowls of Soup'
                 },
                 {
-                    id: 'goldilocks-finds-beds',
-                    title: 'Goldilocks Sees Three Beds'
+                    id: 'goldilocks-finds-two-beds',
+                    title: 'Goldilocks Sees Two Beds'
                 },
                 {
-                    id: 'goldilocks-finds-puzzle-instructions',
-                    title: 'Goldilocks Finds Puzzle Instructions'
+                    id: 'goldilocks-finds-good-bed',
+                    title: 'Goldilocks Finds Good Bed'
+                },
+                {
+                    id: 'goldilocks-finds-laptop',
+                    title: 'Goldilocks Finds Laptop with Puzzle Instruction'
                 },
             ]
         },
@@ -56,23 +60,19 @@ export const config = {
                 },
                 {
                     id: 'square-color-constraints',
-                    title: 'Square Colour Constraints'
+                    title: 'Square Colour and Must Cross Constraints'
+                },
+                // {
+                //     id: 'simple-examples',
+                //     title: 'Simple Examples'
+                // },
+                {
+                    id: 'puzzles-to-solve',
+                    title: 'Puzzles to Solve'
                 },
                 {
-                    id: 'simple-examples',
-                    title: 'Simple Examples'
-                },
-                {
-                    id: 'easy-puzzle',
-                    title: 'Easy Puzzle'
-                },
-                {
-                    id: 'hard-puzzle',
-                    title: 'Hard Puzzle'
-                },
-                {
-                    id: 'medium-puzzle',
-                    title: 'Medium Puzzle'
+                    id: 'use-ai-goldilocks',
+                    title: 'Use AI Goldilocks'
                 },
             ]
         },
@@ -80,12 +80,16 @@ export const config = {
             id: 'why-useful',
             pages: [
                 {
+                    id: 'but-why',
+                    title: 'But Why?'
+                },
+                {
                     id: 'test-puzzles',
                     title: 'Help Designers Test Puzzles'
                 },
                 {
-                    id: 'procedural-generation',
-                    title: 'Automatic Puzzle Generation'
+                    id: 'find-interest-puzzles',
+                    title: 'Finding Interesting Puzzles'
                 },
                 {
                     id: 'dynamic-goldilocks',

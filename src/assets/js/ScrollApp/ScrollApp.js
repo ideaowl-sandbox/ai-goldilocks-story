@@ -4,6 +4,7 @@ import fullpageCSS from '../../css/fullPage.js_4.0.20_fullpage.css';
 import { scaleAndCenterContent } from '../helpers/scaleAndCenterContent';
 import * as d3 from 'd3'
 import { slideTransition } from './slideTransition.mjs';
+import { puzzlesSetup } from './puzzlesSetup.mjs';
 
 
 export class ScrollApp {
@@ -13,6 +14,7 @@ export class ScrollApp {
     self.g = opts;
     self.setupFullPage(self.g);
     scaleAndCenterContent();
+    puzzlesSetup();
     return self;
   }
 
@@ -44,6 +46,15 @@ export class ScrollApp {
     // Drop the fullpage
     d3.select('#fullpage')
       .style('display', 'none')
+
+    // Style the navigation chapter first pages
+    const chapterFirstSections = [...g.config.chapters.map(d => d.pages[0].id)].flat();
+    d3.selectAll('#fp-nav a')
+      .classed('chapter-first-page', function () {
+        const anchor = d3.select(this).property('href').split('#')[1];
+        return chapterFirstSections.includes(anchor)
+      })
+
 
     window
       .addEventListener("resize", function (ev) {
