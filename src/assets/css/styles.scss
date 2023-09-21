@@ -203,6 +203,13 @@ html, body, #page-canvas {
     .viz-container {
         display: none;
     }
+
+    .edge-menu {
+        top: 0px;
+        right: 0px;
+        width: 20px;
+        height: 20px;
+    }
     
 }
 
@@ -219,8 +226,24 @@ html, body, #page-canvas {
 #fp-nav a.chapter-first-page span {
     background-color: rgb(120,0,0);
 }
-
-
+#fp-nav ul li,
+.fp-slidesNav ul li {
+    margin: -4px !important;
+}
+#fp-nav a .chapter-title {
+    position: absolute;
+    right: 18px;
+    width: 400px;
+    text-align: right;
+    margin-top: -4px;
+    color: #777;
+}
+#fp-nav {
+    transition: 1s all;
+}
+#fp-nav.hidden {
+    margin-right: -450px;
+}
 
 
 .container {

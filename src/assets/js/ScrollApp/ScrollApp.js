@@ -48,11 +48,33 @@ export class ScrollApp {
       .style('display', 'none')
 
     // Style the navigation chapter first pages
-    const chapterFirstSections = [...g.config.chapters.map(d => d.pages[0].id)].flat();
+    const chapterFirstSections = [...g.config.chapters.map(d => d.pages[0])].flat();
+    const chapterFirstSectionIDs = chapterFirstSections.map(d => d.id);
+    const chapterFirstSectionTitles = chapterFirstSections.map(d => d.title);
     d3.selectAll('#fp-nav a')
       .classed('chapter-first-page', function () {
         const anchor = d3.select(this).property('href').split('#')[1];
-        return chapterFirstSections.includes(anchor)
+        return chapterFirstSectionIDs.includes(anchor)
+      })
+      .append('div')
+      .classed('chapter-title', true)
+      .text(function () {
+        const anchor = d3.select(this.parentNode).property('href').split('#')[1];
+        const title = chapterFirstSectionTitles[chapterFirstSectionIDs.indexOf(anchor)];
+        return title;
+      })
+
+    d3.select('#fp-nav')
+      .classed('hidden', true)
+      .on('click', function () {
+        d3.select('#fp-nav')
+          .classed('hidden', true)
+      })
+
+    d3.select('.edge-menu')
+      .on('mouseover', function () {
+        d3.select('#fp-nav')
+          .classed('hidden', false)
       })
 
 

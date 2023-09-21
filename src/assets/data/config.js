@@ -6,15 +6,15 @@ export const config = {
             pages: [
                 {
                     id: 'start',
-                    title: 'Start of Presentation'
+                    title: 'Start'
                 },
                 {
                     id: 'initial-thank-you',
-                    title: 'Thank You'
+                    title: 'Supervisors Thank You'
                 },
                 {
                     id: 'organization-thank-you',
-                    title: 'Thank You'
+                    title: 'Organizations Thank You'
                 }
             ]
         },
@@ -23,7 +23,7 @@ export const config = {
             pages: [
                 {
                     id: 'cover',
-                    title: 'Introduction'
+                    title: 'Storybook Start'
                 },
                 // {
                 //     id: 'goldilocks-walking',
@@ -87,6 +87,32 @@ export const config = {
                     id: 'test-puzzles',
                     title: 'Help Designers Test Puzzles'
                 },
+                {
+                    id: 'combinations-one-cell',
+                    title: 'Combinations in a cell'
+                },
+
+                {
+                    id: 'combinations-two-sized-grid',
+                    title: 'Combinations in a 2x2 Grid'
+                },
+
+                {
+                    id: 'combinations-four-sized-grid',
+                    title: 'Combinations in a 4x4 Grid'
+                },
+
+                {
+                    id: 'combinations-four-three-coloured-sized-grid',
+                    title: 'Combinations in a 4x4 Grid 3 Colours'
+                },
+
+
+                {
+                    id: 'combinations-five-sized-grid',
+                    title: 'Combinations in a 5x5 Grid'
+                },
+
                 {
                     id: 'find-interest-puzzles',
                     title: 'Finding Interesting Puzzles'
