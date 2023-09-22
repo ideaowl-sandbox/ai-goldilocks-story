@@ -1,0 +1,14 @@
+<svg class="puzzle-1x1-combination" width="179" height="165" viewBox="0 0 179 165" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M19.4035 145.596V7" stroke="#BBBBBB" stroke-width="13" stroke-linecap="round"/>
+  <path d="M158 145.596V7" stroke="#BBBBBB" stroke-width="13" stroke-linecap="round"/>
+  <path d="M19.4035 145.597H158" stroke="#BBBBBB" stroke-width="13" stroke-linecap="round"/>
+  <path d="M19.4035 7H158" stroke="#BBBBBB" stroke-width="13" stroke-linecap="round"/>
+  <path d="M19.4035 165C30.1198 165 38.807 156.313 38.807 145.597C38.807 134.881 30.1198 126.193 19.4035 126.193C8.68725 126.193 0 134.881 0 145.597C0 156.313 8.68725 165 19.4035 165Z" fill="#BBBBBB"/>
+  <path d="M158 7H171.86" stroke="#BBBBBB" stroke-width="13" stroke-linecap="round"/>
+<g class='combinations'>
+  <path d="M74.3913 34H56.1304C51.0878 34 47 38.0878 47 43.1304V61.3913C47 66.4339 51.0878 70.5217 56.1304 70.5217H74.3913C79.4339 70.5217 83.5217 66.4339 83.5217 61.3913V43.1304C83.5217 38.0878 79.4339 34 74.3913 34Z" stroke="black" stroke-width="3" stroke-dasharray="3 3"/>
+  <path d="M74.3913 81.4785H56.1304C51.0878 81.4785 47 85.5663 47 90.6089V108.87C47 113.912 51.0878 118 56.1304 118H74.3913C79.4339 118 83.5217 113.912 83.5217 108.87V90.6089C83.5217 85.5663 79.4339 81.4785 74.3913 81.4785Z" fill="#882222" stroke="black" stroke-width="3" stroke-dasharray="3 3"/>
+  <path d="M121.87 81.4785H103.609C98.5661 81.4785 94.4783 85.5663 94.4783 90.6089V108.87C94.4783 113.912 98.5661 118 103.609 118H121.87C126.912 118 131 113.912 131 108.87V90.6089C131 85.5663 126.912 81.4785 121.87 81.4785Z" fill="#111111" stroke="black" stroke-width="3" stroke-dasharray="3 3"/>
+  <path d="M121.87 34H103.609C98.5661 34 94.4783 38.0878 94.4783 43.1304V61.3913C94.4783 66.4339 98.5661 70.5217 103.609 70.5217H121.87C126.912 70.5217 131 66.4339 131 61.3913V43.1304C131 38.0878 126.912 34 121.87 34Z" fill="#5AAAD2" stroke="black" stroke-width="3" stroke-dasharray="3 3"/>
+</g>
+</svg>

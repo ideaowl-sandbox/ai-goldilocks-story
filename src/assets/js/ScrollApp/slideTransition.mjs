@@ -35,7 +35,7 @@ export function transitionValue({
 
 export function formatTransitionValue( {key, value} ) {
 
-  let pxKeys = ['top', 'left', 'right', 'bottom', 'width', 'height'];
+  let pxKeys = ['top', 'left', 'right', 'bottom', 'width', 'height', 'font-size'];
 
   if (pxKeys.includes(key)) {
     return value + 'px';
@@ -73,7 +73,6 @@ export function transitionPieces({ pieces, transitionType }, exitMaxDelay){
 
     if (pieceState.exitType === 'fade') {
 
-      console.log(exitMaxDelay);
       if (transitionType === 'enter') {
         pieceBeforeTransition
           .style('display', 'block')
@@ -121,7 +120,7 @@ export function transitionPieces({ pieces, transitionType }, exitMaxDelay){
         pieceBeforeTransition
           .transition()
           .duration(pieceState.duration)
-          .delay((transitionType === 'exit' ? 0 : pieceState.delay) + (transitionType === 'enter' ? exitMaxDelay : 0));
+          .delay((d,i) => (transitionType === 'exit' ? 0 : pieceState.delay + i * 50) + (transitionType === 'enter' ? exitMaxDelay + i * 50 : 0));
 
       localFns.applyEachStyleToPiece({
         d3Obj: transitioningPiece,

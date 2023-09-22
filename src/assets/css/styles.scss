@@ -60,7 +60,7 @@ html, body, #page-canvas {
 
     .intro-portrait {
         width: 133px;
-        transition: all 1s ease-in-out;
+        
     }
 
     .intro-logos-section {
@@ -182,6 +182,164 @@ html, body, #page-canvas {
         transform: translate(-50%, -50%);
     }
 
+
+    .puzzle-1x1-combination {
+        position: absolute;
+        top: -1080px;
+        .combinations path {
+            opacity: 0;
+        }
+    }
+
+    .puzzle-1x1-combination-result{
+        position: absolute;
+        bottom: 2080px;
+        // transform: translate(-50%, -50%);
+    }
+
+    .puzzle-1x1-combination-result-1 {
+        left: calc(1920 / 2 - 540 - 40);
+    }
+    .puzzle-1x1-combination-result-2 {
+        left: calc(1920 / 2 - 180 - 40);
+    }
+    .puzzle-1x1-combination-result-3 {
+        left: calc(1920 / 2 + 180 - 40);
+    }
+    .puzzle-1x1-combination-result-4 {
+        left: calc(1920 / 2 + 540 - 40);
+    }
+
+
+    .puzzle-blank-4x4 {
+        position: absolute;
+        bottom: 2080px;
+        left: calc(1920 / 2 - 100);
+        // transform: translate(-50%, -50%);
+        scale: 1.75;
+    }
+
+
+
+    .num-4x4-combinations-text {
+        bottom: 2080px;
+        left: 200px;
+    }
+
+    .num-5x5-combinations-text {
+        bottom: 2080px;
+        left: 200px;
+    }
+
+    .puzzle-from-witness-game {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+
+    .puzzle-state-and-actions {
+        position: absolute;
+        top: calc( 1080 / 2 - 180);
+        left: -1000px;
+        // transform: translate(-50%, -50%);
+    }
+
+    .states-and-actions-states-text {
+        right: -1900px;
+        top: 150px;
+        font-size: 50px;
+        width: 300px !important;
+    }
+
+    .but-why-reason-img-2 {
+        height: 500px;
+    }
+
+    .but-why-reason-img-3 {
+        height: 500px;
+    }
+
+    .but-why-reason-img-4 {
+        left: 50%;
+        top: 47%;
+    }
+
+    .contribution-two-measures-text, .contribution-validation-text {
+        font-size: 70px;
+    }
+
+// .but-why-reason-img.but-why-reason-img-4 {
+//     bottom: -2080px;
+// }
+
+    .toc-title {
+        border-bottom: 2px solid;
+        ;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.exit-will-fly-left {
+    left: -3840px;
+}
+
+.exit-will-fly-top {
+    top: -2160px;
+}
+
+.exit-will-fly-right {
+    right: -3840px;
+}
+
+.exit-will-fly-bottom {
+    bottom: -2160px;
+}
+
+
+
+.katex>.katex-html {
+    white-space: normal;
+}
+
+.katex .base {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+
+
+
+    .but-why-reason {
+        left: -1080px;
+        // font-size: 90px;
+    }
+
+    .but-why-reason-img {
+        position: absolute;
+        bottom: -1280px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .normal-sized-text {
+        font-size: 50px;
+    }
+
+    
     .section-title {
         font-size: 200px;
         top: 40%;

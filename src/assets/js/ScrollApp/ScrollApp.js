@@ -14,7 +14,7 @@ export class ScrollApp {
     self.g = opts;
     self.setupFullPage(self.g);
     scaleAndCenterContent();
-    puzzlesSetup();
+    self.puzzles = puzzlesSetup();
     return self;
   }
 
@@ -84,6 +84,12 @@ export class ScrollApp {
       })
     scaleAndCenterContent();
 
+    // Preset the positions of items that will be flying
+    self.g.pieces.forEach(piece => {
+      const pieceBeforeTransition = d3.selectAll(piece.selector);
+      pieceBeforeTransition
+        .classed('exit-will-' + piece.states[0].exitType, true)
+    })
 
     self.elementsToTransition({
       from: '<<<>>>', to: g.fpi.getActiveSection().anchor,

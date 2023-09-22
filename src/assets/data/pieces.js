@@ -169,7 +169,7 @@ export const pieces = [
         }, {
             inPages: ['organization-thank-you'],
             exitType: 'fly-bottom',
-            delay: 1000,
+            delay: 400,
             duration: defaultDuration,
             styles: {
                 bottom: 550,
@@ -301,7 +301,7 @@ export const pieces = [
         selector: '.puzzle-intro-easy',
         states: [
         {
-            inPages: ['puzzles-to-solve', 'test-puzzles'],
+            inPages: ['puzzles-to-solve'],
             exitType: 'fly-bottom',
             delay: 0,
             duration: defaultDuration,
@@ -310,12 +310,21 @@ export const pieces = [
                 left: 400,
             }
         }, {
-            inPages: ['use-ai-goldilocks'],
+            inPages: ['use-ai-goldilocks', ],
             exitType: 'fly-bottom',
             delay: 0,
             duration: defaultDuration,
             styles: {
                 bottom: 10,
+                left: 400,
+            }
+        }, {
+            inPages: [ 'evaluate-puzzles'],
+            exitType: 'fly-bottom',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                bottom: 140,
                 left: 400,
             }
         }]
@@ -325,7 +334,7 @@ export const pieces = [
         selector: '.puzzle-intro-hard',
         states: [
         {
-            inPages: ['puzzles-to-solve', 'test-puzzles'],
+            inPages: ['puzzles-to-solve'],
             exitType: 'fly-bottom',
             delay: 100,
             duration: defaultDuration,
@@ -343,6 +352,16 @@ export const pieces = [
                 bottom: 10,
                 left: 960,
             }
+        },
+        {
+            inPages: ['evaluate-puzzles'],
+            exitType: 'fly-bottom',
+            delay: 100,
+            duration: defaultDuration,
+            styles: {
+                bottom: 140,
+                left: 960,
+            }
         }]
     },
 
@@ -350,7 +369,7 @@ export const pieces = [
         selector: '.puzzle-intro-medium',
         states: [
         {
-            inPages: ['puzzles-to-solve', 'test-puzzles'],
+            inPages: ['puzzles-to-solve'],
             exitType: 'fly-bottom',
             delay: 200,
             duration: defaultDuration,
@@ -366,6 +385,16 @@ export const pieces = [
             duration: defaultDuration,
             styles: {
                 bottom: 10,
+                left: 1520,
+            }
+        },
+        {
+            inPages: ['evaluate-puzzles'],
+            exitType: 'fly-bottom',
+            delay: 200,
+            duration: defaultDuration,
+            styles: {
+                bottom: 140,
                 left: 1520,
             }
         }]
@@ -392,7 +421,7 @@ export const pieces = [
         states: [{
             inPages: ['use-ai-goldilocks'],
             exitType: 'fly-top',
-            delay: -700,
+            delay: -0,
             duration: defaultDuration,
             styles: {
                 top: 280,
@@ -410,10 +439,608 @@ export const pieces = [
             delay: -0,
             duration: defaultDuration,
             styles: {
-                left: 300
+                left: 300,
+                top: 430,
+                scale: 1
             }
-        }]
+        },
+        {
+            inPages: ['reasons-summary'],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 160,
+                top: 150,
+                color: 'black',
+                scale: 0.6
+            }
+        },
+    
+    ]
     },
+
+
+    { 
+        selector: '.but-why-reason-1',
+        states: [{
+            inPages: ['evaluate-puzzles'],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 400,
+                top: 200,
+                'font-size': 90,
+                color: 'black'
+            }
+        },
+        {
+            inPages: [
+                'evaluate-puzzles',
+                'empty-two-sized-grid',
+                'combinations-two-sized-grid',
+                'results-two-sized-grid',
+                'blank-four-sized-grid',
+                'combinations-four-sized-grid',
+                'combinations-five-sized-grid',
+                'showing-puzzle-from-witness-game',
+                'find-interest-puzzles',
+                'pick-puzzles-for-game',
+                'dynamic-goldilocks',
+            ],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 150,
+                top: 980,
+                'font-size': 20,
+                color: 'grey'
+            }
+        },
+        
+        {
+            inPages: ['reasons-summary'],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 306,
+                top: 420,
+                'font-size': 70,
+                color: 'black'
+            }
+        },
+        ]
+    },
+    
+
+
+    {
+        selector: '.but-why-reason-2',
+        states: [{
+            inPages: ['find-interest-puzzles'],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 460,
+                top: 160,
+                'font-size': 90,
+                color: 'black'
+            }
+        },
+        {
+            inPages: [
+                'pick-puzzles-for-game', 'dynamic-goldilocks'
+            ],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 500,
+                top: 980,
+                'font-size': 20,
+                color: 'grey'
+            }
+        },
+        
+        {
+            inPages: ['reasons-summary'],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 306,
+                top: 520,
+                'font-size': 70,
+                color: 'black'
+            }
+        },
+        ]
+    },
+
+
+
+    {
+        selector: '.but-why-reason-3',
+        states: [{
+            inPages: ['pick-puzzles-for-game'],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 300,
+                top: 160,
+                'font-size': 90,
+                color: 'black'
+            }
+        },
+        {
+            inPages: [
+                'dynamic-goldilocks', 
+            ],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 840,
+                top: 980,
+                'font-size': 20,
+                color: 'grey'
+            }
+        },
+        
+        {
+            inPages: ['reasons-summary'],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 306,
+                top: 620,
+                'font-size': 70,
+                color: 'black'
+            }
+        },
+        ]
+    },
+
+
+    {
+        selector: '.but-why-reason-4',
+        states: [
+        {
+            inPages: ['reasons-summary'],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 306,
+                top: 720,
+                'font-size': 70,
+                color: 'black'
+            }
+        },
+        ]
+    },
+
+
+
+    {
+        selector: '.puzzle-1x1-combination',
+        states: [
+        {
+            inPages: ['empty-two-sized-grid', 'combinations-two-sized-grid'],
+            exitType: 'fly-top',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                top: 1080/2 - 165/2,
+                left: 960 - 179 / 2,
+                scale: 3.5
+            }
+        },
+        {
+            inPages: ['results-two-sized-grid'],
+            exitType: 'fly-top',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                top: 1080 / 2 - 165 / 2 - 200,
+                left: 960 - 179 / 2,
+                scale: 2.5
+            }
+        },
+      ]
+    },
+
+    {
+        selector: '.puzzle-1x1-combination .combinations path',
+        states: [
+        {
+            inPages: ['combinations-two-sized-grid', 'results-two-sized-grid'],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+        ]
+    },
+
+    {
+        selector: '.puzzle-1x1-combination-result',
+        states: [
+            {
+                inPages: ['results-two-sized-grid'],
+                exitType: 'fly-bottom',
+                delay: 0,
+                duration: defaultDuration,
+                styles: {
+                    bottom: 250,
+                    scale: 2.5
+                }
+            },
+        ]
+    },
+
+    {
+        selector: '.puzzle-blank-4x4',
+        states: [
+            {
+                inPages: ['blank-four-sized-grid'],
+                exitType: 'fly-top',
+                delay: 0,
+                duration: defaultDuration,
+                styles: {
+                    top: 420,
+                    scale: 2.5
+                }
+            },
+            {
+                inPages: ['combinations-four-sized-grid', 'combinations-five-sized-grid'],
+                exitType: 'fly-top',
+                delay: 0,
+                duration: defaultDuration,
+                styles: {
+                    top: 280,
+                    scale: 2.5
+                }
+            },
+        ]
+    },
+
+    {
+        selector: '.num-4x4-combinations-text',
+        states: [
+            {
+                inPages: ['combinations-four-sized-grid', 'combinations-five-sized-grid'],
+                exitType: 'fly-bottom',
+                delay: 0,
+                duration: defaultDuration,
+                styles: {
+                    bottom: 250
+                }
+            },
+        ]
+    },
+
+    {
+        selector: '.num-5x5-combinations-text',
+        states: [
+            {
+                inPages: ['combinations-five-sized-grid'],
+                exitType: 'fly-bottom',
+                delay: 0,
+                duration: defaultDuration,
+                styles: {
+                    bottom: 150
+                }
+            },
+        ]
+    },
+
+    {
+        selector: '.puzzle-from-witness-game',
+        states: [
+            {
+                inPages: ['showing-puzzle-from-witness-game'],
+                exitType: 'fade', 
+                delay: 0,
+                duration: defaultDuration,
+            },
+        ]
+    },
+
+
+    {
+        selector: '.puzzle-state-and-actions',
+        states: [
+            {
+                inPages: ['states-and-actions'],
+                exitType: 'fly-left',
+                delay: 0,
+                duration: defaultDuration,
+                styles: {
+                    left: 450,
+                    scale: 2.5
+                }
+            },
+        ]
+    },
+
+
+    {
+        selector: '.states-and-actions-states-text',
+        states: [
+            {
+                inPages: ['states-and-actions'],
+                exitType: 'fly-right',
+                delay: 100,
+                duration: defaultDuration,
+                styles: {
+                    right: 550
+                }
+            },
+        ]
+    },
+
+
+    {
+        selector: '.but-why-reason-img-2',
+        states: [
+        {
+            inPages: ['find-interest-puzzles'],
+            exitType: 'fly-bottom',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                bottom: -20
+            }
+        }
+      ]
+    },
+
+
+
+    {
+        selector: '.but-why-reason-img-3',
+        states: [
+        {
+            inPages: ['pick-puzzles-for-game'],
+            exitType: 'fly-bottom',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                bottom: -20
+            }
+        }
+      ]
+    },
+
+    {
+        selector: '.but-why-reason-img-4',
+        states: [
+            {
+                inPages: ['dynamic-goldilocks'],
+                exitType: 'fade',
+                delay: 0,
+                duration: defaultDuration
+            }
+        ]
+    },
+
+    
+
+    {
+        selector: '.contribution-contribution-title',
+        states: [{
+            inPages: ['contributions-title'],
+            exitType: 'fly-left',
+            delay: -0,
+            duration: defaultDuration,
+            styles: {
+                left: 300,
+                top: 400,
+                'font-size': 150,
+                color: 'black',
+            }
+        },
+        {
+            inPages: ['contribution-two-measures','contribution-validation'],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 250,
+                top: 230,
+                'font-size': 120,
+                color: 'black',
+            }
+        },
+        {
+            inPages: ['how-title-section'],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 300,
+                top: 320,
+                'font-size': 50,
+                color: '#AAA',
+            }
+        },
+
+        ]
+    },
+
+    {
+        selector: '.contribution-two-measures-text',
+        states: [{
+            inPages: ['contribution-two-measures','contribution-validation'],
+            exitType: 'fly-left',
+            delay: -0,
+            duration: defaultDuration,
+            styles: {
+                left: 250,
+                top: 430,
+            }
+        },
+
+        ]
+    },
+
+    {
+        selector: '.contribution-validation-text',
+        states: [{
+            inPages: ['contribution-validation',],
+            exitType: 'fly-left',
+            delay: -0,
+            duration: defaultDuration,
+            styles: {
+                left: 250,
+                top: 560,
+            }
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.toc-title',
+        states: [{
+            inPages: ['how-title-section',],
+            exitType: 'fly-left',
+            delay: -0,
+            duration: defaultDuration,
+            styles: {
+                left: 300,
+                top: 60,
+                'font-size': 80,
+                color: '#222',
+                'border-color': '#222'
+            }
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.toc-intro',
+        states: [{
+            inPages: ['how-title-section',],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 300,
+                top: 200,
+                'font-size': 50,
+                color: '#AAA'
+            }
+        },
+
+        ]
+    },
+
+    {
+        selector: '.toc-why',
+        states: [{
+            inPages: ['how-title-section',],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 300,
+                top: 260,
+                'font-size': 50,
+                color: '#AAA'
+            }
+        },
+
+        ]
+    },
+
+
+
+    {
+        selector: '.toc-how',
+        states: [{
+            inPages: ['how-title-section',],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 300,
+                top: 400,
+                'font-size': 150,
+                color: 'black'
+            }
+        },
+
+        ]
+    },
+
+    {
+        selector: '.toc-experiments-and-results',
+        states: [{
+            inPages: ['how-title-section',],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 300,
+                top: 620,
+                'font-size': 50,
+                color: '#777'
+            }
+        },
+
+        ]
+    },
+
+    {
+        selector: '.toc-conclusion',
+        states: [{
+            inPages: ['how-title-section',],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 300,
+                top: 680,
+                'font-size': 50,
+                color: '#777'
+            }
+        },
+
+        ]
+    },
+
+    {
+        selector: '.toc-questions',
+        states: [{
+            inPages: ['how-title-section',],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 300,
+                top: 740,
+                'font-size': 50,
+                color: '#777'
+            }
+        },
+
+        ]
+    },
+
+
+
+
+
 
 
 

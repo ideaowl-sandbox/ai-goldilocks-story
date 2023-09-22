@@ -84,17 +84,28 @@ export const config = {
                     title: 'But Why?'
                 },
                 {
-                    id: 'test-puzzles',
+                    id: 'evaluate-puzzles',
                     title: 'Help Designers Test Puzzles'
                 },
                 {
-                    id: 'combinations-one-cell',
-                    title: 'Combinations in a cell'
+                    id: 'empty-two-sized-grid',
+                    title: 'Empty 2x2 grid'
                 },
 
                 {
                     id: 'combinations-two-sized-grid',
                     title: 'Combinations in a 2x2 Grid'
+                },
+
+
+                {
+                    id: 'results-two-sized-grid',
+                    title: 'Results of 4 colour squares a 2x2 Grid'
+                },
+
+                {
+                    id: 'blank-four-sized-grid',
+                    title: 'Blank 4x4 Grid Combinations discussion'
                 },
 
                 {
@@ -103,46 +114,72 @@ export const config = {
                 },
 
                 {
-                    id: 'combinations-four-three-coloured-sized-grid',
-                    title: 'Combinations in a 4x4 Grid 3 Colours'
-                },
-
-
-                {
                     id: 'combinations-five-sized-grid',
                     title: 'Combinations in a 5x5 Grid'
                 },
+
+
+
+                {
+                    id: 'showing-puzzle-from-witness-game',
+                    title: '8x8 Puzzle from Witness Game'
+                },                
+                
 
                 {
                     id: 'find-interest-puzzles',
                     title: 'Finding Interesting Puzzles'
                 },
                 {
+                    id: 'pick-puzzles-for-game',
+                    title: 'Pick Puzzles for Game'
+                },
+                {
                     id: 'dynamic-goldilocks',
                     title: 'Goldilocks / Flow Zone'
                 },
+                {
+                    id: 'reasons-summary',
+                    title: 'Reasons Summary'
+                },
             ]
         },
+        // described the metrics
+        // simple version and 
+        // contribution: validated that the algorithm is successful in an online dataset
+        // make some other observations
+        // design space where there are interesting things to be selected and presented for the users
+        // 
+
         {
-            id: 'contribution-summary',
+            id: 'contribution-intro',
             pages: [
                 {
-                    id: 'two-measures',
+                    id: 'contributions-title',
+                    title: 'Contributions'
+                },
+                {
+                    id: 'contribution-two-measures',
                     title: 'Two Entropy-Based Measures'
                 },
                 {
-                    id: 'proof-of-success',
+                    id: 'contribution-validation',
                     title: 'Successful Results'
                 },
-                {
-                    id: 'distribution-via-epcg',
-                    title: 'Distribution of Scores'
-                },
+                // {
+                //     id: 'distribution-via-epcg',
+                //     title: 'Distribution of Scores'
+                // },
             ]
         },
+
         {
             id: 'how-entropy',
             pages: [
+                {
+                    id: 'how-title-section',
+                    title: 'How?'
+                },
                 {
                     id: 'entropy-formula',
                     title: 'Entropy Formula'
@@ -181,19 +218,156 @@ export const config = {
                     title: 'Recursive Interpretation'
                 },
                 {
-                    id: 'dice-entropy',
-                    title: 'Entropy of a Die'
+                    id: 'muse-example',
+                    title: 'MUSE Example'
                 },
                 {
-                    id: 'states-and-actions',
-                    title: 'States and Actions'
+                    id: 'path-algorithm',
+                    title: 'Is this not encoding the size of tree?'
                 },
                 {
-                    id: 'local-entropy',
-                    title: 'Local Entropy'
+                    id: 'are-all-actions-logical',
+                    title: 'Are all actions logical?'
+                },
+                {
+                    id: 'comparing-a-and-l',
+                    title: 'Compare Valid and Logical actions'
+                },
+                {
+                    id: 'l-reduces-search-tree',
+                    title: 'L reduces search tree'
+                },
+                {
+                    id: 'n-step-lookahead',
+                    title: 'n-step lookahead'
+                },
+                {
+                    id: 'necessary-to-encode',
+                    title: 'Do all actions need to be communicated / encoded?'
+                }
+            ]
+        },
+
+        {
+            id: 'algorithm-remuse',
+            pages: [
+                {
+                    id: 'kl-divergence',
+                    title: 'KL-Divergence'
+                },
+                {
+                    id: 'change-in-algorithm',
+                    title: 'Change in Algorithm'
+                },
+                {
+                    id: 'comparison-of-muse-and-remuse',
+                    title: 'Comparing MUSE and ReMUSE'
                 },
             ]
         },
+
+        {
+            id: 'results-intro',
+            pages: [
+                {
+                    id: 'experiment-and-results-title',
+                    title: 'Experiments and Results'
+                },
+                {
+                    id: 'intro-to-windmill',
+                    title: 'The Windmill'
+                },
+                {
+                    id: 'results-chart',
+                    title: 'Dot plot of Correlations'
+                },
+                {
+                    id: 'table-of-correlations',
+                    title: 'Table of Correlations'
+                },
+                {
+                    id: 'ordering-of-puzzles-to-the-game',
+                    title: 'Game vs ReMUSE Puzzle Ordering'
+                },
+                {
+                    id: 'ordering-of-puzzles-to-the-levi-research',
+                    title: 'Equidistant vs ReMUSE Puzzle Ordering'
+                },
+                {
+                    id: 'distribution-3x3-puzzles',
+                    title: 'Distribution of 3x3 Puzzle Scores'
+                },
+                {
+                    id: 'distribution-3x4-puzzles',
+                    title: 'Distribution of 3x4 Puzzle Scores'
+                },
+                {
+                    id: 'triangle-constraint-puzzle-scores',
+                    title: 'Triangle Constraint Puzzles Correlation'
+                },
+            ]
+        },
+
+
+        {
+            id: 'conclusion-and-future-work',
+            pages: [
+                {
+                    id: 'conclusion-title-slide',
+                    title: 'Conclusion and Future Work'
+                },
+                {
+                    id: 'contribution-start',
+                    title: 'Original Contribution'
+                },
+                {
+                    id: 'fill-two-algorithms-contribution',
+                    title: 'Two Algorithms Filled'
+                },
+                {
+                    id: 'fill-results-contribution',
+                    title: 'Results Filled'
+                },
+                {
+                    id: 'future-work-other-games',
+                    title: 'Future Work Other Games'
+                },
+                {
+                    id: 'future-work-inference-rules',
+                    title: 'Future Work Inference Rules'
+                },
+                {
+                    id: 'future-work-co-design-tool',
+                    title: 'Future work Co-Design Tools'
+                },
+                {
+                    id: 'thoughts-on-game-and-education',
+                    title: 'Game and Education'
+                },
+                {
+                    id: 'educational-game-example',
+                    title: 'Education + Game Example'
+                },
+            ]
+        },
+
+
+        {
+            id: 'questions-section',
+            pages: [
+                {
+                    id: 'questions',
+                    title: 'Questions'
+                },
+                {
+                    id: 'thank-you',
+                    title: 'Thank You and Suggestions'
+                },
+            ]
+        },
+
+
+
     ],
 
 
