@@ -4565,7 +4565,7 @@ export class WitnessPuzzle {
             self.policyPaths({ POLCstraightToExit: true })
         }
 
-        if (opts !== undefined && (opts.triggerNLookAhead !== false || opts.userDrivenMove)) {
+        if (opts !== undefined && (opts.triggerNLookAhead!== undefined && opts.triggerNLookAhead !== false)) {
             self.M(self._settings.options.entropyLookAhead);
         }
         

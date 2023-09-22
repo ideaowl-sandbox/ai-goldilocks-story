@@ -245,12 +245,24 @@ html, body, #page-canvas {
         // transform: translate(-50%, -50%);
     }
 
-    .states-and-actions-states-text {
+    .states-and-actions-text-container {
         right: -1900px;
         top: 150px;
         font-size: 50px;
         width: 300px !important;
     }
+    .states-and-actions-states-text {
+        position: relative;
+        min-height: 350px;
+        
+    }
+
+
+    .states-and-actions-valid-action-text {
+        position: relative;
+        padding-top: 20px;
+    }
+
 
     .but-why-reason-img-2 {
         height: 500px;

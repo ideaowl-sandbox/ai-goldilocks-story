@@ -197,6 +197,10 @@ export const config = {
                     title: 'States and Actions'
                 },
                 {
+                    id: 'states-and-valid-actions',
+                    title: 'Valid Actions'
+                },
+                {
                     id: 'local-entropy',
                     title: 'Local Entropy'
                 },

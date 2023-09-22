@@ -44,6 +44,7 @@ export function puzzlesSetup() {
 
     if (classTarget === 'puzzle-state-and-actions') {
       moveCB = (inst) => {
+
         katex.render(
           String.raw`\text{State } s = ` 
           + replaceEveryNthSearchString(
@@ -54,13 +55,54 @@ export function puzzlesSetup() {
           d3.select('.states-and-actions-states-text').node(),
           { throwOnError: false }
         );
-      }
+
+        let possibleActions = JSON.parse(JSON.stringify(inst._state.puzzle.history.possibleMoveOutcomes));
+
+        console.log(inst._state.puzzle.history, inst._state.puzzle.history.possibleMoveOutcomes);
+
+        let legalActionsAsDirections = possibleActions.filter(d => d.outcome.isForwardLegal).map(d => d.dir).map(dir => dir);
+        
+        // Given that legalActionsAsDirections returns a set of
+        // directional [x,y] arrays, get the string of directions
+        // that can be used to render the legal actions.
+
+        console.log(legalActionsAsDirections);
+
+        let legalActionsAsDirectionsString = legalActionsAsDirections.map(dir => {
+          if (dir[0] === 1 && dir[1] === 0) {
+            return 'right'
+          } else if (dir[0] === -1 && dir[1] === 0) {
+            return 'left'
+          }
+          else if (dir[0] === 0 && dir[1] === 1) {
+            return 'up'
+          }
+          else if (dir[0] === 0 && dir[1] === -1) {
+            return 'down'
+          }
+        }).map(dir=> `a_{${dir}}`).join(', ');
+
+
+
+        katex.render(
+          String.raw`\text{Valid Actions via } A(s) = `
+          + '[' + legalActionsAsDirectionsString + ']',          
+          d3.select('.states-and-actions-valid-actions-text').node(),
+          { throwOnError: false }
+        );
+
+      }        
     }
 
     puzzlesByClassTarget[classTarget] =
       new WitnessPuzzle(
         puzzleSetup,
-        Object.assign({ classed: ['medium'] }, { targetElement: '.' + classTarget, userInterface: false, render: true, moveCB})
+        Object.assign({ classed: ['medium'] }, { 
+          targetElement: '.' + classTarget, 
+          userInterface: false, 
+          triggerNLookAhead: false,
+          render: true, 
+          moveCB})
       );
 
   }

@@ -757,7 +757,7 @@ export const pieces = [
         selector: '.puzzle-state-and-actions',
         states: [
             {
-                inPages: ['states-and-actions'],
+                inPages: ['states-and-actions', 'states-and-valid-actions'],
                 exitType: 'fly-left',
                 delay: 0,
                 duration: defaultDuration,
@@ -771,10 +771,10 @@ export const pieces = [
 
 
     {
-        selector: '.states-and-actions-states-text',
+        selector: '.states-and-actions-text-container',
         states: [
             {
-                inPages: ['states-and-actions'],
+                inPages: ['states-and-actions', 'states-and-valid-actions'],
                 exitType: 'fly-right',
                 delay: 100,
                 duration: defaultDuration,
@@ -784,6 +784,20 @@ export const pieces = [
             },
         ]
     },
+
+
+    {
+        selector: '.states-and-actions-valid-actions-text',
+        states: [
+            {
+                inPages: ['states-and-valid-actions'],
+                exitType: 'fade',
+                delay: 0,
+                duration: defaultDuration,
+            },
+        ]
+    },
+
 
 
     {
