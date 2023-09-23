@@ -209,19 +209,49 @@ export const pieces = [
     {
         selector: '.storybook-img-finds-cabin',
         states: [
+            {
+                inPages: ['goldilocks-finds-cabin', 'text-once-upon-a-time'],
+                delay: 0,
+                exitType: 'fade',
+                duration: defaultDuration
+            },
+            // {
+            //     inPages: ['goldilocks-finds-cabin'],
+            //     delay: 0,
+            //     exitType: 'fade',
+            //     exitSetting: {
+            //         opacity: 0.5
+            //     },
+            //     duration: defaultDuration
+            // },
+        ]
+    },
+
+    {
+        selector: '.storybook-text-once-upon-a-time',
+        states: [
         {
-            inPages: ['goldilocks-finds-cabin'],
+            inPages: ['text-once-upon-a-time'],
             delay: 0,
             exitType: 'fade',
-            duration: defaultDuration
+            enterOffset: {
+                transform: 'translate(0, -40px)'
+            },
+            duration: defaultDuration * 2
         }]
     },
+
 
     {
         selector: '.storybook-img-soup',
         states: [
         {
-            inPages: ['goldilocks-finds-soup'],
+            inPages: [
+                'goldilocks-finds-soup', 
+                'text-soup-too-hot',
+                'text-soup-too-cold',
+                'text-soup-just-right'
+            ],
             delay: 0,
             exitType: 'fade',
             duration: defaultDuration
@@ -229,13 +259,102 @@ export const pieces = [
     },
 
     {
+        selector: '.storybook-text-soup-too-hot',
+        states: [
+        {
+                inPages: ['text-soup-too-hot', 'text-soup-too-cold', 'text-soup-just-right'],
+            delay: 0,
+            exitType: 'fade',
+            enterOffset: {
+                transform: 'translate(0, -40px)'
+            },
+            duration: defaultDuration * 2
+        }]
+    },
+
+
+    {
+        selector: '.storybook-text-soup-too-cold',
+        states: [
+        {
+            inPages: ['text-soup-too-cold', 'text-soup-just-right'],
+            delay: 0,
+            exitType: 'fade',
+            enterOffset: {
+                transform: 'translate(0, -40px)'
+            },
+            duration: defaultDuration * 2
+        }]
+    },
+
+    {
+        selector: '.storybook-text-soup-just-right',
+        states: [
+        {
+            inPages: ['text-soup-just-right'],
+            delay: 0,
+            exitType: 'fade',
+            enterOffset: {
+                transform: 'translate(0, -40px)'
+            },
+            duration: defaultDuration * 2
+        }]
+    },
+
+
+    {
         selector: '.storybook-img-two-beds',
         states: [
         {
-            inPages: ['goldilocks-finds-two-beds'],
+                inPages: ['goldilocks-finds-two-beds', 'text-bed-too-hard', 'text-bed-too-soft'],
             delay: 0,
             exitType: 'fade',
             duration: defaultDuration
+        }]
+    },
+
+    
+
+    {
+        selector: '.storybook-text-bed-too-hard',
+        states: [
+        {
+                inPages: ['text-bed-too-hard', 'text-bed-too-soft'],
+            delay: 0,
+            exitType: 'fade',
+            enterOffset: {
+                transform: 'translate(0, -40px)'
+            },
+            duration: defaultDuration * 2
+        }]
+    },
+
+
+    {
+        selector: '.storybook-text-bed-too-soft',
+        states: [
+        {
+            inPages: ['text-bed-too-soft'],
+            delay: 0,
+            exitType: 'fade',
+            enterOffset: {
+                transform: 'translate(0, -40px)'
+            },
+            duration: defaultDuration * 2
+        }]
+    },
+
+    {
+        selector: '.storybook-text-bed-just-right',
+        states: [
+        {
+            inPages: ['text-bed-just-right'],
+            delay: 0,
+            exitType: 'fade',
+            enterOffset: {
+                transform: 'translate(0, -40px)'
+            },
+            duration: defaultDuration * 2
         }]
     },
 
@@ -243,7 +362,7 @@ export const pieces = [
         selector: '.storybook-img-good-bed',
         states: [
         {
-            inPages: ['goldilocks-finds-good-bed'],
+            inPages: ['goldilocks-finds-good-bed', 'text-bed-just-right'],
             delay: 0,
             exitType: 'fade',
             duration: defaultDuration
@@ -990,6 +1109,18 @@ export const pieces = [
                 left: 300,
                 top: 400,
                 'font-size': 150,
+                color: 'black'
+            }
+        },
+        {
+            inPages: ['how-main-idea',],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 750,
+                top: 80,
+                'font-size': 200,
                 color: 'black'
             }
         },

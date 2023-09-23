@@ -34,16 +34,44 @@ export const config = {
                     title: 'Goldilocks Finds a Cabin'
                 },
                 {
+                    id: 'text-once-upon-a-time',
+                    title: 'Once upon a time...'
+                },
+                {
                     id: 'goldilocks-finds-soup',
                     title: 'Goldilocks Sees Three Bowls of Soup'
+                },
+                {
+                    id: 'text-soup-too-hot',
+                    title: 'Soup is too hot...!'
+                },
+                {
+                    id: 'text-soup-too-cold',
+                    title: 'Soup is too cold...'
+                },
+                {
+                    id: 'text-soup-just-right',
+                    title: 'Soup is just right!'
                 },
                 {
                     id: 'goldilocks-finds-two-beds',
                     title: 'Goldilocks Sees Two Beds'
                 },
                 {
+                    id: 'text-bed-too-hard',
+                    title: 'Bed is too hard...'
+                },
+                {
+                    id: 'text-bed-too-soft',
+                    title: 'Bed is too soft...'
+                },
+                {
                     id: 'goldilocks-finds-good-bed',
                     title: 'Goldilocks Finds Good Bed'
+                },
+                {
+                    id: 'text-bed-just-right',
+                    title: 'Bed is just right'
                 },
                 {
                     id: 'goldilocks-finds-laptop',
@@ -179,6 +207,10 @@ export const config = {
                 {
                     id: 'how-title-section',
                     title: 'How?'
+                },
+                {
+                    id: 'how-main-idea',
+                    title: 'Main idea'
                 },
                 {
                     id: 'entropy-formula',

@@ -77,10 +77,12 @@ export function transitionPieces({ pieces, transitionType }, exitMaxDelay){
         pieceBeforeTransition
           .style('display', 'block')
           .style('opacity', 0)
+          .style('transform', pieceState.enterOffset?.transform ? pieceState.enterOffset?.transform : 'translate(0,0)')
           .transition()
           .duration(pieceState.duration)
           .delay(pieceState.delay + 0)
           .style('opacity', 1)
+          .style('transform', 'translate(0,0)')
       }
 
       if (transitionType === 'exit') {

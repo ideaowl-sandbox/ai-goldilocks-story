@@ -107,11 +107,8 @@ html, body, #page-canvas {
     }
 
 
-    .storybook-text {
-        font-family: 'Neucha', cursive;
-    }
-
     .storybook-cover-title {
+        font-family: 'Neucha', cursive;
         font-size: 80px;
         position: absolute;
         top: 80%;
@@ -122,6 +119,66 @@ html, body, #page-canvas {
     .storybook-page {
         width: 100%;
         height: 100%;
+    }
+
+    svg.for-story {
+        overflow: visible;
+    }
+
+    .storybook-text svg.for-story text{
+        font-size: 140px;
+        fill: white;
+        font-family: 'Neucha';
+        stroke: black;
+        stroke-width: 14px;
+        paint-order: stroke fill;
+        
+    }
+
+    .storybook-text-once-upon-a-time.storybook-text svg.for-story text {
+        font-size: 110px;
+        stroke-width: 11px;
+    }
+
+    .storybook-text-once-upon-a-time {
+        // left: 560px;
+        // top: 430px;
+        top: 582px;
+        left: 1031px;
+        font-size: 110px;
+        
+    }
+
+    .storybook-text-soup-too-hot {
+        top: 656px;
+        left: 517px;
+    }
+
+    .storybook-text-soup-too-cold {
+        top: 402px;
+        left: 780px;
+    }
+
+
+    .storybook-text-soup-just-right {
+        top: 636px;
+        left: 1200px;
+    }
+
+    .storybook-text-bed-too-hard {
+        top: 656px;
+        left: 517px;
+    }
+
+    .storybook-text-bed-too-soft {
+        top: 402px;
+        left: 780px;
+    }
+
+
+    .storybook-text-bed-just-right {
+        top: 636px;
+        left: 1200px;
     }
 
     .puzzle-fully-centered {
@@ -365,7 +422,7 @@ html, body, #page-canvas {
     }
 
 
-    .faded-item {
+    .exit-will-fade {
         opacity: 0;
         display: none;
     }
