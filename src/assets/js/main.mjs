@@ -10,6 +10,16 @@ let g = {
     fullPageID: '#fullpage',
     config,
     pieces,
+    puzzleMetricsByClassTarget: {
+        // 'puzzle-state-and-actions': {
+        //   numSnakePositions: _,
+        //   currValidActions: 0,
+        //   currLegalActions: 0,
+        //   trajectory: [
+        //     {numValidActions: _, numLegalActions: _}
+        //   ]
+        // }
+    },
     sectionsData: [...config.chapters.map(d => d.pages)].flat(),
     fpi: null, // fullpage instance, set in setupFullPage
 };

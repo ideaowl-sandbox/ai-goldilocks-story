@@ -8,7 +8,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&family=Neucha&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Dosis:wght@400;700&family=Neucha&display=swap&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/styles.scss">  
         <link rel="stylesheet" href="assets/css/katex@0.16.8_dist_katex.min.css">
         <script src="assets/js/lib/katex@0.16.8_dist_katex.min.js"></script>
@@ -96,7 +96,7 @@
             <div class="storybook-text-bed-too-soft storybook-text"><svg class="for-story"><text>Too Soft...</text></svg></div>
 
             <img class=" storybook-page storybook-img-good-bed" src="./assets/images/storybook-06-good-bed.jpg" />
-            <div class="storybook-text-bed-just-right storybook-text"><svg class="for-story"><text>Just Right :)</text></svg></div>
+            <div class="storybook-text-bed-just-right storybook-text"><svg class="for-story"><text>... Just right :)</text></svg></div>
 
 
             <img class=" storybook-page storybook-img-laptop" src="./assets/images/storybook-07-laptop.jpg" />
@@ -286,7 +286,7 @@
 
             <div class="states-and-actions-text-container">
                 <div class="states-and-actions-states-text"></div>
-                <div class="states-and-actions-valid-actions-text ">d</div>
+                <div class="states-and-actions-valid-actions-text"></div>
             </div>
 
 
@@ -298,12 +298,405 @@
             <div class="toc-section toc-conclusion">Conclusion + Future Work</div>
             <div class="toc-section toc-questions">Questions</div>
 
+            <img class="storybook-page how-img-oracle" src="./assets/images/how-oracle-crystal-ball.png" />            
+            <div class="how-oracle-text storybook-text"><svg class="for-story"><text>Use Information Bits to Communicate Solution</text></svg></div>
 
-            <!-- <div class="" -->
+            <div class="latex-information-theory-entropy-formula latex-replace">\text{Entropy } = H(Z) \doteq \sum_{n=1}^{k} P(z_n) \log_{2} \frac{1}{P(z_n)}</div>
+            <div class="formula-information-entropy">
+
+            </div>
+
+            <div class="explanation-coin-random-variable">
+                For a random variable 
+                <span class="latex-replace">Z</span>, return the average number of bits needed to encode its outcomes.
+                <!-- Number of bits needed to communicate information -->
+            </div>
+
+            <div class="explanation-coin-z entropy-explanations-text">
+                Random Variable
+                <span class="latex-replace">Z_{coin}</span>
+                <span class="latex-replace explanation-z-outcomes">=\{z_{heads}, z_{tails}\}</span>
+                <!-- Number of bits needed to communicate information -->
+            </div>
+
+            <img class="entropy-coin-img" src="./assets/images/entropy-coin.jpg" />
+
+            <div class="explanation-coin-probabilities entropy-explanations-text">
+                Probabilities are 
+                <span class="latex-replace">P(z_{heads}) = P(z_{tails}) = 0.5</span>
+            </div>
+
+            <div class="explanation-coin-use-formula entropy-explanations-text latex-replace">
+                H(Z_{coin}) = [0.5 \log_{2} \frac{1}{0.5}] + [0.5 \log_{2} \frac{1}{0.5}] = 1 \text{ bit}
+            </div>
+
+            <div class="explanation-coin-1-bit entropy-explanations-text latex-replace">
+                H(Z_{coin}) = 1 \text{ bit}
+            </div>
 
 
 
-            <div class="viz-container"></div> 
+            <img class="entropy-coin-heads-img" src="./assets/images/entropy-coin-heads.jpg" />
+            <div class="bit-representation-coin-0 bit-representation">Bit:0</div>
+
+            <img class="entropy-coin-tails-img" src="./assets/images/entropy-coin-tails.jpg" />
+            <div class="bit-representation-coin-1 bit-representation">Bit:1</div>
+
+
+
+
+
+
+
+
+            <div class="explanation-puzzle-random-variable">
+                For a random variable
+                <span class="latex-replace">Z</span>, return the average number of bits needed to <b>communicate</b> an action to take.
+                <!-- Number of bits needed to communicate information -->
+            </div>
+
+            <div class="explanation-puzzle-z entropy-explanations-text">
+                
+                <span class="latex-replace">Z_{A(s)}</span>
+                <span class="latex-replace explanation-puzzle-z-outcomes">=\{z_{a_{up}}, z_{a_{down}}, z_{a_{left}}, z_{a_{right}}\}</span>
+                <!-- Number of bits needed to communicate information -->
+            </div>
+
+ 
+
+
+            <svg class="entropy-puzzle-img" width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_518_112" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="420" height="420">
+                <circle cx="210" cy="210" r="210" fill="url(#paint0_radial_518_112)"/>
+                </mask>
+                <g mask="url(#mask0_518_112)">
+                <path d="M72.3145 488.259V-69" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M211.629 488.259V-69" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M350.945 488.259V-69" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M-67 348.944H490.259" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M-67 209.63H490.259" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M-67 70.3148H490.259" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M16.5894 -27.2054H-11.2736C-18.9677 -27.2054 -25.2051 -20.9681 -25.2051 -13.274V14.589C-25.2051 22.2831 -18.9677 28.5205 -11.2736 28.5205H16.5894C24.2835 28.5205 30.5208 22.2831 30.5208 14.589V-13.274C30.5208 -20.9681 24.2835 -27.2054 16.5894 -27.2054Z" fill="#111111"/>
+                <path d="M16.5894 112.109H-11.2736C-18.9677 112.109 -25.2051 118.346 -25.2051 126.041V153.904C-25.2051 161.598 -18.9677 167.835 -11.2736 167.835H16.5894C24.2835 167.835 30.5208 161.598 30.5208 153.904V126.041C30.5208 118.346 24.2835 112.109 16.5894 112.109Z" fill="#111111"/>
+                <path d="M16.5894 251.424H-11.2736C-18.9677 251.424 -25.2051 257.661 -25.2051 265.355V293.218C-25.2051 300.913 -18.9677 307.15 -11.2736 307.15H16.5894C24.2835 307.15 30.5208 300.913 30.5208 293.218V265.355C30.5208 257.661 24.2835 251.424 16.5894 251.424Z" fill="#111111"/>
+                <path d="M16.5894 390.739H-11.2736C-18.9677 390.739 -25.2051 396.976 -25.2051 404.67V432.533C-25.2051 440.227 -18.9677 446.465 -11.2736 446.465H16.5894C24.2835 446.465 30.5208 440.227 30.5208 432.533V404.67C30.5208 396.976 24.2835 390.739 16.5894 390.739Z" fill="#111111"/>
+                <path d="M155.904 -27.2054H128.041C120.347 -27.2054 114.109 -20.9681 114.109 -13.274V14.589C114.109 22.2831 120.347 28.5205 128.041 28.5205H155.904C163.598 28.5205 169.835 22.2831 169.835 14.589V-13.274C169.835 -20.9681 163.598 -27.2054 155.904 -27.2054Z" fill="#111111"/>
+                <path d="M155.904 112.109H128.041C120.347 112.109 114.109 118.346 114.109 126.041V153.904C114.109 161.598 120.347 167.835 128.041 167.835H155.904C163.598 167.835 169.835 161.598 169.835 153.904V126.041C169.835 118.346 163.598 112.109 155.904 112.109Z" fill="#5AAAD2"/>
+                <path d="M155.904 390.739H128.041C120.347 390.739 114.109 396.976 114.109 404.67V432.533C114.109 440.227 120.347 446.465 128.041 446.465H155.904C163.598 446.465 169.835 440.227 169.835 432.533V404.67C169.835 396.976 163.598 390.739 155.904 390.739Z" fill="#5AAAD2"/>
+                <path d="M295.218 -27.2054H267.355C259.661 -27.2054 253.424 -20.9681 253.424 -13.274V14.589C253.424 22.2831 259.661 28.5205 267.355 28.5205H295.218C302.912 28.5205 309.15 22.2831 309.15 14.589V-13.274C309.15 -20.9681 302.912 -27.2054 295.218 -27.2054Z" fill="#111111"/>
+                <path d="M295.218 251.424H267.355C259.661 251.424 253.424 257.661 253.424 265.355V293.218C253.424 300.913 259.661 307.15 267.355 307.15H295.218C302.912 307.15 309.15 300.913 309.15 293.218V265.355C309.15 257.661 302.912 251.424 295.218 251.424Z" fill="#5AAAD2"/>
+                <path d="M295.218 390.739H267.355C259.661 390.739 253.424 396.976 253.424 404.67V432.533C253.424 440.227 259.661 446.465 267.355 446.465H295.218C302.912 446.465 309.15 440.227 309.15 432.533V404.67C309.15 396.976 302.912 390.739 295.218 390.739Z" fill="#5AAAD2"/>
+                <path d="M434.533 -27.2054H406.67C398.976 -27.2054 392.738 -20.9681 392.738 -13.274V14.589C392.738 22.2831 398.976 28.5205 406.67 28.5205H434.533C442.227 28.5205 448.464 22.2831 448.464 14.589V-13.274C448.464 -20.9681 442.227 -27.2054 434.533 -27.2054Z" fill="#111111"/>
+                <path d="M434.533 112.109H406.67C398.976 112.109 392.738 118.346 392.738 126.041V153.904C392.738 161.598 398.976 167.835 406.67 167.835H434.533C442.227 167.835 448.464 161.598 448.464 153.904V126.041C448.464 118.346 442.227 112.109 434.533 112.109Z" fill="#111111"/>
+                <path d="M434.533 251.424H406.67C398.976 251.424 392.738 257.661 392.738 265.355V293.218C392.738 300.913 398.976 307.15 406.67 307.15H434.533C442.227 307.15 448.464 300.913 448.464 293.218V265.355C448.464 257.661 442.227 251.424 434.533 251.424Z" fill="#111111"/>
+                <path d="M434.533 390.739H406.67C398.976 390.739 392.738 396.976 392.738 404.67V432.533C392.738 440.227 398.976 446.465 406.67 446.465H434.533C442.227 446.465 448.464 440.227 448.464 432.533V404.67C448.464 396.976 442.227 390.739 434.533 390.739Z" fill="#111111"/>
+                <path d="M211.999 246.444C232.004 246.444 248.221 230.227 248.221 210.222C248.221 190.217 232.004 174 211.999 174C191.994 174 175.777 190.217 175.777 210.222C175.777 230.227 191.994 246.444 211.999 246.444Z" fill="#7963FF"/>
+                </g>
+                <defs>
+                <radialGradient id="paint0_radial_518_112" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(210 210) rotate(90) scale(210)">
+                <stop offset="0.927083" stop-color="#D9D9D9"/>
+                <stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+                </radialGradient>
+                </defs>
+            </svg>
+
+
+            <div class="explanation-puzzle-probabilities entropy-explanations-text">
+                Probabilities are <b>uniform</b>
+                <span class="latex-replace" style="display: block; margin-top: 15px; font-size: 38px;">P(z_{a_{up}}) = P(z_{a_{down}}) = P(z_{a_{left}}) = P(z_{a_{right}}) = 0.25</span>
+            </div>
+
+            <div class="explanation-puzzle-use-formula entropy-explanations-text latex-replace">
+                H(Z_{A(s)}) = 4 \times [0.25 \log_{2} \frac{1}{0.25}] ] = 2 \text{ bits}
+            </div>
+
+            <div class="explanation-puzzle-2-bits entropy-explanations-text latex-replace">
+                H(Z_{A(s)}) = 2 \text{ bits}
+            </div>
+
+
+
+            <svg class="entropy-puzzle-rep-allElements entropy-puzzle-0-img entropy-puzzle-rep-img" width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_511_2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="420" height="420">
+                <circle cx="210" cy="210" r="210" fill="url(#paint0_radial_511_2)"/>
+                </mask>
+                <g mask="url(#mask0_511_2)">
+                <path d="M72.3145 488.259V-69" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M211.629 488.259V-69" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M350.945 488.259V-69" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M-67 348.944H490.259" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M-67 209.63H490.259" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M-67 70.3149H490.259" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M16.5894 -27.2056H-11.2736C-18.9677 -27.2056 -25.2051 -20.9682 -25.2051 -13.2741V14.5889C-25.2051 22.283 -18.9677 28.5203 -11.2736 28.5203H16.5894C24.2835 28.5203 30.5208 22.283 30.5208 14.5889V-13.2741C30.5208 -20.9682 24.2835 -27.2056 16.5894 -27.2056Z" fill="#111111"/>
+                <path d="M16.5894 112.109H-11.2736C-18.9677 112.109 -25.2051 118.346 -25.2051 126.041V153.904C-25.2051 161.598 -18.9677 167.835 -11.2736 167.835H16.5894C24.2835 167.835 30.5208 161.598 30.5208 153.904V126.041C30.5208 118.346 24.2835 112.109 16.5894 112.109Z" fill="#111111"/>
+                <path d="M16.5894 251.424H-11.2736C-18.9677 251.424 -25.2051 257.661 -25.2051 265.356V293.219C-25.2051 300.913 -18.9677 307.15 -11.2736 307.15H16.5894C24.2835 307.15 30.5208 300.913 30.5208 293.219V265.356C30.5208 257.661 24.2835 251.424 16.5894 251.424Z" fill="#111111"/>
+                <path d="M16.5894 390.739H-11.2736C-18.9677 390.739 -25.2051 396.976 -25.2051 404.67V432.533C-25.2051 440.227 -18.9677 446.465 -11.2736 446.465H16.5894C24.2835 446.465 30.5208 440.227 30.5208 432.533V404.67C30.5208 396.976 24.2835 390.739 16.5894 390.739Z" fill="#111111"/>
+                <path d="M155.904 -27.2056H128.041C120.347 -27.2056 114.109 -20.9682 114.109 -13.2741V14.5889C114.109 22.283 120.347 28.5203 128.041 28.5203H155.904C163.598 28.5203 169.835 22.283 169.835 14.5889V-13.2741C169.835 -20.9682 163.598 -27.2056 155.904 -27.2056Z" fill="#111111"/>
+                <path d="M155.904 112.109H128.041C120.347 112.109 114.109 118.346 114.109 126.041V153.904C114.109 161.598 120.347 167.835 128.041 167.835H155.904C163.598 167.835 169.835 161.598 169.835 153.904V126.041C169.835 118.346 163.598 112.109 155.904 112.109Z" fill="#5AAAD2"/>
+                <path d="M155.904 390.739H128.041C120.347 390.739 114.109 396.976 114.109 404.67V432.533C114.109 440.227 120.347 446.465 128.041 446.465H155.904C163.598 446.465 169.835 440.227 169.835 432.533V404.67C169.835 396.976 163.598 390.739 155.904 390.739Z" fill="#5AAAD2"/>
+                <path d="M295.218 -27.2056H267.355C259.661 -27.2056 253.424 -20.9682 253.424 -13.2741V14.5889C253.424 22.283 259.661 28.5203 267.355 28.5203H295.218C302.912 28.5203 309.15 22.283 309.15 14.5889V-13.2741C309.15 -20.9682 302.912 -27.2056 295.218 -27.2056Z" fill="#111111"/>
+                <path d="M295.218 251.424H267.355C259.661 251.424 253.424 257.661 253.424 265.356V293.219C253.424 300.913 259.661 307.15 267.355 307.15H295.218C302.912 307.15 309.15 300.913 309.15 293.219V265.356C309.15 257.661 302.912 251.424 295.218 251.424Z" fill="#5AAAD2"/>
+                <path d="M295.218 390.739H267.355C259.661 390.739 253.424 396.976 253.424 404.67V432.533C253.424 440.227 259.661 446.465 267.355 446.465H295.218C302.912 446.465 309.15 440.227 309.15 432.533V404.67C309.15 396.976 302.912 390.739 295.218 390.739Z" fill="#5AAAD2"/>
+                <path d="M434.533 -27.2056H406.67C398.976 -27.2056 392.738 -20.9682 392.738 -13.2741V14.5889C392.738 22.283 398.976 28.5203 406.67 28.5203H434.533C442.227 28.5203 448.464 22.283 448.464 14.5889V-13.2741C448.464 -20.9682 442.227 -27.2056 434.533 -27.2056Z" fill="#111111"/>
+                <path d="M434.533 112.109H406.67C398.976 112.109 392.738 118.346 392.738 126.041V153.904C392.738 161.598 398.976 167.835 406.67 167.835H434.533C442.227 167.835 448.464 161.598 448.464 153.904V126.041C448.464 118.346 442.227 112.109 434.533 112.109Z" fill="#111111"/>
+                <path d="M434.533 251.424H406.67C398.976 251.424 392.738 257.661 392.738 265.356V293.219C392.738 300.913 398.976 307.15 406.67 307.15H434.533C442.227 307.15 448.464 300.913 448.464 293.219V265.356C448.464 257.661 442.227 251.424 434.533 251.424Z" fill="#111111"/>
+                <path d="M434.533 390.739H406.67C398.976 390.739 392.738 396.976 392.738 404.67V432.533C392.738 440.227 398.976 446.465 406.67 446.465H434.533C442.227 446.465 448.464 440.227 448.464 432.533V404.67C448.464 396.976 442.227 390.739 434.533 390.739Z" fill="#111111"/>
+                <path d="M211.999 246.444C232.004 246.444 248.221 230.227 248.221 210.222C248.221 190.217 232.004 174 211.999 174C191.994 174 175.777 190.217 175.777 210.222C175.777 230.227 191.994 246.444 211.999 246.444Z" fill="#7963FF"/>
+                </g>
+                <path d="M212 140L212 210" stroke="#7963FF" stroke-width="26" stroke-linecap="round"/>
+                <defs>
+                <radialGradient id="paint0_radial_511_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(210 210) rotate(90) scale(210)">
+                <stop offset="0.927083" stop-color="#D9D9D9"/>
+                <stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+                </radialGradient>
+                </defs>
+            </svg>
+            
+            <div class="entropy-puzzle-rep-allElements bit-representation-puzzle-0 
+                        bit-representation">Bit:00</div>
+
+
+
+            <svg class="entropy-puzzle-rep-allElements entropy-puzzle-1-img entropy-puzzle-rep-img" width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_511_2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="420" height="420">
+                <circle cx="210" cy="210" r="210" fill="url(#paint0_radial_511_2)"/>
+                </mask>
+                <g mask="url(#mask0_511_2)">
+                <path d="M72.3145 488.259V-69" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M211.629 488.259V-69" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M350.945 488.259V-69" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M-67 348.944H490.259" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M-67 209.63H490.259" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M-67 70.3149H490.259" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M16.5894 -27.2056H-11.2736C-18.9677 -27.2056 -25.2051 -20.9682 -25.2051 -13.2741V14.5889C-25.2051 22.283 -18.9677 28.5203 -11.2736 28.5203H16.5894C24.2835 28.5203 30.5208 22.283 30.5208 14.5889V-13.2741C30.5208 -20.9682 24.2835 -27.2056 16.5894 -27.2056Z" fill="#111111"/>
+                <path d="M16.5894 112.109H-11.2736C-18.9677 112.109 -25.2051 118.346 -25.2051 126.041V153.904C-25.2051 161.598 -18.9677 167.835 -11.2736 167.835H16.5894C24.2835 167.835 30.5208 161.598 30.5208 153.904V126.041C30.5208 118.346 24.2835 112.109 16.5894 112.109Z" fill="#111111"/>
+                <path d="M16.5894 251.424H-11.2736C-18.9677 251.424 -25.2051 257.661 -25.2051 265.356V293.219C-25.2051 300.913 -18.9677 307.15 -11.2736 307.15H16.5894C24.2835 307.15 30.5208 300.913 30.5208 293.219V265.356C30.5208 257.661 24.2835 251.424 16.5894 251.424Z" fill="#111111"/>
+                <path d="M16.5894 390.739H-11.2736C-18.9677 390.739 -25.2051 396.976 -25.2051 404.67V432.533C-25.2051 440.227 -18.9677 446.465 -11.2736 446.465H16.5894C24.2835 446.465 30.5208 440.227 30.5208 432.533V404.67C30.5208 396.976 24.2835 390.739 16.5894 390.739Z" fill="#111111"/>
+                <path d="M155.904 -27.2056H128.041C120.347 -27.2056 114.109 -20.9682 114.109 -13.2741V14.5889C114.109 22.283 120.347 28.5203 128.041 28.5203H155.904C163.598 28.5203 169.835 22.283 169.835 14.5889V-13.2741C169.835 -20.9682 163.598 -27.2056 155.904 -27.2056Z" fill="#111111"/>
+                <path d="M155.904 112.109H128.041C120.347 112.109 114.109 118.346 114.109 126.041V153.904C114.109 161.598 120.347 167.835 128.041 167.835H155.904C163.598 167.835 169.835 161.598 169.835 153.904V126.041C169.835 118.346 163.598 112.109 155.904 112.109Z" fill="#5AAAD2"/>
+                <path d="M155.904 390.739H128.041C120.347 390.739 114.109 396.976 114.109 404.67V432.533C114.109 440.227 120.347 446.465 128.041 446.465H155.904C163.598 446.465 169.835 440.227 169.835 432.533V404.67C169.835 396.976 163.598 390.739 155.904 390.739Z" fill="#5AAAD2"/>
+                <path d="M295.218 -27.2056H267.355C259.661 -27.2056 253.424 -20.9682 253.424 -13.2741V14.5889C253.424 22.283 259.661 28.5203 267.355 28.5203H295.218C302.912 28.5203 309.15 22.283 309.15 14.5889V-13.2741C309.15 -20.9682 302.912 -27.2056 295.218 -27.2056Z" fill="#111111"/>
+                <path d="M295.218 251.424H267.355C259.661 251.424 253.424 257.661 253.424 265.356V293.219C253.424 300.913 259.661 307.15 267.355 307.15H295.218C302.912 307.15 309.15 300.913 309.15 293.219V265.356C309.15 257.661 302.912 251.424 295.218 251.424Z" fill="#5AAAD2"/>
+                <path d="M295.218 390.739H267.355C259.661 390.739 253.424 396.976 253.424 404.67V432.533C253.424 440.227 259.661 446.465 267.355 446.465H295.218C302.912 446.465 309.15 440.227 309.15 432.533V404.67C309.15 396.976 302.912 390.739 295.218 390.739Z" fill="#5AAAD2"/>
+                <path d="M434.533 -27.2056H406.67C398.976 -27.2056 392.738 -20.9682 392.738 -13.2741V14.5889C392.738 22.283 398.976 28.5203 406.67 28.5203H434.533C442.227 28.5203 448.464 22.283 448.464 14.5889V-13.2741C448.464 -20.9682 442.227 -27.2056 434.533 -27.2056Z" fill="#111111"/>
+                <path d="M434.533 112.109H406.67C398.976 112.109 392.738 118.346 392.738 126.041V153.904C392.738 161.598 398.976 167.835 406.67 167.835H434.533C442.227 167.835 448.464 161.598 448.464 153.904V126.041C448.464 118.346 442.227 112.109 434.533 112.109Z" fill="#111111"/>
+                <path d="M434.533 251.424H406.67C398.976 251.424 392.738 257.661 392.738 265.356V293.219C392.738 300.913 398.976 307.15 406.67 307.15H434.533C442.227 307.15 448.464 300.913 448.464 293.219V265.356C448.464 257.661 442.227 251.424 434.533 251.424Z" fill="#111111"/>
+                <path d="M434.533 390.739H406.67C398.976 390.739 392.738 396.976 392.738 404.67V432.533C392.738 440.227 398.976 446.465 406.67 446.465H434.533C442.227 446.465 448.464 440.227 448.464 432.533V404.67C448.464 396.976 442.227 390.739 434.533 390.739Z" fill="#111111"/>
+                <path d="M211.999 246.444C232.004 246.444 248.221 230.227 248.221 210.222C248.221 190.217 232.004 174 211.999 174C191.994 174 175.777 190.217 175.777 210.222C175.777 230.227 191.994 246.444 211.999 246.444Z" fill="#7963FF"/>
+                </g>
+                <path d="M212 210L212 280" stroke="#7963FF" stroke-width="26" stroke-linecap="round"/>
+                <defs>
+                <radialGradient id="paint0_radial_511_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(210 210) rotate(90) scale(210)">
+                <stop offset="0.927083" stop-color="#D9D9D9"/>
+                <stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+                </radialGradient>
+                </defs>
+            </svg>
+
+            
+            <div class="entropy-puzzle-rep-allElements bit-representation-puzzle-1 
+                        bit-representation">Bit:01</div>
+
+        
+
+            <svg class="entropy-puzzle-rep-allElements entropy-puzzle-2-img entropy-puzzle-rep-img" width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_511_2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="420" height="420">
+                <circle cx="210" cy="210" r="210" fill="url(#paint0_radial_511_2)"/>
+                </mask>
+                <g mask="url(#mask0_511_2)">
+                <path d="M72.3145 488.259V-69" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M211.629 488.259V-69" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M350.945 488.259V-69" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M-67 348.944H490.259" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M-67 209.63H490.259" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M-67 70.3149H490.259" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M16.5894 -27.2056H-11.2736C-18.9677 -27.2056 -25.2051 -20.9682 -25.2051 -13.2741V14.5889C-25.2051 22.283 -18.9677 28.5203 -11.2736 28.5203H16.5894C24.2835 28.5203 30.5208 22.283 30.5208 14.5889V-13.2741C30.5208 -20.9682 24.2835 -27.2056 16.5894 -27.2056Z" fill="#111111"/>
+                <path d="M16.5894 112.109H-11.2736C-18.9677 112.109 -25.2051 118.346 -25.2051 126.041V153.904C-25.2051 161.598 -18.9677 167.835 -11.2736 167.835H16.5894C24.2835 167.835 30.5208 161.598 30.5208 153.904V126.041C30.5208 118.346 24.2835 112.109 16.5894 112.109Z" fill="#111111"/>
+                <path d="M16.5894 251.424H-11.2736C-18.9677 251.424 -25.2051 257.661 -25.2051 265.356V293.219C-25.2051 300.913 -18.9677 307.15 -11.2736 307.15H16.5894C24.2835 307.15 30.5208 300.913 30.5208 293.219V265.356C30.5208 257.661 24.2835 251.424 16.5894 251.424Z" fill="#111111"/>
+                <path d="M16.5894 390.739H-11.2736C-18.9677 390.739 -25.2051 396.976 -25.2051 404.67V432.533C-25.2051 440.227 -18.9677 446.465 -11.2736 446.465H16.5894C24.2835 446.465 30.5208 440.227 30.5208 432.533V404.67C30.5208 396.976 24.2835 390.739 16.5894 390.739Z" fill="#111111"/>
+                <path d="M155.904 -27.2056H128.041C120.347 -27.2056 114.109 -20.9682 114.109 -13.2741V14.5889C114.109 22.283 120.347 28.5203 128.041 28.5203H155.904C163.598 28.5203 169.835 22.283 169.835 14.5889V-13.2741C169.835 -20.9682 163.598 -27.2056 155.904 -27.2056Z" fill="#111111"/>
+                <path d="M155.904 112.109H128.041C120.347 112.109 114.109 118.346 114.109 126.041V153.904C114.109 161.598 120.347 167.835 128.041 167.835H155.904C163.598 167.835 169.835 161.598 169.835 153.904V126.041C169.835 118.346 163.598 112.109 155.904 112.109Z" fill="#5AAAD2"/>
+                <path d="M155.904 390.739H128.041C120.347 390.739 114.109 396.976 114.109 404.67V432.533C114.109 440.227 120.347 446.465 128.041 446.465H155.904C163.598 446.465 169.835 440.227 169.835 432.533V404.67C169.835 396.976 163.598 390.739 155.904 390.739Z" fill="#5AAAD2"/>
+                <path d="M295.218 -27.2056H267.355C259.661 -27.2056 253.424 -20.9682 253.424 -13.2741V14.5889C253.424 22.283 259.661 28.5203 267.355 28.5203H295.218C302.912 28.5203 309.15 22.283 309.15 14.5889V-13.2741C309.15 -20.9682 302.912 -27.2056 295.218 -27.2056Z" fill="#111111"/>
+                <path d="M295.218 251.424H267.355C259.661 251.424 253.424 257.661 253.424 265.356V293.219C253.424 300.913 259.661 307.15 267.355 307.15H295.218C302.912 307.15 309.15 300.913 309.15 293.219V265.356C309.15 257.661 302.912 251.424 295.218 251.424Z" fill="#5AAAD2"/>
+                <path d="M295.218 390.739H267.355C259.661 390.739 253.424 396.976 253.424 404.67V432.533C253.424 440.227 259.661 446.465 267.355 446.465H295.218C302.912 446.465 309.15 440.227 309.15 432.533V404.67C309.15 396.976 302.912 390.739 295.218 390.739Z" fill="#5AAAD2"/>
+                <path d="M434.533 -27.2056H406.67C398.976 -27.2056 392.738 -20.9682 392.738 -13.2741V14.5889C392.738 22.283 398.976 28.5203 406.67 28.5203H434.533C442.227 28.5203 448.464 22.283 448.464 14.5889V-13.2741C448.464 -20.9682 442.227 -27.2056 434.533 -27.2056Z" fill="#111111"/>
+                <path d="M434.533 112.109H406.67C398.976 112.109 392.738 118.346 392.738 126.041V153.904C392.738 161.598 398.976 167.835 406.67 167.835H434.533C442.227 167.835 448.464 161.598 448.464 153.904V126.041C448.464 118.346 442.227 112.109 434.533 112.109Z" fill="#111111"/>
+                <path d="M434.533 251.424H406.67C398.976 251.424 392.738 257.661 392.738 265.356V293.219C392.738 300.913 398.976 307.15 406.67 307.15H434.533C442.227 307.15 448.464 300.913 448.464 293.219V265.356C448.464 257.661 442.227 251.424 434.533 251.424Z" fill="#111111"/>
+                <path d="M434.533 390.739H406.67C398.976 390.739 392.738 396.976 392.738 404.67V432.533C392.738 440.227 398.976 446.465 406.67 446.465H434.533C442.227 446.465 448.464 440.227 448.464 432.533V404.67C448.464 396.976 442.227 390.739 434.533 390.739Z" fill="#111111"/>
+                <path d="M211.999 246.444C232.004 246.444 248.221 230.227 248.221 210.222C248.221 190.217 232.004 174 211.999 174C191.994 174 175.777 190.217 175.777 210.222C175.777 230.227 191.994 246.444 211.999 246.444Z" fill="#7963FF"/>
+                </g>
+                <path d="M142 210H212" stroke="#7963FF" stroke-width="26" stroke-linecap="round"/>
+                <defs>
+                <radialGradient id="paint0_radial_511_2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(210 210) rotate(90) scale(210)">
+                <stop offset="0.927083" stop-color="#D9D9D9"/>
+                <stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+                </radialGradient>
+                </defs>
+            </svg>
+
+
+            
+            <div class="entropy-puzzle-rep-allElements bit-representation-puzzle-2 
+                        bit-representation">Bit:10</div>
+
+
+        
+
+            <svg class="entropy-puzzle-rep-allElements entropy-puzzle-3-img entropy-puzzle-rep-img" width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="mask0_518_245" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="420" height="420">
+                <circle cx="210" cy="210" r="210" fill="url(#paint0_radial_518_245)"/>
+                </mask>
+                <g mask="url(#mask0_518_245)">
+                <path d="M72.3145 488.259V-69" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M211.629 488.259V-69" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M350.945 488.259V-69" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M-67 348.944H490.259" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M-67 209.63H490.259" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M-67 70.3149H490.259" stroke="#BBBBBB" stroke-width="26" stroke-linecap="round"/>
+                <path d="M16.5894 -27.2056H-11.2736C-18.9677 -27.2056 -25.2051 -20.9682 -25.2051 -13.2741V14.5889C-25.2051 22.283 -18.9677 28.5203 -11.2736 28.5203H16.5894C24.2835 28.5203 30.5208 22.283 30.5208 14.5889V-13.2741C30.5208 -20.9682 24.2835 -27.2056 16.5894 -27.2056Z" fill="#111111"/>
+                <path d="M16.5894 112.109H-11.2736C-18.9677 112.109 -25.2051 118.346 -25.2051 126.041V153.904C-25.2051 161.598 -18.9677 167.835 -11.2736 167.835H16.5894C24.2835 167.835 30.5208 161.598 30.5208 153.904V126.041C30.5208 118.346 24.2835 112.109 16.5894 112.109Z" fill="#111111"/>
+                <path d="M16.5894 251.424H-11.2736C-18.9677 251.424 -25.2051 257.661 -25.2051 265.356V293.219C-25.2051 300.913 -18.9677 307.15 -11.2736 307.15H16.5894C24.2835 307.15 30.5208 300.913 30.5208 293.219V265.356C30.5208 257.661 24.2835 251.424 16.5894 251.424Z" fill="#111111"/>
+                <path d="M16.5894 390.739H-11.2736C-18.9677 390.739 -25.2051 396.976 -25.2051 404.67V432.533C-25.2051 440.227 -18.9677 446.465 -11.2736 446.465H16.5894C24.2835 446.465 30.5208 440.227 30.5208 432.533V404.67C30.5208 396.976 24.2835 390.739 16.5894 390.739Z" fill="#111111"/>
+                <path d="M155.904 -27.2056H128.041C120.347 -27.2056 114.109 -20.9682 114.109 -13.2741V14.5889C114.109 22.283 120.347 28.5203 128.041 28.5203H155.904C163.598 28.5203 169.835 22.283 169.835 14.5889V-13.2741C169.835 -20.9682 163.598 -27.2056 155.904 -27.2056Z" fill="#111111"/>
+                <path d="M155.904 112.109H128.041C120.347 112.109 114.109 118.346 114.109 126.041V153.904C114.109 161.598 120.347 167.835 128.041 167.835H155.904C163.598 167.835 169.835 161.598 169.835 153.904V126.041C169.835 118.346 163.598 112.109 155.904 112.109Z" fill="#5AAAD2"/>
+                <path d="M155.904 390.739H128.041C120.347 390.739 114.109 396.976 114.109 404.67V432.533C114.109 440.227 120.347 446.465 128.041 446.465H155.904C163.598 446.465 169.835 440.227 169.835 432.533V404.67C169.835 396.976 163.598 390.739 155.904 390.739Z" fill="#5AAAD2"/>
+                <path d="M295.218 -27.2056H267.355C259.661 -27.2056 253.424 -20.9682 253.424 -13.2741V14.5889C253.424 22.283 259.661 28.5203 267.355 28.5203H295.218C302.912 28.5203 309.15 22.283 309.15 14.5889V-13.2741C309.15 -20.9682 302.912 -27.2056 295.218 -27.2056Z" fill="#111111"/>
+                <path d="M295.218 251.424H267.355C259.661 251.424 253.424 257.661 253.424 265.356V293.219C253.424 300.913 259.661 307.15 267.355 307.15H295.218C302.912 307.15 309.15 300.913 309.15 293.219V265.356C309.15 257.661 302.912 251.424 295.218 251.424Z" fill="#5AAAD2"/>
+                <path d="M295.218 390.739H267.355C259.661 390.739 253.424 396.976 253.424 404.67V432.533C253.424 440.227 259.661 446.465 267.355 446.465H295.218C302.912 446.465 309.15 440.227 309.15 432.533V404.67C309.15 396.976 302.912 390.739 295.218 390.739Z" fill="#5AAAD2"/>
+                <path d="M434.533 -27.2056H406.67C398.976 -27.2056 392.738 -20.9682 392.738 -13.2741V14.5889C392.738 22.283 398.976 28.5203 406.67 28.5203H434.533C442.227 28.5203 448.464 22.283 448.464 14.5889V-13.2741C448.464 -20.9682 442.227 -27.2056 434.533 -27.2056Z" fill="#111111"/>
+                <path d="M434.533 112.109H406.67C398.976 112.109 392.738 118.346 392.738 126.041V153.904C392.738 161.598 398.976 167.835 406.67 167.835H434.533C442.227 167.835 448.464 161.598 448.464 153.904V126.041C448.464 118.346 442.227 112.109 434.533 112.109Z" fill="#111111"/>
+                <path d="M434.533 251.424H406.67C398.976 251.424 392.738 257.661 392.738 265.356V293.219C392.738 300.913 398.976 307.15 406.67 307.15H434.533C442.227 307.15 448.464 300.913 448.464 293.219V265.356C448.464 257.661 442.227 251.424 434.533 251.424Z" fill="#111111"/>
+                <path d="M434.533 390.739H406.67C398.976 390.739 392.738 396.976 392.738 404.67V432.533C392.738 440.227 398.976 446.465 406.67 446.465H434.533C442.227 446.465 448.464 440.227 448.464 432.533V404.67C448.464 396.976 442.227 390.739 434.533 390.739Z" fill="#111111"/>
+                <path d="M211.999 246.444C232.004 246.444 248.221 230.227 248.221 210.222C248.221 190.217 232.004 174 211.999 174C191.994 174 175.777 190.217 175.777 210.222C175.777 230.227 191.994 246.444 211.999 246.444Z" fill="#7963FF"/>
+                </g>
+                <path d="M210 210H280" stroke="#7963FF" stroke-width="26" stroke-linecap="round"/>
+                <defs>
+                <radialGradient id="paint0_radial_518_245" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(210 210) rotate(90) scale(210)">
+                <stop offset="0.927083" stop-color="#D9D9D9"/>
+                <stop offset="1" stop-color="#D9D9D9" stop-opacity="0"/>
+                </radialGradient>
+                </defs>
+            </svg>
+
+            </svg>
+
+
+            
+            <div class="entropy-puzzle-rep-allElements bit-representation-puzzle-3 
+                        bit-representation">Bit:11</div>
+
+
+            <div class="local-entropy-text-container">
+                <div class="local-entropy-valid-action-text"></div>
+                <div class="local-entropy-value-text"></div>
+            </div>
+
+            <div class="local-entropy-algorithm-title algorithm-title">
+                <b>U</b>niform <b>E</b>ntropy
+            </div>
+
+
+
+            <div class="solution-entropy-valid-a-text-container">
+                <div class="solution-entropy-valid-a-text"></div>
+                <div class="solution-entropy-valid-a-total"></div>
+            </div>
+
+            <div class="uniform-solution-entropy-algorithm-title algorithm-title">
+                <b>U</b>niform <b>S</b>olution <b>E</b>ntropy
+            </div>
+
+            <div class="how-oracle-text-strike-information-bits storybook-text">
+                <svg class="for-story">
+                    <text>
+                        <tspan style="text-decoration: line-through;">Use Information</tspan> 
+                        <tspan style="opacity: 0">Bits to Communicate
+                        Solution</tspan>
+                    </text>
+                </svg>
+            </div>
+
+            <div class="how-oracle-minimum-text storybook-text">
+                <svg class="for-story">
+                    <text>
+                        Minimum
+                    </text>
+                </svg>
+            </div>
+
+            <div class="puzzle-second-solution"></div>
+
+
+
+
+            <div class="muse-algorithm-title algorithm-title">
+                <b>MUSE</b>: <b>M</b>inimum <b>U</b>niform <b>S</b>olution <b>E</b>ntropy
+            </div>
+
+            <!-- The Two Puzzles -->
+
+            <div class="muse-explanation-solution-with-lowest-entropy center-text">
+                Entropy of the solution with the lowest entropy
+            </div>
+            <div class="muse-explanation-oracle center-text">
+                = Minimum bits to communicate solution
+            </div>
+            <div class="muse-explanation-recursive center-text">
+                = Recursive algorithm with state entropy
+            </div>
+            <div class="muse-recursive-code-text latex-replace">
+                    \ldots \newline
+                    {localEntropy \gets H(Z_{A(s)})}\newline
+                    {\textbf{return } localEntropy + \text{min(}childEntropies\text{)}} \newline
+                    \ldots
+            </div>
+            
+
+
+
+            <div class="muse-must-we-communicate-all-actions-text center-text">
+                Must all actions be communicated?
+            </div>
+            
+
+
+
+
+            <img class="muse-jigsaw-example-img" src="assets/images/muse-jigsaw.png" alt="MUSE Jigsaw Example" />
+
+            <div class="muse-jigsaw-question-mark-text">
+                ?
+            </div>
+
+            <div class="muse-jigsaw-example-inference-rules center-text">
+                Inference Rules: Player Knowledge
+            </div>
+
+            
+
+
+            <div class="muse-entropy-a-and-l-text-container">
+                <div class="muse-entropy-a-text"></div>
+                <div class="muse-entropy-l-text"></div>
+            </div>
+
+
+
+
+            <div class="muse-l-reduces-search-tree">
+                L reduces Search Tree
+            </div>
+
+            <div class="muse-n-step-lookahead">
+                N-step Lookahead
+            </div>
+
+
+
+            
+
+
 
             <div class="edge-menu"></div>
         </div>

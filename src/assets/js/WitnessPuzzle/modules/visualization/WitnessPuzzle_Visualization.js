@@ -446,6 +446,7 @@ class WitnessPuzzle_Visualization {
 
 
                 // possibleNStepLines.exit().remove();
+                // debugger;
     
                 possibleNStepLines
                     .enter()

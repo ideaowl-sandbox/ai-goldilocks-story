@@ -12,6 +12,111 @@ html, body, #page-canvas {
     height: 100vh;
     position: fixed;
 
+
+
+
+
+
+
+
+
+    .center-text {
+        text-align: center;
+        left: 0px;
+        width: 1920px;
+        font-size: 70px;
+    }
+
+
+    .bit-representation {
+        font-family: 'Courier Prime', Courier, monospace;
+        font-size: 60px;
+    }
+
+
+    .exit-will-fly-left {
+        left: -3840px;
+    }
+
+    .exit-will-fly-top {
+        top: -2160px;
+    }
+
+    .exit-will-fly-right {
+        right: -3840px;
+    }
+
+    .exit-will-fly-bottom {
+        bottom: -2160px;
+    }
+
+
+
+    .katex>.katex-html {
+        white-space: normal;
+    }
+
+    .katex .base {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+
+
+    .but-why-reason {
+        left: -1080px;
+        // font-size: 90px;
+    }
+
+    .but-why-reason-img {
+        position: absolute;
+        bottom: -1280px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .normal-sized-text {
+        font-size: 50px;
+    }
+
+
+    .section-title {
+        font-size: 200px;
+        top: 40%;
+        left: -900px;
+        transform: translateY(-50%);
+    }
+
+    .section-subtitle {
+        font-size: 80px;
+        margin-top: 30px;
+    }
+
+
+    .exit-will-fade {
+        opacity: 0;
+        display: none;
+    }
+
+    .viz-container {
+        display: none;
+    }
+
+    .edge-menu {
+        top: 0px;
+        right: 0px;
+        width: 20px;
+        height: 20px;
+    }
+
+
+
+
+
+
+
+
+
     #main-scalable-content {
         background-color: #fff;
         width: 1920px;
@@ -166,19 +271,19 @@ html, body, #page-canvas {
     }
 
     .storybook-text-bed-too-hard {
-        top: 656px;
-        left: 517px;
+        top: 498px;
+        left: 631px;
     }
 
     .storybook-text-bed-too-soft {
-        top: 402px;
-        left: 780px;
+        top: 667px;
+        left: 1196px;
     }
 
 
     .storybook-text-bed-just-right {
         top: 636px;
-        left: 1200px;
+        left: 845px;
     }
 
     .puzzle-fully-centered {
@@ -295,16 +400,9 @@ html, body, #page-canvas {
     }
     
 
-    .puzzle-state-and-actions {
-        position: absolute;
-        top: calc( 1080 / 2 - 180);
-        left: -1000px;
-        // transform: translate(-50%, -50%);
-    }
-
     .states-and-actions-text-container {
         right: -1900px;
-        top: 150px;
+        top: 230px;
         font-size: 50px;
         width: 300px !important;
     }
@@ -347,96 +445,260 @@ html, body, #page-canvas {
         ;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.exit-will-fly-left {
-    left: -3840px;
-}
-
-.exit-will-fly-top {
-    top: -2160px;
-}
-
-.exit-will-fly-right {
-    right: -3840px;
-}
-
-.exit-will-fly-bottom {
-    bottom: -2160px;
-}
-
-
-
-.katex>.katex-html {
-    white-space: normal;
-}
-
-.katex .base {
-    margin-top: 2px;
-    margin-bottom: 2px;
-}
-
-
-
-
-    .but-why-reason {
-        left: -1080px;
-        // font-size: 90px;
+    .how-oracle-text.storybook-text svg.for-story text {
+        font-size: 90px;
+        stroke-width: 11px;
     }
 
-    .but-why-reason-img {
-        position: absolute;
-        bottom: -1280px;
-        left: 50%;
-        transform: translate(-50%, -50%);
+
+    .how-oracle-text {
+        top: 573px;
+        left: 232px;
     }
 
-    .normal-sized-text {
+
+    .entropy-explanations-text {
         font-size: 50px;
     }
 
-    
-    .section-title {
-        font-size: 200px;
-        top: 40%;
-        left: -900px;
-        transform: translateY(-50%);
+    .explanation-coin-z {
+        top: 500px;
+        left: 160px;
     }
 
-    .section-subtitle {
+    .explanation-coin-probabilities {
+        top: 600px;
+        left: 160px;
+    }
+
+    .explanation-coin-use-formula {
+        top: 810px;
+        left: 160px;
+    }
+
+    .entropy-coin-img {
+        position: absolute;
+        top: 460px;
+        left: 1280px;
+        width: 450px;
+    }
+
+    .explanation-coin-1-bit {
+        top: 180px;
+        left: 160px;
+        font-size: 60px;
+    }
+
+    .entropy-coin-tails-img {
+        position: absolute;
+        top: 360px;
+        left: 1080px;
+        width: 300px;
+    }
+
+    .entropy-coin-heads-img {
+        position: absolute;
+        top: 360px;
+        left: 480px;
+        width: 300px;
+    }
+
+    .bit-representation-coin-0 {
+        top: 680px;
+        left: 535px;
+    }
+
+    .bit-representation-coin-1 {
+        top: 680px;
+        left: 1140px;
+    }
+
+
+
+    .explanation-puzzle-z {
+        top: 450px;
+        left: 160px;
+    }
+
+    .explanation-puzzle-probabilities {
+        top: 570px;
+        left: 160px;
+    }
+
+    .explanation-puzzle-use-formula {
+        top: 810px;
+        left: 160px;
+    }
+
+    .entropy-puzzle-img {
+        position: absolute;
+        top: 400px;
+        left: 1280px;
+        width: 450px;
+    }
+
+    .explanation-puzzle-2-bits {
+        top: 180px;
+        left: 160px;
+        font-size: 60px;
+    }
+
+    .entropy-puzzle-0-img {
+        position: absolute;
+        top: 360px;
+        left: 200px;
+        width: 300px;
+    }
+
+    .bit-representation-puzzle-0 {
+        top: 740px;
+        left: 255px;
+    }
+
+    .entropy-puzzle-1-img {
+        position: absolute;
+        top: 360px;
+        left: 600px;
+        width: 300px;
+    }
+
+    .bit-representation-puzzle-1 {
+        top: 740px;
+        left: 655px;
+    }
+
+
+    .entropy-puzzle-2-img {
+        position: absolute;
+        top: 360px;
+        left: 1000px;
+        width: 300px;
+    }
+
+    .bit-representation-puzzle-2 {
+        top: 740px;
+        left: 1055px;
+    }
+
+    .entropy-puzzle-3-img {
+        position: absolute;
+        top: 360px;
+        left: 1400px;
+        width: 300px;
+    }
+
+    .bit-representation-puzzle-3 {
+        top: 740px;
+        left: 1455px;
+    }
+
+
+
+
+    .algorithm-title {
         font-size: 80px;
-        margin-top: 30px;
+        top: 50px;
+        left: 0px;
+        width: 1920px;
+        text-align: center;
+    }
+
+    .local-entropy-text-container {
+        top: 280px;
+        font-size: 50px;
+        width: 300px !important;
+    }
+
+    .local-entropy-valid-action-text {
+        position: relative;
+        min-height: 230px;
+
+    }
+
+    .local-entropy-value-text {
+        position: relative;
+        padding-top: 20px;
     }
 
 
-    .exit-will-fade {
+    .solution-entropy-valid-a-text-container {
+        top: 255px;
+        font-size: 50px;
+        width: 300px !important;
+
+    }
+
+    .solution-entropy-valid-a-text {
+        // position: relative;
+        // min-height: 200px;
+    }
+
+    .solution-entropy-valid-a-total {
+        margin-top: 350px;
         opacity: 0;
-        display: none;
     }
 
-    .viz-container {
-        display: none;
+
+    .how-oracle-text-strike-information-bits svg.for-story text {
+        font-size: 90px;
+        stroke-width: 11px;
     }
 
-    .edge-menu {
-        top: 0px;
-        right: 0px;
-        width: 20px;
-        height: 20px;
+
+    .how-oracle-text-strike-information-bits {
+        top: 573px;
+        left: 232px;
     }
+
+
+    .how-oracle-minimum-text {
+        top: 483px;
+        left: 372px;
+    }
+
+    .how-oracle-minimum-text svg.for-story text {
+        font-size: 90px;
+        stroke-width: 11px;
+    }
+
+
+
+    .muse-explanation-solution-with-lowest-entropy {
+        top: 660px;
+    }
+
+    .muse-explanation-oracle {
+        top: 760px;
+    }
+
+    .muse-explanation-recursive {
+        top: 860px;
+    }
+
+
+    .muse-recursive-code-text {
+            top: 230px;
+            font-size: 50px; 
+            width: 600px;
+    }
+
+
+    .muse-jigsaw-example-img {
+        height: 640px;
+        left: calc((1920 - 1920 * 640/1080) / 2);
+        top: 120px;
+    }
+
+    .muse-jigsaw-question-mark-text {
+        font-size: 140px;
+        color: darkred;
+        font-weight: bold;
+        left: 620px;
+        top: 110px;
+    }
+
+
+
     
 }
 
@@ -456,13 +718,15 @@ html, body, #page-canvas {
 #fp-nav ul li,
 .fp-slidesNav ul li {
     margin: -4px !important;
+    height: 11px !important;
 }
+
 #fp-nav a .chapter-title {
     position: absolute;
     right: 18px;
     width: 400px;
     text-align: right;
-    margin-top: -4px;
+    margin-top: -7px;
     color: #777;
 }
 #fp-nav {

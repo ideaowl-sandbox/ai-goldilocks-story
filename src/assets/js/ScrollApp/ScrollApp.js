@@ -13,8 +13,8 @@ export class ScrollApp {
     let self = this;
     self.g = opts;
     self.setupFullPage(self.g);
+    self.puzzlesByClassTarget = puzzlesSetup(self.g);
     scaleAndCenterContent();
-    self.puzzles = puzzlesSetup();
     return self;
   }
 
@@ -97,39 +97,92 @@ export class ScrollApp {
     })
   }
  
-  // fpCBonLeave
-  elementsToTransition({from, to, pieces}) {
-    const piecesCopy = JSON.parse(JSON.stringify(pieces));
+  // // fpCBonLeave
+  // elementsToTransition({from, to, pieces}) {
+  //   const self = this;
+  //   const piecesCopy = pieces;
 
-    let enterPieces = JSON.parse(JSON.stringify(piecesCopy
+  //   let enterPieces = JSON.parse(JSON.stringify(piecesCopy
+  //     .filter(
+  //       d => 
+  //         d.states.filter(
+  //           e => e.inPages.includes(to)
+  //         ).length > 0)));
+
+  //   if (enterPieces.length > 0) {
+  //     enterPieces.forEach(enterPiece => {
+  //       enterPiece.states = enterPiece.states.filter(
+  //         d => d.inPages.includes(to)
+  //       )
+  //     })
+  //   }
+
+  //   let exitPieces = JSON.parse(JSON.stringify(piecesCopy
+  //     .filter(
+  //       d =>
+  //         d.states.filter(
+  //           e => e.inPages.includes(from)
+  //         ).length > 0)));
+
+  //   if (exitPieces.length > 0) {
+  //     exitPieces.forEach(exitPiece => {
+  //       exitPiece.states = exitPiece.states.filter(
+  //         d => d.inPages.includes(from)
+  //       )
+  //     })
+  //   }
+
+  //   let transitionPieces = enterPieces
+  //     .filter(
+  //       enterPiece => 
+  //         exitPieces.filter(
+  //           exitPiece => enterPiece.selector === exitPiece.selector
+  //         ).length > 0);
+
+  //   enterPieces = enterPieces
+  //     .filter(
+  //       enterPiece => 
+  //         !transitionPieces
+  //           .some(
+  //               transitionPiece => 
+  //                 transitionPiece.selector === enterPiece.selector
+  //           ))
+
+  //   exitPieces = exitPieces
+  //     .filter(
+  //       exitPiece =>
+  //         !transitionPieces
+  //           .some(
+  //             transitionPiece =>
+  //               transitionPiece.selector === exitPiece.selector
+  //           ))
+
+  //   slideTransition( [
+  //     {pieces: enterPieces, transitionType: 'enter'}, 
+  //     { pieces: exitPieces, transitionType: 'exit'},
+  //     { pieces: transitionPieces, transitionType: 'transition'}
+  //   ], self )
+
+  //   return;
+  // }
+
+  elementsToTransition({from, to, pieces}) {
+    const self = this;
+
+    let enterPieces = pieces
       .filter(
         d => 
           d.states.filter(
             e => e.inPages.includes(to)
-          ).length > 0)));
+          ).length > 0);
 
-    if (enterPieces.length > 0) {
-      enterPieces.forEach(enterPiece => {
-        enterPiece.states = enterPiece.states.filter(
-          d => d.inPages.includes(to)
-        )
-      })
-    }
-
-    let exitPieces = JSON.parse(JSON.stringify(piecesCopy
+    let exitPieces = pieces
       .filter(
         d =>
           d.states.filter(
             e => e.inPages.includes(from)
-          ).length > 0)));
-
-    if (exitPieces.length > 0) {
-      exitPieces.forEach(exitPiece => {
-        exitPiece.states = exitPiece.states.filter(
-          d => d.inPages.includes(from)
-        )
-      })
-    }
+          ).length > 0);
+    
 
     let transitionPieces = enterPieces
       .filter(
@@ -156,15 +209,15 @@ export class ScrollApp {
                 transitionPiece.selector === exitPiece.selector
             ))
 
+
     slideTransition( [
-      {pieces: enterPieces, transitionType: 'enter'}, 
-      { pieces: exitPieces, transitionType: 'exit'},
-      { pieces: transitionPieces, transitionType: 'transition'}
-    ] )
+      {pieces: enterPieces, transitionType: 'enter', page: to}, 
+      { pieces: exitPieces, transitionType: 'exit', page: from},
+      { pieces: transitionPieces, transitionType: 'transition', page: to}
+    ], self )
 
     return;
   }
-
 
 
 }

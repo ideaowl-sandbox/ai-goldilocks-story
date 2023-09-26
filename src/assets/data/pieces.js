@@ -261,30 +261,50 @@ export const pieces = [
     {
         selector: '.storybook-text-soup-too-hot',
         states: [
-        {
-                inPages: ['text-soup-too-hot', 'text-soup-too-cold', 'text-soup-just-right'],
-            delay: 0,
-            exitType: 'fade',
-            enterOffset: {
-                transform: 'translate(0, -40px)'
+            {
+                    inPages: ['text-soup-too-hot'],
+                delay: 0,
+                exitType: 'fade',
+                enterOffset: {
+                    transform: 'translate(0, -40px)'
+                },
+                duration: defaultDuration * 2
             },
-            duration: defaultDuration * 2
-        }]
+            {
+                inPages: ['text-soup-too-cold', 'text-soup-just-right'],
+                delay: 0,
+                exitType: 'fade',
+                enterOffset: {
+                    opacity: 0.4
+                },
+                duration: defaultDuration * 2
+            }
+        ]
     },
 
 
     {
         selector: '.storybook-text-soup-too-cold',
         states: [
-        {
-            inPages: ['text-soup-too-cold', 'text-soup-just-right'],
-            delay: 0,
-            exitType: 'fade',
-            enterOffset: {
-                transform: 'translate(0, -40px)'
+            {
+                inPages: ['text-soup-too-cold'],
+                delay: 0,
+                exitType: 'fade',
+                enterOffset: {
+                    transform: 'translate(0, -40px)'
+                },
+                duration: defaultDuration * 2
             },
-            duration: defaultDuration * 2
-        }]
+            {
+                inPages: ['text-soup-just-right'],
+                delay: 0,
+                exitType: 'fade',
+                enterOffset: {
+                    opacity: 0.4
+                },
+                duration: defaultDuration * 2
+            }
+        ]
     },
 
     {
@@ -318,15 +338,25 @@ export const pieces = [
     {
         selector: '.storybook-text-bed-too-hard',
         states: [
-        {
-                inPages: ['text-bed-too-hard', 'text-bed-too-soft'],
-            delay: 0,
-            exitType: 'fade',
-            enterOffset: {
-                transform: 'translate(0, -40px)'
+            {
+                    inPages: ['text-bed-too-hard'],
+                delay: 0,
+                exitType: 'fade',
+                enterOffset: {
+                    transform: 'translate(0, -40px)'
+                },
+                duration: defaultDuration * 2
             },
-            duration: defaultDuration * 2
-        }]
+            {
+                inPages: ['text-bed-too-soft'],
+                delay: 0,
+                exitType: 'fade',
+                enterOffset: {
+                    opacity: 0.4
+                },
+                duration: defaultDuration * 2
+            }
+        ]   
     },
 
 
@@ -876,15 +906,114 @@ export const pieces = [
         selector: '.puzzle-state-and-actions',
         states: [
             {
-                inPages: ['states-and-actions', 'states-and-valid-actions'],
+                inPages: [
+                    'states-and-actions', 
+                    'states-and-valid-actions', 
+                    'local-entropy', 'uniform-entropy',
+                    'uniform-solution-entropy-example',
+                    'uniform-solution-entropy-title-and-outcome',
+                    'solution-entropy-second-solution',
+                    'comparing-a-and-l',
+                ],
                 exitType: 'fly-left',
                 delay: 0,
                 duration: defaultDuration,
                 styles: {
-                    left: 450,
+                    left: 400,
+                    top: 1080/2-180,
                     scale: 2.5
                 }
             },
+            {
+                inPages: [
+                    'muse-interpretation-lowest-entropy',
+                    'muse-interpretation-oracle',
+                    'local-entropy', 'uniform-entropy',
+                    'muse-interpretation-recursive',
+                ],
+                exitType: 'fly-left',
+                delay: 0,
+                duration: defaultDuration,
+                styles: {
+                    left: 540,
+                    top: 260,
+                    scale: 1.8
+                }
+            },
+
+            {
+                inPages: [
+                    'muse-recursive-two-lines',
+                ],
+                exitType: 'fly-left',
+                delay: 0,
+                duration: defaultDuration,
+                styles: {
+                    left: 200,
+                    top: 260,
+                    scale: 1.8
+                }
+            },
+
+            {
+                inPages: [
+                    'must-we-communicate-all-actions',
+                    'inference-rule-puzzle-example'
+                ],
+                exitType: 'fly-left',
+                delay: 0,
+                duration: defaultDuration,
+                styles: {
+                    left: (1080+810)/2-120,
+                    top: 360,
+                    scale: 2.8
+                }
+            },
+
+            {
+                inPages: [
+                    'puzzle-showing-l',
+                    'comparing-a-and-l'
+                ],
+                exitType: 'fly-left',
+                delay: 0,
+                duration: defaultDuration,
+                styles: {
+                    left: (1080 + 810) / 2 - 120,
+                    top: 60,
+                    scale: 2.8
+                },
+                runOnEnter: function ({ appInst }) {
+                    // return;
+                    console.log('option set')
+                    const puzzle = appInst.puzzlesByClassTarget['puzzle-state-and-actions'];
+                    // puzzle
+                    //     .setOption('userInterface', true);
+                    puzzle
+                        setOption('renderNLookAhead', true)
+                    puzzle.reset();
+                    puzzle.attemptMove([1, 0]);
+return;
+
+
+                    puzzle
+                        .setOption('userInterface', true);
+
+                    puzzle
+                        .setOption('renderNLookAhead', true)
+                    puzzle.reset();
+                    puzzle.attemptMove([1, 0]);
+                },
+                runOnExit: function ({ appInst }) {
+                    console.log('exit js')
+                    appInst.puzzlesByClassTarget['puzzle-state-and-actions']
+                        .setOption('renderNLookAhead', false)
+                    appInst.puzzlesByClassTarget['puzzle-state-and-actions']
+                        .setOption('userInterface', false)
+                }
+            },
+
+            
         ]
     },
 
@@ -1112,18 +1241,18 @@ export const pieces = [
                 color: 'black'
             }
         },
-        {
-            inPages: ['how-main-idea',],
-            exitType: 'fly-left',
-            delay: 0,
-            duration: defaultDuration,
-            styles: {
-                left: 750,
-                top: 80,
-                'font-size': 200,
-                color: 'black'
-            }
-        },
+        // {
+        //     inPages: ['how-main-idea',],
+        //     exitType: 'fly-left',
+        //     delay: 0,
+        //     duration: defaultDuration,
+        //     styles: {
+        //         left: 750,
+        //         top: 80,
+        //         'font-size': 200,
+        //         color: 'black'
+        //     }
+        // },
 
         ]
     },
@@ -1178,6 +1307,727 @@ export const pieces = [
                 color: '#777'
             }
         },
+
+        ]
+    },
+
+
+
+
+    {
+        selector: '.how-img-oracle',
+        states: [
+        {
+            inPages: [
+                'how-main-idea', 
+                'how-communicate-solution',
+                'goal-of-communicating-solution',
+                'revisit-goal-of-communicating-solution',
+                'goal-now-minimum-bits'
+            ],
+            delay: 0,
+            exitType: 'fade',
+            duration: defaultDuration
+        }]
+    },
+
+
+    {
+        selector: '.how-oracle-text',
+        states: [{
+            inPages: [
+                'how-communicate-solution',
+                'goal-of-communicating-solution',
+                'revisit-goal-of-communicating-solution',
+                'goal-now-minimum-bits'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+
+    {
+        selector: '.latex-information-theory-entropy-formula',
+        states: [{
+            inPages: ['entropy-formula'],
+            exitType: 'fly-top',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 160,
+                top: 440,
+                'font-size': 60
+            }
+        },{
+            inPages: [
+                'entropy-basic-explanation',
+                'entropy-coin-intro',
+                'entropy-coin-outcomes',
+                'entropy-coin-probabilities',
+                'entropy-coin-full-calculation',
+
+                'entropy-communications-explanation',
+                'entropy-puzzle-intro',
+                'entropy-puzzle-outcomes',
+                'entropy-puzzle-probabilities',
+                'entropy-puzzle-full-calculation'
+            ],
+            exitType: 'fly-top',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 160,
+                top: 160,
+                'font-size': 60
+            }
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.explanation-coin-random-variable',
+        states: [{
+            inPages: [ 'entropy-basic-explanation'],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 160,
+                top: 300,
+                'font-size': 60,
+                width: 1560
+            }
+        },{
+            inPages: [
+                'entropy-coin-intro',
+                'entropy-coin-outcomes',
+                'entropy-coin-probabilities',
+                'entropy-coin-full-calculation'
+            ],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 160,
+                top: 300,
+                'font-size': 40,
+                width: 1560
+            }
+        },
+
+        ]
+    },
+
+
+
+
+    {
+        selector: '.explanation-coin-z',
+        states: [{
+            inPages: [
+                'entropy-coin-intro', 
+                'entropy-coin-outcomes',
+                'entropy-coin-probabilities',
+                'entropy-coin-full-calculation'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    
+    {
+        selector: '.entropy-coin-img',
+        states: [{
+            inPages: [
+                'entropy-coin-intro', 
+                'entropy-coin-outcomes',
+                'entropy-coin-probabilities',
+                'entropy-coin-full-calculation'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.explanation-z-outcomes',
+        states: [{
+            inPages: [
+                'entropy-coin-outcomes',
+                'entropy-coin-probabilities',
+                'entropy-coin-full-calculation'
+            ],
+            exitType: 'fade',
+            exitOptions: {
+                display: 'inline-block'
+            },
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+
+    {
+        selector: '.explanation-coin-probabilities',
+        states: [{
+            inPages: [
+                'entropy-coin-probabilities',
+                'entropy-coin-full-calculation'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.explanation-coin-use-formula',
+        states: [{
+            inPages: [
+                'entropy-coin-full-calculation'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+
+    {
+        selector: '.explanation-coin-1-bit',
+        states: [{
+            inPages: [
+                'entropy-coin-what-is-1-bit',
+                'entropy-coin-heads-representation',
+                'entropy-coin-tails-representation'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.entropy-coin-heads-img, .bit-representation-coin-0',
+        states: [{
+            inPages: [
+                'entropy-coin-heads-representation',
+                'entropy-coin-tails-representation'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.entropy-coin-tails-img, .bit-representation-coin-1',
+        states: [{
+            inPages: [
+                'entropy-coin-tails-representation'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+
+
+    {
+        selector: '.explanation-puzzle-random-variable',
+        states: [{
+            inPages: [
+                'entropy-communications-explanation',
+                'entropy-puzzle-intro',
+                'entropy-puzzle-outcomes',
+                'entropy-puzzle-probabilities',
+                'entropy-puzzle-full-calculation'
+            ],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 160,
+                top: 300,
+                'font-size': 40,
+                width: 1560
+            }
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.explanation-puzzle-z',
+        states: [{
+            inPages: [
+                'entropy-puzzle-intro',
+                'entropy-puzzle-outcomes',
+                'entropy-puzzle-probabilities',
+                'entropy-puzzle-full-calculation'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.entropy-puzzle-img',
+        states: [{
+            inPages: [
+
+                'entropy-puzzle-intro',
+                'entropy-puzzle-outcomes',
+                'entropy-puzzle-probabilities',
+                'entropy-puzzle-full-calculation'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.explanation-puzzle-z-outcomes',
+        states: [{
+            inPages: [
+                'entropy-puzzle-outcomes',
+                'entropy-puzzle-probabilities',
+                'entropy-puzzle-full-calculation'
+            ],
+            exitType: 'fade',
+            exitOptions: {
+                display: 'inline-block'
+            },
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+
+    {
+        selector: '.explanation-puzzle-probabilities',
+        states: [{
+            inPages: [
+                'entropy-puzzle-probabilities',
+                'entropy-puzzle-full-calculation'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.explanation-puzzle-use-formula',
+        states: [{
+            inPages: [
+                'entropy-puzzle-full-calculation'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+
+    {
+        selector: '.explanation-puzzle-2-bits',
+        states: [{
+            inPages: [
+                'entropy-puzzle-what-is-2-bits',
+                'entropy-puzzle-representation'
+                // 'entropy-puzzle-heads-representation',
+                // 'entropy-puzzle-tails-representation'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+
+    {
+        selector: '.entropy-puzzle-rep-allElements',
+        states: [{
+            inPages: [
+                'entropy-puzzle-representation'
+                // 'entropy-puzzle-heads-representation',
+                // 'entropy-puzzle-tails-representation'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+
+    {
+        selector: '.local-entropy-text-container',
+        states: [
+            {
+                inPages: ['local-entropy', 'uniform-entropy'],
+                exitType: 'fly-right',
+                delay: 100,
+                duration: defaultDuration,
+                styles: {
+                    right: 590
+                }
+            },
+        ]
+    },
+
+    {
+        selector: '.local-entropy-algorithm-title',
+        states: [{
+            inPages: [
+                'uniform-entropy'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+
+    {
+        selector: '.solution-entropy-valid-a-text-container',
+        states: [
+            {
+                inPages: ['uniform-solution-entropy-example', 'uniform-solution-entropy-title-and-outcome'],
+                exitType: 'fly-right',
+                delay: 100,
+                duration: defaultDuration,
+                styles: {
+                    right: 550
+                }
+            },
+        ]
+    },
+
+
+    {
+        selector: '.solution-entropy-valid-a-total',
+        states: [
+            {
+                inPages: ['uniform-solution-entropy-title-and-outcome'],
+                exitType: 'fade',
+                delay: 100,
+                duration: defaultDuration,
+            },
+        ]
+    },
+
+    {
+        selector: '.uniform-solution-entropy-algorithm-title',
+        states: [
+            {
+                inPages: [
+                    'uniform-solution-entropy-title-and-outcome',
+                    'solution-entropy-second-solution'
+                ],
+                exitType: 'fade',
+                delay: 100,
+                duration: defaultDuration,
+            },
+        ]
+    },
+
+    {
+        selector: '.puzzle-second-solution',
+        states: [
+            {
+                inPages: [
+                    'solution-entropy-second-solution',
+                    // 'local-entropy', 'uniform-entropy',
+                    // 'uniform-solution-entropy-example',
+                    // 'uniform-solution-entropy-title-and-outcome'
+                ],
+                exitType: 'fly-right',
+                delay: 0,
+                duration: defaultDuration,
+                styles: {
+                    top: 1080/2-180,
+                    right: 420,
+                    scale: 2.5
+                }
+            },
+            {
+                inPages: [
+                    'muse-interpretation-lowest-entropy',
+                    'muse-interpretation-oracle',
+                    'muse-interpretation-recursive'
+                    // 'local-entropy', 'uniform-entropy',
+                    // 'uniform-solution-entropy-example',
+                    // 'uniform-solution-entropy-title-and-outcome'
+                ],
+                exitType: 'fly-right',
+                delay: 0,
+                duration: defaultDuration,
+                styles: {
+                    right: 560,
+                    top: 260,
+                    scale: 1.8
+                }
+            },
+        ]
+    },
+
+
+
+
+    {
+        selector: '.how-oracle-text-strike-information-bits',
+        states: [{
+            inPages: [
+                'goal-now-minimum-bits'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+
+
+    {
+        selector: '.how-oracle-minimum-text',
+        states: [{
+            inPages: [
+                'goal-now-minimum-bits'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration * 2,
+            enterOffset: {
+                transform: 'translate(0, -40px)'
+            },
+        },
+
+        ]
+    },
+
+
+
+
+    {
+        selector: '.muse-algorithm-title',
+        states: [{
+            inPages: [
+                'muse-first-definition',
+                'muse-interpretation-lowest-entropy',
+                'muse-interpretation-oracle',
+                'muse-interpretation-recursive',
+                'muse-recursive-two-lines',
+                'must-we-communicate-all-actions',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.muse-explanation-solution-with-lowest-entropy',
+        states: [{
+            inPages: [
+                'muse-interpretation-lowest-entropy',
+                'muse-interpretation-oracle',
+                'muse-interpretation-recursive',
+                'muse-recursive-two-lines',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.muse-explanation-oracle',
+        states: [{
+            inPages: [
+                'muse-interpretation-oracle',
+                'muse-interpretation-recursive',
+                'muse-recursive-two-lines',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.muse-explanation-recursive',
+        states: [{
+            inPages: [
+                'muse-interpretation-recursive',
+                'muse-recursive-two-lines',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+
+    {
+        selector: '.muse-recursive-code-text',
+        states: [
+            {
+                inPages: ['muse-recursive-two-lines'],
+                exitType: 'fly-right',
+                delay: 100,
+                duration: defaultDuration,
+                styles: {
+                    right: 680
+                }
+            },
+
+        ]
+    },
+
+
+
+    {
+        selector: '.muse-must-we-communicate-all-actions-text',
+        states: [
+            {
+                inPages: ['must-we-communicate-all-actions'],
+                exitType: 'fly-bottom',
+                delay: 100,
+                duration: defaultDuration,
+                styles: {
+                    bottom: 130
+                }
+            },
+
+        ]
+    },
+
+
+
+    {
+        selector: '.muse-jigsaw-example-inference-rules',
+        states: [
+            {
+                inPages: ['introducing-inference-rules'],
+                exitType: 'fly-bottom',
+                delay: 100,
+                duration: defaultDuration,
+                styles: {
+                    bottom: 150,
+                    'font-size': 80
+                }
+            },
+
+        ]
+    },
+
+
+    {
+        selector: '.muse-jigsaw-example-img',
+        states: [
+            {
+                inPages: ['jigsaw-example', 
+                'jigsaw-question-mark',
+                'introducing-inference-rules'],
+                exitType: 'fade',
+                delay: 100,
+                duration: defaultDuration,
+            },
+
+        ]
+    },
+
+
+    {
+        selector: '.muse-jigsaw-question-mark-text',
+        states: [
+            {
+                inPages: ['jigsaw-question-mark', 'introducing-inference-rules'],
+                exitType: 'fade',
+                delay: 100,
+                enterOffset: {
+                    transform: 'translate(0, -40px)'
+                },
+                duration: defaultDuration,
+            }, 
 
         ]
     },

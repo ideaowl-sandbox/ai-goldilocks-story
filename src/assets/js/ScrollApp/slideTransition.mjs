@@ -45,7 +45,7 @@ export function formatTransitionValue( {key, value} ) {
 }
 
 
-export function slideTransition(typedPieceSets) {
+export function slideTransition(typedPieceSets, appInst) {
   
   // get exit max delay
   let exitMaxDelay = 0;
@@ -56,26 +56,33 @@ export function slideTransition(typedPieceSets) {
   }
   
   for (let typedPieceSet of typedPieceSets) {
-    localFns.transitionPieces(typedPieceSet, exitMaxDelay)
+    localFns.transitionPieces(typedPieceSet, exitMaxDelay, appInst)
   }
 
 }
 
 
-export function transitionPieces({ pieces, transitionType }, exitMaxDelay){
-
+export function transitionPieces({ pieces, transitionType, page }, exitMaxDelay, appInst){
 
 
   pieces.forEach((piece) => {
-    const pieceState = piece.states[0];
+    const pieceState = piece.states.filter(state=>state.inPages.includes(page))[0];
 
     const pieceBeforeTransition = d3.selectAll(piece.selector);
+
+
+    if (transitionType === 'enter' && pieceState.runOnEnter) {
+      pieceState.runOnEnter({appInst});
+    }
+    if (transitionType === 'exit' && pieceState.runOnExit) {
+      pieceState.runOnExit({appInst});
+    }
 
     if (pieceState.exitType === 'fade') {
 
       if (transitionType === 'enter') {
         pieceBeforeTransition
-          .style('display', 'block')
+          .style('display', pieceState?.exitOptions?.display ? pieceState?.exitOptions?.display : 'block')
           .style('opacity', 0)
           .style('transform', pieceState.enterOffset?.transform ? pieceState.enterOffset?.transform : 'translate(0,0)')
           .transition()
@@ -94,6 +101,15 @@ export function transitionPieces({ pieces, transitionType }, exitMaxDelay){
           .on('end', () => {
             pieceBeforeTransition.style('display', 'none')
           });
+      }
+
+ 
+      if (transitionType === 'transition') {
+        pieceBeforeTransition
+          .transition()
+          .duration(pieceState.duration)
+          .delay(pieceState.delay + 0)
+          .style('opacity', pieceState.enterOffset?.opacity ? pieceState.enterOffset?.opacity  : 1)
       }
 
 

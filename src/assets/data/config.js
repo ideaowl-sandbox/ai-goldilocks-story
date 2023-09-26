@@ -213,16 +213,8 @@ export const config = {
                     title: 'Main idea'
                 },
                 {
-                    id: 'entropy-formula',
-                    title: 'Entropy Formula'
-                },
-                {
-                    id: 'coin-entropy',
-                    title: 'Entropy of a Coin'
-                },
-                {
-                    id: 'dice-entropy',
-                    title: 'Entropy of a Die'
+                    id: 'how-communicate-solution',
+                    title: 'Use bits to communicate solution'
                 },
                 {
                     id: 'states-and-actions',
@@ -231,39 +223,166 @@ export const config = {
                 {
                     id: 'states-and-valid-actions',
                     title: 'Valid Actions'
+                }
+            ]
+        },
+
+        
+        {
+            id: 'how-entropy',
+            pages:[
+                {
+                    id: 'entropy-formula',
+                    title: 'Entropy Formula'
+                }, 
+                {
+                    id: 'entropy-basic-explanation',
+                    title: 'Basic Explanation of Entropy Formula'
                 },
+                {
+                    id: 'entropy-coin-intro',
+                    title: 'Coin Example Introduction'
+                },
+                {
+                    id: 'entropy-coin-outcomes',
+                    title: 'Outcomes of a Coin Flip'
+                },
+                {
+                    id: 'entropy-coin-probabilities',
+                    title: 'Prbabilities of a Coin Flip'
+                },
+                {
+                    id: 'entropy-coin-full-calculation',
+                    title: 'Entropy of a Coin Flip'
+                },
+                {
+                    id: 'entropy-coin-what-is-1-bit',
+                    title: 'What is 1 Bit of Entropy of a Coin?'
+                },
+                {
+                    id: 'entropy-coin-heads-representation',
+                    title: 'Heads is 0'
+                },
+                {
+                    id: 'entropy-coin-tails-representation',
+                    title: 'Tails is 1'
+                },
+
+
+                {
+                    id: 'entropy-communications-explanation',
+                    title: 'Using Entropy to Communicate'
+                },
+                {
+                    id: 'entropy-puzzle-intro',
+                    title: 'Puzzle Example Introduction'
+                },
+                {
+                    id: 'entropy-puzzle-outcomes',
+                    title: 'Outcomes of Puzzle'
+                },
+                {
+                    id: 'entropy-puzzle-probabilities',
+                    title: 'Prbabilities of 4 Puzzle Actions'
+                },
+                {
+                    id: 'entropy-puzzle-full-calculation',
+                    title: 'Entropy of a State with 4 Actions'
+                },
+                {
+                    id: 'entropy-puzzle-what-is-2-bits',
+                    title: 'What is 1 Bit of Entropy of a Coin?'
+                },
+                {
+                    id: 'entropy-puzzle-representation',
+                    title: 'Heads is 0'
+                },
+
+
+
                 {
                     id: 'local-entropy',
                     title: 'Local Entropy'
                 },
+                {
+                    id: 'uniform-entropy',
+                    title: 'Introducing Algorithm Uniform Entropy'
+                },
+                {
+                    id: 'goal-of-communicating-solution',
+                    title: 'Revisting Oracle Goal'
+                },
+                {
+                    id: 'uniform-solution-entropy-example',
+                    title: 'Uniform Solution Entropy Example'
+                },
+                {
+                    id: 'uniform-solution-entropy-title-and-outcome',
+                    title: 'Outcome and Title'
+                },
+                {
+                    id: 'solution-entropy-second-solution',
+                    title: 'Second Solution for Puzzle'
+                },
+                {
+                    id: 'revisit-goal-of-communicating-solution',
+                    title: 'Original Goal of Communicating Solution'
+                },
+                {
+                    id: 'goal-now-minimum-bits',
+                    title: 'Goal is Now Minimum Bits'
+                },
             ]
         },
+
+
         {
             id: 'algorithm-muse',
             pages: [
                 {
-                    id: 'approach-in-english',
-                    title: 'Simple Approach in English'
+                    id: 'muse-first-definition',
+                    title: 'MUSE: Minimal Uniform Solution Entropy'
                 },
                 {
-                    id: 'solution-interpretation',
-                    title: 'Solution Interpretation'
+                    id: 'muse-interpretation-lowest-entropy',
+                    title: 'Solution with Lowest Entropy',
+                    note: 'Make sure to cover the longest path'
                 },
                 {
-                    id: 'recursive-interpretation',
+                    id: 'muse-interpretation-oracle',
+                    title: 'Oracle Interpretation'
+                },
+                {
+                    id: 'muse-interpretation-recursive',
                     title: 'Recursive Interpretation'
                 },
                 {
-                    id: 'muse-example',
-                    title: 'MUSE Example'
+                    id: 'muse-recursive-two-lines',
+                    title: 'Recursive Interpretation'
                 },
                 {
-                    id: 'path-algorithm',
-                    title: 'Is this not encoding the size of tree?'
+                    id: 'must-we-communicate-all-actions',
+                    title: 'Are all of these actions necessary to communicate?'
                 },
                 {
-                    id: 'are-all-actions-logical',
-                    title: 'Are all actions logical?'
+                    id: 'jigsaw-example',
+                    title: 'Jigsaw Example'
+                },
+                {
+                    id: 'jigsaw-question-mark',
+                    title: 'Which pieces would you check?'
+                },
+                {
+                    id: 'introducing-inference-rules',
+                    title: 'Inference Rules as Player Information'
+                },
+                {
+                    id: 'inference-rule-puzzle-example',
+                    title: 'Inference Rule Puzzle Example'
+                },
+                {
+                    id: 'puzzle-showing-l',
+                    title: 'Puzzle Shows L Actions'
                 },
                 {
                     id: 'comparing-a-and-l',
@@ -278,8 +397,8 @@ export const config = {
                     title: 'n-step lookahead'
                 },
                 {
-                    id: 'necessary-to-encode',
-                    title: 'Do all actions need to be communicated / encoded?'
+                    id: 'muse-summary',
+                    title: 'MUSE Summary'
                 }
             ]
         },
@@ -287,6 +406,18 @@ export const config = {
         {
             id: 'algorithm-remuse',
             pages: [
+                {
+                    id: 'kl-divergence',
+                    title: 'KL-Divergence'
+                },
+                {
+                    id: 'kl-divergence',
+                    title: 'KL-Divergence'
+                },
+                {
+                    id: 'kl-divergence',
+                    title: 'KL-Divergence'
+                },
                 {
                     id: 'kl-divergence',
                     title: 'KL-Divergence'
