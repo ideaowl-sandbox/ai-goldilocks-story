@@ -1,3 +1,5 @@
+import * as d3 from 'd3';
+
 let defaultDuration = 1000;
 
 export const pieces = [
@@ -912,8 +914,7 @@ export const pieces = [
                     'local-entropy', 'uniform-entropy',
                     'uniform-solution-entropy-example',
                     'uniform-solution-entropy-title-and-outcome',
-                    'solution-entropy-second-solution',
-                    'comparing-a-and-l',
+                    'solution-entropy-second-solution'
                 ],
                 exitType: 'fly-left',
                 delay: 0,
@@ -922,7 +923,33 @@ export const pieces = [
                     left: 400,
                     top: 1080/2-180,
                     scale: 2.5
-                }
+                },
+                runOnEnter: function ({ appInst }) {
+                    console.log('renderNLooAhead: false')
+                    appInst.puzzlesByClassTarget['puzzle-state-and-actions']
+                        .setOption('renderNLookAhead', false)
+                },
+            },
+            {
+                inPages: [
+                    'comparing-a-and-l',
+                ],
+                exitType: 'fly-left',
+                delay: 0,
+                duration: defaultDuration,
+                styles: {
+                    left: 340,
+                    top: 1080 / 2 - 180,
+                    scale: 2.5
+                },
+                runOnEnter: function ({ appInst }) {
+                    appInst.puzzlesByClassTarget['puzzle-state-and-actions']
+                        .setOption('renderNLookAhead', false)
+                    appInst.puzzlesByClassTarget['puzzle-state-and-actions']
+                        .reset();
+                    appInst.puzzlesByClassTarget['puzzle-state-and-actions']
+                        .attemptMove([0,0]);
+                },
             },
             {
                 inPages: [
@@ -930,6 +957,7 @@ export const pieces = [
                     'muse-interpretation-oracle',
                     'local-entropy', 'uniform-entropy',
                     'muse-interpretation-recursive',
+                    
                 ],
                 exitType: 'fly-left',
                 delay: 0,
@@ -938,12 +966,18 @@ export const pieces = [
                     left: 540,
                     top: 260,
                     scale: 1.8
-                }
+                },
+                runOnEnter: function ({ appInst }) {
+                    console.log('renderNLooAhead: false')
+                    appInst.puzzlesByClassTarget['puzzle-state-and-actions']
+                        .setOption('renderNLookAhead', false)
+                },
             },
 
             {
                 inPages: [
                     'muse-recursive-two-lines',
+                    'muse-summary'
                 ],
                 exitType: 'fly-left',
                 delay: 0,
@@ -952,13 +986,17 @@ export const pieces = [
                     left: 200,
                     top: 260,
                     scale: 1.8
-                }
+                },
+                runOnEnter: function ({ appInst }) {
+                    console.log('renderNLooAhead: false')
+                    appInst.puzzlesByClassTarget['puzzle-state-and-actions']
+                        .setOption('renderNLookAhead', false)
+                },
             },
 
             {
                 inPages: [
-                    'must-we-communicate-all-actions',
-                    'inference-rule-puzzle-example'
+                    'must-we-communicate-all-actions'
                 ],
                 exitType: 'fly-left',
                 delay: 0,
@@ -967,50 +1005,77 @@ export const pieces = [
                     left: (1080+810)/2-120,
                     top: 360,
                     scale: 2.8
-                }
+                },
+                runOnEnter: function ({ appInst }) {
+                    appInst.puzzlesByClassTarget['puzzle-state-and-actions']
+                        .setOption('renderNLookAhead', false);
+                    appInst.puzzlesByClassTarget['puzzle-state-and-actions']
+                        .reset();
+                    appInst.puzzlesByClassTarget['puzzle-state-and-actions']
+                        .attemptSolveWithPath([[0,1],[1,0],[0,1],[1,0],[0,-1],[1,0],[0,1],[0,1]]);
+                },
             },
+
 
             {
                 inPages: [
-                    'puzzle-showing-l',
-                    'comparing-a-and-l'
+                    'puzzle-to-use-l',
                 ],
                 exitType: 'fly-left',
                 delay: 0,
                 duration: defaultDuration,
                 styles: {
                     left: (1080 + 810) / 2 - 120,
-                    top: 60,
+                    top: 280,
                     scale: 2.8
                 },
                 runOnEnter: function ({ appInst }) {
-                    // return;
-                    console.log('option set')
-                    const puzzle = appInst.puzzlesByClassTarget['puzzle-state-and-actions'];
-                    // puzzle
-                    //     .setOption('userInterface', true);
-                    puzzle
-                        setOption('renderNLookAhead', true)
-                    puzzle.reset();
-                    puzzle.attemptMove([1, 0]);
-return;
-
-
-                    puzzle
-                        .setOption('userInterface', true);
-
-                    puzzle
-                        .setOption('renderNLookAhead', true)
-                    puzzle.reset();
-                    puzzle.attemptMove([1, 0]);
+                    appInst.puzzlesByClassTarget['puzzle-state-and-actions']
+                        .setOption('renderNLookAhead', false);
                 },
-                runOnExit: function ({ appInst }) {
-                    console.log('exit js')
+            },
+
+            {
+                inPages: [
+                    'inference-rule-puzzle-example',
+                ],
+                exitType: 'fly-left',
+                delay: 0,
+                duration: defaultDuration,
+                styles: {
+                    left: (1080 + 810) / 2 - 120,
+                    top: 280,
+                    scale: 2.8
+                },
+                runOnEnter: function ({ appInst }) {
                     appInst.puzzlesByClassTarget['puzzle-state-and-actions']
-                        .setOption('renderNLookAhead', false)
+                        .setOption('renderNLookAhead', false);
                     appInst.puzzlesByClassTarget['puzzle-state-and-actions']
-                        .setOption('userInterface', false)
-                }
+                        .reset();
+                    appInst.puzzlesByClassTarget['puzzle-state-and-actions']
+                        .attemptMove([0, 1]);
+                },
+            },          
+
+            {
+                inPages: [
+                    'showing-l',
+                    'l-reduces-search-tree',
+                    'n-step-lookahead'
+                ],
+                exitType: 'fly-left',
+                delay: 0,
+                duration: defaultDuration,
+                styles: {
+                    left: (1080 + 810) / 2 - 120,
+                    top: 280,
+                    scale: 2.8
+                },
+                runOnEnter: function ({ appInst }) {
+                    console.log('renderNLooAhead: !!!!!!!!!!!!!!!!!')
+                    appInst.puzzlesByClassTarget['puzzle-state-and-actions']
+                        .setOption('renderNLookAhead', true)
+                },
             },
 
             
@@ -1095,7 +1160,7 @@ return;
     
 
     {
-        selector: '.contribution-contribution-title',
+        selector: '.toc-contribution',
         states: [{
             inPages: ['contributions-title'],
             exitType: 'fly-left',
@@ -1121,7 +1186,7 @@ return;
             }
         },
         {
-            inPages: ['how-title-section'],
+            inPages: ['how-title-section', 'experiment-and-results-title-section'],
             exitType: 'fly-left',
             delay: 0,
             duration: defaultDuration,
@@ -1171,8 +1236,9 @@ return;
 
     {
         selector: '.toc-title',
-        states: [{
-            inPages: ['how-title-section',],
+        states: [
+            {
+            inPages: ['how-title-section','experiment-and-results-title-section'],
             exitType: 'fly-left',
             delay: -0,
             duration: defaultDuration,
@@ -1191,8 +1257,9 @@ return;
 
     {
         selector: '.toc-intro',
-        states: [{
-            inPages: ['how-title-section',],
+        states: [
+            {
+                inPages: ['how-title-section','experiment-and-results-title-section'],
             exitType: 'fly-left',
             delay: 0,
             duration: defaultDuration,
@@ -1209,8 +1276,9 @@ return;
 
     {
         selector: '.toc-why',
-        states: [{
-            inPages: ['how-title-section',],
+        states: [
+            {
+                inPages: ['how-title-section', 'experiment-and-results-title-section'],
             exitType: 'fly-left',
             delay: 0,
             duration: defaultDuration,
@@ -1229,7 +1297,8 @@ return;
 
     {
         selector: '.toc-how',
-        states: [{
+        states: [
+        {
             inPages: ['how-title-section',],
             exitType: 'fly-left',
             delay: 0,
@@ -1241,19 +1310,18 @@ return;
                 color: 'black'
             }
         },
-        // {
-        //     inPages: ['how-main-idea',],
-        //     exitType: 'fly-left',
-        //     delay: 0,
-        //     duration: defaultDuration,
-        //     styles: {
-        //         left: 750,
-        //         top: 80,
-        //         'font-size': 200,
-        //         color: 'black'
-        //     }
-        // },
-
+        {
+            inPages: ['experiment-and-results-title-section',],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 300,
+                top: 380,
+                'font-size': 50,
+                color: '#AAA'
+            }
+        },
         ]
     },
 
@@ -1271,6 +1339,18 @@ return;
                 color: '#777'
             }
         },
+        {
+            inPages: ['experiment-and-results-title-section',],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 300,
+                top: 480,
+                'font-size': 150,
+                color: 'black'
+            }
+        },
 
         ]
     },
@@ -1285,6 +1365,18 @@ return;
             styles: {
                 left: 300,
                 top: 680,
+                'font-size': 50,
+                color: '#777'
+            }
+        },
+        {
+            inPages: ['experiment-and-results-title-section',],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 300,
+                top: 740,
                 'font-size': 50,
                 color: '#777'
             }
@@ -1307,6 +1399,18 @@ return;
                 color: '#777'
             }
         },
+        {
+            inPages: ['experiment-and-results-title-section',],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 300,
+                top: 800,
+                'font-size': 50,
+                color: '#777'
+            }
+        },
 
         ]
     },
@@ -1323,7 +1427,8 @@ return;
                 'how-communicate-solution',
                 'goal-of-communicating-solution',
                 'revisit-goal-of-communicating-solution',
-                'goal-now-minimum-bits'
+                'goal-now-minimum-bits',
+                'remuse-revisit-min-bits-goal'
             ],
             delay: 0,
             exitType: 'fade',
@@ -1817,7 +1922,7 @@ return;
                 inPages: [
                     'muse-interpretation-lowest-entropy',
                     'muse-interpretation-oracle',
-                    'muse-interpretation-recursive'
+                    'muse-interpretation-recursive',
                     // 'local-entropy', 'uniform-entropy',
                     // 'uniform-solution-entropy-example',
                     // 'uniform-solution-entropy-title-and-outcome'
@@ -1884,6 +1989,7 @@ return;
                 'muse-interpretation-recursive',
                 'muse-recursive-two-lines',
                 'must-we-communicate-all-actions',
+                'muse-summary'
             ],
             exitType: 'fade',
             delay: 0,
@@ -1902,6 +2008,7 @@ return;
                 'muse-interpretation-oracle',
                 'muse-interpretation-recursive',
                 'muse-recursive-two-lines',
+                'muse-summary'
             ],
             exitType: 'fade',
             delay: 0,
@@ -1919,6 +2026,7 @@ return;
                 'muse-interpretation-oracle',
                 'muse-interpretation-recursive',
                 'muse-recursive-two-lines',
+                'muse-summary'
             ],
             exitType: 'fade',
             delay: 0,
@@ -1935,6 +2043,7 @@ return;
             inPages: [
                 'muse-interpretation-recursive',
                 'muse-recursive-two-lines',
+                'muse-summary'
             ],
             exitType: 'fade',
             delay: 0,
@@ -2033,6 +2142,613 @@ return;
     },
 
 
+
+    {
+        selector: '.muse-question-do-both-actions-text',
+        states: [
+            {
+                inPages: ['inference-rule-puzzle-example'],
+                exitType: 'fade',
+                delay: 100,
+                enterOffset: {
+                    transform: 'translate(0, -40px)'
+                },
+                duration: defaultDuration,
+            },
+
+        ]
+    },
+    
+
+
+    {
+        selector: '.muse-introducing-l-text',
+        states: [
+            {
+                inPages: ['puzzle-to-use-l'],
+                exitType: 'fade',
+                delay: 100,
+                duration: defaultDuration,
+            },
+
+        ]
+    },
+
+
+
+
+    {
+        selector: '.muse-entropy-a-and-l-text-container',
+        states: [
+            {
+                inPages: ['comparing-a-and-l'],
+                exitType: 'fly-right',
+                delay: 100,
+                duration: defaultDuration,
+                styles: {
+                    right: 200
+                }
+            },
+        ]
+    },
+
+
+
+    {
+        selector: '.muse-visualizing-l-text',
+        states: [
+            {
+                inPages: ['showing-l'],
+                exitType: 'fade',
+                delay: 100,
+                duration: defaultDuration,
+            },
+
+        ]
+    },
+
+
+
+
+    {
+        selector: '.muse-l-reduces-search-tree',
+        states: [
+            {
+                inPages: ['l-reduces-search-tree'],
+                exitType: 'fade',
+                delay: 100,
+                duration: defaultDuration,
+            },
+
+        ]
+    },
+
+
+
+
+    {
+        selector: '.muse-n-step-lookahead',
+        states: [
+            {
+                inPages: ['n-step-lookahead'],
+                exitType: 'fade',
+                delay: 100,
+                duration: defaultDuration,
+            },
+
+        ]
+    },
+
+
+
+    {
+        selector: '.muse-recursive-summary-code-text',
+        states: [
+            {
+                inPages: ['muse-summary'],
+                exitType: 'fly-right',
+                delay: 100,
+                duration: defaultDuration,
+                styles: {
+                    right: 680
+                }
+            },
+
+        ]
+    },
+
+
+
+    {
+        selector: '.remuse-revisit-min-goal-text',
+        states: [{
+            inPages: [
+                'remuse-revisit-min-bits-goal',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+
+    {
+        selector: '.remuse-img-easy-paths',
+        states: [{
+            inPages: [
+                'remuse-story-good-paths',
+                'remuse-story-good-paths-oracle-question'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+    {
+        selector: '.remuse-easy-paths-question-text',
+        states: [{
+            inPages: [
+                'remuse-story-good-paths-oracle-question',
+            ],
+            exitType: 'fade',
+            enterOffset: {
+                transform: 'translate(0, -40px)'
+            },
+            delay: 0,
+            duration: defaultDuration * 2,
+        },
+
+        ]
+    },
+
+    {
+        selector: '.remuse-kl-divergence-title',
+        states: [{
+            inPages: [
+                'kl-divergence',
+                'kl-divergence-description',
+                'kl-divergence-connection-to-remuse',
+                'kl-divergence-formula',
+                'kl-divergence-example',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+        ]
+    },
+
+    {
+        selector: '.remuse-kl-divergence-description',
+        states: [{
+            inPages: [
+                'kl-divergence-description',
+                'kl-divergence-connection-to-remuse',
+                'kl-divergence-formula',
+                'kl-divergence-example',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+        ]
+    },
+
+    {
+        selector: '.remuse-algorithm-title',
+        states: [{
+            inPages: [
+                'kl-divergence-connection-to-remuse',
+                'kl-divergence-formula',
+                'kl-divergence-example',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+        ]
+    },
+
+    {
+        selector: '.remuse-kl-divergence-formula-text',
+        states: [{
+            inPages: [
+                'kl-divergence-formula',
+                'kl-divergence-example',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+        ]
+    },
+
+    {
+        selector: '.remuse-kl-divergence-equal-output',
+        states: [{
+            inPages: [
+                'kl-divergence-example',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+        ]
+    },
+
+
+
+
+    {
+        selector: '.puzzle-remuse-already-won',
+        states: [
+            {
+                inPages: [
+                    'remuse-first-puzzle-first-example',
+                    'remuse-first-puzzle-slight-reveal',
+                    'remuse-first-puzzle-show-entropies',
+                    'remuse-first-puzzle-show-probabilities',
+                    'remuse-first-puzzle-show-muse',
+                    'remuse-first-puzzle-show-remuse',
+                    'remuse-first-puzzle-reveal-playable'
+                ],
+                exitType: 'fade',
+                delay: 0,
+                duration: defaultDuration,
+                runOnEnter: function ({ appInst }) {
+                    console.log('---------')
+                    appInst.puzzlesByClassTarget['puzzle-remuse-already-won']
+                        .setOption('renderNLookAhead', false)
+
+                    appInst.puzzlesByClassTarget['puzzle-remuse-already-won']
+                        .attemptMove([0, 0])
+
+                    d3.select('.puzzle-remuse-already-won svg .snakeHeadCircle')
+                        .attr('r', 13)
+                        .attr('fill', 'rgb(102, 102, 238)')
+
+                    // setTimeout(()=> {
+                    //     console.log('attemptMove')
+                    //     appInst.puzzlesByClassTarget['puzzle-remuse-already-won']
+                    //         .attemptMove([0, 1])
+                        
+                    // }, 1000)
+                },
+            }, 
+
+        ]
+    },
+
+    {
+        selector: '.remuse-actions-tabletop-puzzle-remuse-already-won',
+        states: [
+            {
+                inPages: [
+                    'remuse-first-puzzle-first-example',
+                    'remuse-first-puzzle-slight-reveal',
+                    'remuse-first-puzzle-show-entropies',
+                    'remuse-first-puzzle-show-probabilities',
+                    'remuse-first-puzzle-show-muse',
+                    'remuse-first-puzzle-show-remuse',
+                    'remuse-first-puzzle-reveal-playable'
+                ],
+                exitType: 'fade',
+                delay: 0,
+                duration: defaultDuration,
+            },
+
+        ]
+    },
+
+    
+
+    {
+        selector: '.focus-circle-cover',
+        states: [
+            {
+                inPages: [
+                    'remuse-first-puzzle-first-example',
+                    'remuse-first-puzzle-slight-reveal',
+                    'remuse-first-puzzle-show-entropies',
+                    'remuse-first-puzzle-show-probabilities',
+                    'remuse-first-puzzle-show-muse',
+                    'remuse-first-puzzle-show-remuse',
+                ],
+                exitType: 'fade',
+                enterOffset: {
+                    opacity: 0.95
+                },
+                delay: 0,
+                duration: defaultDuration / 2,
+            },
+
+        ]
+    },
+
+
+    {
+        selector: '.remuse-table-puzzle-remuse-already-won',
+        states: [{
+            inPages: [
+                'remuse-first-puzzle-show-entropies',
+                'remuse-first-puzzle-show-probabilities',
+                'remuse-first-puzzle-show-muse',
+                'remuse-first-puzzle-show-remuse',
+                'remuse-first-puzzle-reveal-playable'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+
+    {
+        selector: '.remuse-prob-fields-puzzle-remuse-already-won',
+        states: [{
+            inPages: [
+                'remuse-first-puzzle-show-probabilities',
+                'remuse-first-puzzle-show-muse',
+                'remuse-first-puzzle-show-remuse',
+                'remuse-first-puzzle-reveal-playable'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+    {
+        selector: '.remuse-results-bottom-puzzle-remuse-already-won .remuse-muse-algorithm-section',
+        states: [{
+            inPages: [
+                'remuse-first-puzzle-show-muse',
+                'remuse-first-puzzle-show-remuse',
+                'remuse-first-puzzle-reveal-playable'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+    {
+        selector: '.remuse-results-bottom-puzzle-remuse-already-won .remuse-remuse-algorithm-section',
+        states: [{
+            inPages: [
+                'remuse-first-puzzle-show-remuse',
+                'remuse-first-puzzle-reveal-playable'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+
+
+
+    {
+        selector: '.puzzle-remuse-only-one-solution',
+        states: [
+            {
+                inPages: [
+                    'remuse-second-puzzle',
+                ],
+                exitType: 'fade',
+                delay: 0,
+                duration: defaultDuration,
+                runOnEnter: function ({ appInst }) {
+                    appInst.puzzlesByClassTarget['puzzle-remuse-only-one-solution']
+                        .attemptMove([0, 0])
+
+                    d3.select('.puzzle-remuse-only-one-solution svg .snakeHeadCircle')
+                        .attr('r', 13)
+                        .attr('fill', 'rgb(102, 102, 238)')
+
+                },
+            },
+
+        ]
+    },
+
+
+
+    {
+        selector: 
+            '.remuse-actions-tabletop-puzzle-remuse-only-one-solution, '
+            + '.remuse-table-puzzle-remuse-only-one-solution, '
+            + '.remuse-results-bottom-puzzle-remuse-only-one-solution ',
+        states: [{
+            inPages: [
+                'remuse-second-puzzle',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+
+    {
+        selector: '.remuse-img-bad-paths',
+        states: [{
+            inPages: [
+                'remuse-story-hard-paths',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.remuse-bad-paths-question-text',
+        states: [{
+            inPages: [
+                'remuse-story-hard-paths',
+            ],
+            exitType: 'fade',
+            enterOffset: {
+                transform: 'translate(0, -40px)'
+            },
+            delay: 0,
+            duration: defaultDuration * 2,
+        },
+
+        ]
+    },
+    
+
+    {
+        selector: '.windmill-page-allElements',
+        states: [{
+            inPages: [
+                'intro-to-windmill',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.dotplot-page-allElements',
+        states: [{
+            inPages: [
+                'results-chart',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+    {
+        selector: '.results-windmill-main-table',
+        states: [{
+            inPages: [
+                'table-of-correlations',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+    {
+        selector: '.results-compare-remuse-and-soln-length-img',
+        states: [{
+            inPages: [
+                'comparing-solution-length-with-remuse',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.results-puzzle-ordering-game-img',
+        states: [{
+            inPages: [
+                'ordering-of-puzzles-to-the-game',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+    {
+        selector: '.results-puzzle-ordering-equidistant-img',
+        states: [{
+            inPages: [
+                'ordering-of-puzzles-to-the-levi-research',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+    {
+        selector: '.results-distribution-3x3-img',
+        states: [{
+            inPages: [
+                'distribution-3x3-puzzles',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+    {
+        selector: '.results-distribution-3x4-img',
+        states: [{
+            inPages: [
+                'distribution-3x4-puzzles',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+    {
+        selector: '.results-triangle-img',
+        states: [{
+            inPages: [
+                'triangle-constraint-puzzle-scores',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
 
 
 

@@ -62,21 +62,33 @@ export function slideTransition(typedPieceSets, appInst) {
 }
 
 
-export function transitionPieces({ pieces, transitionType, page }, exitMaxDelay, appInst){
+export function transitionPieces({ pieces, transitionType, pageTarget, from, to }, exitMaxDelay, appInst){
 
 
   pieces.forEach((piece) => {
-    const pieceState = piece.states.filter(state=>state.inPages.includes(page))[0];
+    const pieceState = piece.states.filter(state => state.inPages.includes(pageTarget))[0];
+
+    const transitionChange = transitionType === 'transition' 
+      && (
+        piece.states.filter(state => state.inPages.includes(from))[0]
+        !== piece.states.filter(state => state.inPages.includes(to))[0]
+      );
+
 
     const pieceBeforeTransition = d3.selectAll(piece.selector);
-
-
-    if (transitionType === 'enter' && pieceState.runOnEnter) {
+    if (
+        (transitionType === 'enter' 
+            || (transitionType === 'transition' && transitionChange)) 
+        && pieceState.runOnEnter
+     ) {
       pieceState.runOnEnter({appInst});
+      
     }
-    if (transitionType === 'exit' && pieceState.runOnExit) {
-      pieceState.runOnExit({appInst});
-    }
+
+    // There is no run on exit, just on enter for now.
+    // if (transitionType === 'exit' && pieceState.runOnExit) {
+    //   pieceState.runOnExit({appInst});
+    // }
 
     if (pieceState.exitType === 'fade') {
 

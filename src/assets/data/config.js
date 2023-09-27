@@ -381,12 +381,16 @@ export const config = {
                     title: 'Inference Rule Puzzle Example'
                 },
                 {
-                    id: 'puzzle-showing-l',
-                    title: 'Puzzle Shows L Actions'
+                    id: 'puzzle-to-use-l',
+                    title: 'Concept of using L(s) instead of A(s)'
                 },
                 {
                     id: 'comparing-a-and-l',
                     title: 'Compare Valid and Logical actions'
+                },
+                {
+                    id: 'showing-l',
+                    title: 'Showing L(s) visually'
                 },
                 {
                     id: 'l-reduces-search-tree',
@@ -407,28 +411,72 @@ export const config = {
             id: 'algorithm-remuse',
             pages: [
                 {
-                    id: 'kl-divergence',
-                    title: 'KL-Divergence'
+                    id: 'remuse-revisit-min-bits-goal',
+                    title: 'ReMUSE: Reviewing Goal of Minimum Bits'
+                },
+                {
+                    id: 'remuse-story-good-paths',
+                    title: 'Good Paths Scenario'
+                },
+                {
+                    id: 'remuse-story-good-paths-oracle-question',
+                    title: 'Does the Oracle Need to Tell You Anything?'
                 },
                 {
                     id: 'kl-divergence',
                     title: 'KL-Divergence'
                 },
                 {
-                    id: 'kl-divergence',
-                    title: 'KL-Divergence'
+                    id: 'kl-divergence-description',
+                    title: 'KL-Divergence Description'
                 },
                 {
-                    id: 'kl-divergence',
-                    title: 'KL-Divergence'
+                    id: 'kl-divergence-connection-to-remuse',
+                    title: 'KL-Divergence Connection to ReMUSE'
                 },
                 {
-                    id: 'change-in-algorithm',
-                    title: 'Change in Algorithm'
+                    id: 'kl-divergence-formula',
+                    title: 'KL-Divergence Formula'
                 },
                 {
-                    id: 'comparison-of-muse-and-remuse',
-                    title: 'Comparing MUSE and ReMUSE'
+                    id: 'kl-divergence-example',
+                    title: 'KL-Divergence Example'
+                },
+                {
+                    id: 'remuse-first-puzzle-first-example',
+                    title: 'ReMUSE Puzzle Example'
+                },
+                {
+                    id: 'remuse-first-puzzle-slight-reveal',
+                    title: 'ReMUSE Puzzle Slight Reveal'
+                },
+                {
+                    id: 'remuse-first-puzzle-show-entropies',
+                    title: 'ReMUSE Show Entropies'
+                },
+                {
+                    id: 'remuse-first-puzzle-show-probabilities',
+                    title: 'ReMUSE Show Probabilities'
+                },
+                {
+                    id: 'remuse-first-puzzle-show-muse',
+                    title: 'ReMUSE Show MUSE Algorithm'
+                },
+                {
+                    id: 'remuse-first-puzzle-show-remuse',
+                    title: 'ReMUSE Show ReMUSE Algorithm'
+                },
+                {
+                    id: 'remuse-first-puzzle-reveal-playable',
+                    title: 'ReMUSE Algorithm with Synced Puzzle'
+                },
+                {
+                    id: 'remuse-story-hard-paths',
+                    title: 'Bad Paths Scenario'
+                },
+                {
+                    id: 'remuse-second-puzzle',
+                    title: 'ReMUSE Second Puzzle'
                 },
             ]
         },
@@ -437,7 +485,7 @@ export const config = {
             id: 'results-intro',
             pages: [
                 {
-                    id: 'experiment-and-results-title',
+                    id: 'experiment-and-results-title-section',
                     title: 'Experiments and Results'
                 },
                 {
@@ -451,6 +499,10 @@ export const config = {
                 {
                     id: 'table-of-correlations',
                     title: 'Table of Correlations'
+                },
+                {
+                    id: 'comparing-solution-length-with-remuse',
+                    title: 'Comparing Solution Length with ReMUSE'
                 },
                 {
                     id: 'ordering-of-puzzles-to-the-game',

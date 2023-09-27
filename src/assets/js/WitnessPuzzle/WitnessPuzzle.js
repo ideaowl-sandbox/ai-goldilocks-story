@@ -4449,7 +4449,15 @@ export class WitnessPuzzle {
 
         if (self._state.inputEnabled === false) return;
 
-        let isPuzzleReset = userMove[0] === 0 && userMove[1] === 0;
+        let isPuzzleReset = false;
+        
+        if (userMove === undefined) {
+            userMove = [0,0]
+        } else {
+            if (userMove[0] === 0 && userMove[1] === 0) {
+                isPuzzleReset = true;
+            }
+        }
 
         let moveData = {
             userMove: userMove,

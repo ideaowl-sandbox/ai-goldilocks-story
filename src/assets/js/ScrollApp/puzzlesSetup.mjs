@@ -51,10 +51,105 @@ export function puzzlesSetup(g) {
       fullPageInstance.moveSectionDown();
     });
 
+  function ifInfConvertToLatex(val) {
+    if (val === Infinity) {
+      console.log(`\\infty`);
+      return `\\infty`
+    }
+    return val;
+  }
+  
+  function updateReMUSEExamplesText(inst, cTarget) {
+
+    // if (cTarget === 'puzzle-remuse-only-one-solution') { return }
+
+    const posn = JSON.stringify(inst._state.puzzle.history.snakePositions);
+    const currStateData = inst._state.puzzle.history['KLTrajectoryN0'][posn];
+    currStateData.logicOutcomes.sort((a,b) => (
+      a.dirn.name === 'right' ? 1 : -1 > 
+      b.dirn.name === 'right' ? 1 : -1
+    ) );
+
+
+    katex.render(
+      String.raw`L(s) = \{` + currStateData.logicOutcomes.map(d=>'a_{'+d.dirn.name+'}').join(',') + ` \\}`,
+      d3.select('.remuse-actions-tabletop-' + cTarget).node(),
+      { throwOnError: false }
+    );
+    katex.render(
+      String.raw`\{` + currStateData.logicOutcomes.map(d => '' + d.localPartialEntropy + '').join(',') + ` \\}`,
+      d3.select('.remuse-table-' + cTarget 
+        + ' .local-entropies-value-text').node(),
+      { throwOnError: false }
+    );
+    katex.render(
+      String.raw`\{` + currStateData.logicOutcomes.map(d => '' + ifInfConvertToLatex(d.childEntropy) + '').join(',') + ` \\}`,
+      d3.select('.remuse-table-' + cTarget
+        + ' .oracle-entropies-value-text').node(),
+      { throwOnError: false }
+    );
+
+    katex.render(
+      String.raw`P = \{` + currStateData.logicOutcomes.map(d => '' + d.localSoftMinProb + '').join(',') + ` \\}`,
+      d3.select('.remuse-table-' + cTarget
+        + ' .local-probs-value-text').node(),
+      { throwOnError: false }
+    );
+    katex.render(
+      String.raw`Q = \{` + currStateData.logicOutcomes.map(d => '' + d.childSoftMinProb + '').join(',') + ` \\}`,
+      d3.select('.remuse-table-' + cTarget
+        + ' .oracle-probs-value-text').node(),
+      { throwOnError: false }
+    );
+
+    const localEntropyValue = currStateData.logicOutcomes.map(d => d.localPartialEntropy).reduce((a, b) => a + b, 0);
+    const minChildEntropyValue = Math.min(...currStateData.logicOutcomes.map(d => d.childEntropy));
+
+    katex.render(
+      String.raw`= {` 
+      + ifInfConvertToLatex(localEntropyValue)
+      + ` + `
+      + ifInfConvertToLatex(minChildEntropyValue)
+      + ` = `
+      + ifInfConvertToLatex(localEntropyValue + minChildEntropyValue)
+      + ` \}`,
+      d3.select('.remuse-results-bottom-' + cTarget
+        + ' .muse-puzzle-results-value-text').node(),
+      { throwOnError: false }
+    );
+
+    console.log(d3.select('.remuse-results-bottom-' + cTarget
+      + ' .muse-puzzle-results-value-text').node());
+
+    const totalChildSoftMinProb = currStateData.logicOutcomes.map(d => d.childSoftMinProb).reduce((a, b) => a + b, 0);
+
+    katex.render(
+      String.raw`= {`
+      + (totalChildSoftMinProb < 1 ? 'n/a' : ifInfConvertToLatex(currStateData.currEntropy))
+      + ` + `
+      + ifInfConvertToLatex(minChildEntropyValue)
+      + ` = `
+      + ifInfConvertToLatex(currStateData.totalEntropy)
+      + ` \}`,
+      d3.select('.remuse-results-bottom-' + cTarget
+        + ' .remuse-puzzle-results-value-text').node(),
+      { throwOnError: false }
+    );
+
+
+    console.log(currStateData, inst._state.puzzle.history.minSolKLDivergenceEntropyWithPruningAndN0);
+
+    // puzzlesByClassTarget[cTarget].deriveMinSolKLDivergenceEntropyWithPruningAndNdepth(0, { storeKLTrajectoryForDebugging: true });
+
+  }
+
   // Object.entries(puzzles)
   for (const [cTarget, puzzleSetup] of Object.entries(puzzles)) {
 
     let moveCB = (inst) => {};
+
+
+
 
     if (cTarget === 'puzzle-state-and-actions') {
 
@@ -65,11 +160,11 @@ export function puzzlesSetup(g) {
           {
             numSnakePositions: 1,
             currValidActions: 0,
-            currLegalActions: 0,
+            currvalidActions: 0,
             solved: false,
             currentM: null,
             trajectory: {
-              numValidActions: [], numLegalActions: [], M: []
+              numValidActions: [], numLogicalActions: [], M: []
             }
           }
         ))
@@ -95,6 +190,23 @@ export function puzzlesSetup(g) {
           { throwOnError: false }
         );
 
+        function getLogicalActions() {
+
+          let mustMoves = g.puzzleMetricsByClassTarget[cTarget]
+            .currentM.filter(d => d.assessment === 1);
+
+          if (mustMoves.length === 1) {
+            return mustMoves
+          }
+
+          if (mustMoves.length > 1) {
+            return []
+          }
+
+          return g.puzzleMetricsByClassTarget[cTarget]
+               .currentM.filter(d => d.assessment >= 0)
+        }
+
 
         ////////////////////
         // Trajectory
@@ -107,7 +219,7 @@ export function puzzlesSetup(g) {
         if (inst._state.puzzle.history.snakePositions.length
           === g.puzzleMetricsByClassTarget[cTarget].numSnakePositions - 1) {
           g.puzzleMetricsByClassTarget[cTarget].trajectory.numValidActions.pop();
-          g.puzzleMetricsByClassTarget[cTarget].trajectory.numLegalActions.pop();
+          g.puzzleMetricsByClassTarget[cTarget].trajectory.numLogicalActions.pop();
           g.puzzleMetricsByClassTarget[cTarget].trajectory.M.pop();
         }
 
@@ -116,10 +228,8 @@ export function puzzlesSetup(g) {
           g.puzzleMetricsByClassTarget[cTarget].trajectory.numValidActions.push(
             g.puzzleMetricsByClassTarget[cTarget].currentM.filter(d => d.isLegal).length
           );
-          g.puzzleMetricsByClassTarget[cTarget].trajectory.numLegalActions.push(            
-            g.puzzleMetricsByClassTarget[cTarget].currentM.filter(d => d.assessment === 1).length === 1 
-              ? 1 
-              : g.puzzleMetricsByClassTarget[cTarget].currentM.filter(d => d.assessment === 0).length
+          g.puzzleMetricsByClassTarget[cTarget].trajectory.numLogicalActions.push(   
+            getLogicalActions().length
           );
           g.puzzleMetricsByClassTarget[cTarget].trajectory.M.push(g.puzzleMetricsByClassTarget[cTarget].currentM);
         }
@@ -135,27 +245,29 @@ export function puzzlesSetup(g) {
           inst.M(0),
           g.puzzleMetricsByClassTarget[cTarget].trajectory);
 
-        let legalActions = g.puzzleMetricsByClassTarget[cTarget].currentM.filter(d=>d.isLegal);
-        let legalActionsAsDirectionsString = legalActions.map(d=>d.dirn.name);
+        let validActions = g.puzzleMetricsByClassTarget[cTarget].currentM.filter(d=>d.isLegal);
+        let validActionsAsDirectionsString = validActions.map(d => '\\allowbreak a_{' + d.dirn.name +'}');
+        let logicActions = getLogicalActions();
+        let logicActionsAsDirectionsString = logicActions.map(d => '\\allowbreak a_{' + d.dirn.name + '}');
         
 
 
         katex.render(
           String.raw`\text{Valid Actions via } A(s) = `
-          + '[' + legalActionsAsDirectionsString + ']',          
+          + '[' + validActionsAsDirectionsString + ']',          
           d3.select('.states-and-actions-valid-actions-text').node(),
           { throwOnError: false }
         );
 
         katex.render(
           String.raw`\text{Valid Actions via } A(s) = `
-          + '[' + legalActionsAsDirectionsString + ']',
+          + '[' + validActionsAsDirectionsString + ']',
           d3.select('.local-entropy-valid-action-text').node(),
           { throwOnError: false }
         );
 
 
-        const localEntropyValue = getEntropyVal(legalActions.length);
+        const localEntropyValue = getEntropyVal(validActions.length);
 
         function getEntropyVal(numActions) {
           return numActions === 0
@@ -206,9 +318,71 @@ export function puzzlesSetup(g) {
           { throwOnError: false }
         );
 
+        // g.puzzleMetricsByClassTarget[cTarget].currentM
+
+        katex.render(
+          validActionsAsDirectionsString.join(' , '),
+          d3.select('.a-actions-text').node(),
+          { throwOnError: false }
+        );
+
+
+        katex.render(
+          logicActionsAsDirectionsString.join(' , '),
+          d3.select('.l-actions-text').node(),
+          { throwOnError: false }
+        );
+
+
+        katex.render(
+          validActionsAsDirectionsString.length.toString(),
+          d3.select('.a-num-actions-text').node(),
+          { throwOnError: false }
+        );
+
+
+        katex.render(
+          logicActionsAsDirectionsString.length.toString(),
+          d3.select('.l-num-actions-text').node(),
+          { throwOnError: false }
+        );
+
+
+
+        katex.render(
+          getEntropyVal(validActionsAsDirectionsString.length).toString(),
+          d3.select('.a-local-entropy-text').node(),
+          { throwOnError: false }
+        );
+
+
+        katex.render(
+          getEntropyVal(logicActionsAsDirectionsString.length).toString(),
+          d3.select('.l-local-entropy-text').node(),
+          { throwOnError: false }
+        );
+
+
 
       }        
     }
+
+
+
+
+    if (cTarget === 'puzzle-remuse-already-won' || cTarget === 'puzzle-remuse-only-one-solution') {
+
+      moveCB = (inst) => {
+        updateReMUSEExamplesText(inst, cTarget);
+
+      }
+
+      // const currStateData = testPuzzle._state.puzzle.history['KLTrajectoryN' + n][posn];
+
+    }
+
+
+
 
     puzzlesByClassTarget[cTarget] =
       new WitnessPuzzle(
@@ -221,6 +395,14 @@ export function puzzlesSetup(g) {
           render: true, 
           moveCB})
       );
+
+    
+
+    if (cTarget === 'puzzle-remuse-already-won' || cTarget === 'puzzle-remuse-only-one-solution') {
+      puzzlesByClassTarget[cTarget].deriveMinSolKLDivergenceEntropyWithPruningAndNdepth(0, { storeKLTrajectoryForDebugging: true });
+      updateReMUSEExamplesText(puzzlesByClassTarget[cTarget], cTarget);
+    }
+
 
   }
 
@@ -391,6 +573,52 @@ export const puzzles = {
 
 
 
+
+  'puzzle-remuse-already-won':
+  {
+    "size": [4, 4],
+    "startPosition": [2, 0],
+    "endPosition": [2, 4, 1],
+    "constraints": {
+      "cannotCrosses": [
+        [0.5, 3], [3.5, 3],
+        [0.5, 2], [3.5, 2],
+        [0.5, 1], [3.5, 1],
+        [1, 3.5], [2, 3.5], [3, 3.5],
+        [1, 0.5], [2, 0.5], [3, 0.5],
+        // [1.5, 3], [2.5, 3],
+        // [1, 2.5], [2, 2.5], [3, 2.5],
+        // [1.5, 2], [2.5, 2],
+        // [1.5, 1], [2.5, 1],
+        // [1, 1.5], [2, 1.5], [3, 1.5],
+      ]
+    }
+  },
+
+
+
+  'puzzle-remuse-only-one-solution':
+  {
+    "size": [4, 4],
+    "startPosition": [2, 0],
+    "endPosition": [2, 4, 1],
+    "constraints": {
+      "cannotCrosses": [
+        [0.5, 3], [3.5, 3],
+        [0.5, 2], [3.5, 2],
+        [0.5, 1], 
+        [2.5, 4],
+        [1, 3.5], [2, 3.5], [3, 3.5],
+        [1, 0.5], [2, 0.5], [3, 0.5],
+        [2, 1.5], [3, 1.5], [1, 1.5],
+        [3.5, 4], 
+        [1.5, 3], [2.5, 3], 
+        [1, 2.5], [2, 2.5], [3, 2.5],
+        [1.5, 2], [2.5, 2],
+        [1.5, 1], [4, 3.5]
+      ]
+    }
+  },
 
 
   // 'puzzle-blank-2x2':

@@ -14,6 +14,7 @@ export class ScrollApp {
     self.g = opts;
     self.setupFullPage(self.g);
     self.puzzlesByClassTarget = puzzlesSetup(self.g);
+    self.setupOtherControls();
     scaleAndCenterContent();
     return self;
   }
@@ -96,7 +97,19 @@ export class ScrollApp {
       pieces: self.g.pieces
     })
   }
- 
+
+
+  setupOtherControls() {
+    let self = this;
+    d3.select('.n-step-select')
+      .on('change', function() {
+        console.log('n-step-select', this.value)
+        self.puzzlesByClassTarget['puzzle-state-and-actions']
+          .restartPuzzleWithExistingMoves({ entropyLookAheadAtEnd: +this.value })
+      })
+  }
+
+
   // // fpCBonLeave
   // elementsToTransition({from, to, pieces}) {
   //   const self = this;
@@ -211,9 +224,9 @@ export class ScrollApp {
 
 
     slideTransition( [
-      {pieces: enterPieces, transitionType: 'enter', page: to}, 
-      { pieces: exitPieces, transitionType: 'exit', page: from},
-      { pieces: transitionPieces, transitionType: 'transition', page: to}
+      { pieces: enterPieces, transitionType: 'enter', pageTarget: to, from, to}, 
+      { pieces: exitPieces, transitionType: 'exit', pageTarget: from, from, to },
+      { pieces: transitionPieces, transitionType: 'transition', pageTarget: to, from, to }
     ], self )
 
     return;

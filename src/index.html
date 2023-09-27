@@ -277,7 +277,7 @@
             <div class="but-why-reason but-why-reason-4">4) Adapt for "Flow" / "Goldilocks" state</div>
 
 
-            <div class="contribution-intro-section contribution-contribution-title">Contributions</div>
+            <div class="contribution-intro-section toc-contribution">Contributions</div>
             <div class="contribution-intro-section contribution-two-measures-text">1) Two Entropy-based Measures of Puzzle Difficulty</div>
             <div class="contribution-intro-section contribution-validation-text">2) Validation of Measures Using 3rd-Party Datasets</div>
 
@@ -676,25 +676,333 @@
             
 
 
-            <div class="muse-entropy-a-and-l-text-container">
-                <div class="muse-entropy-a-text"></div>
-                <div class="muse-entropy-l-text"></div>
+
+            <div class="muse-question-do-both-actions-text center-text">
+                Do both <span class="latex-replace">a_{up}</span> 
+                and <span class="latex-replace">a_{right}</span>
+                need to be considered?
+            </div>
+
+
+            <div class="muse-introducing-l-text center-text">
+                <b>Logic</b> action function 
+                <span class="latex-replace">L(s)</span> to replace
+                <b>Valid</b> action function <span class="latex-replace">A(s)</span>
             </div>
 
 
 
 
-            <div class="muse-l-reduces-search-tree">
-                L reduces Search Tree
+            <!-- <div class="muse-entropy-a-and-l-text-container">
+                <div>
+                    <span class="latex-replace">L(s) = </span>
+                    <span class="muse-entropy-l-text"></span>
+                </div>
+                <div>
+                    <span class="latex-replace">A(s) = </span>
+                    <span class="muse-entropy-a-text"></span>
+                </div>
+            </div> -->
+
+            <table class="muse-entropy-a-and-l-text-container">
+                <tr>
+                    <th></th>
+                    <th class="latex-replace">A(s)</th>
+                    <th class="latex-replace">L(s)</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="smaller-table-title latex-replace">\text{Actions}</div>
+                        <!-- <div class="table-small-description latex-replace">\text{Outcomes}</div> -->
+                    </td>
+                    <td class="a-actions-text latex-replace"></td>
+                    <td class="l-actions-text latex-replace"></td>
+                </tr>
+                <tr>
+                    <td class="smaller-table-title latex-replace">
+                        |\text{Actions}|
+                    </td>
+                    <td class="a-num-actions-text latex-replace"></td>
+                    <td class="l-num-actions-text latex-replace"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="latex-replace">H(Z)</div>
+                        <div class="table-small-description latex-replace">\text{Local}\newline\text{Entropy}</div>
+                    </td>
+                    <td class="a-local-entropy-text latex-replace"></td>
+                    <td class="l-local-entropy-text latex-replace"></td>
+                </tr>
+            </table>
+
+
+            <div class="muse-visualizing-l-text center-text">
+                <span class="latex-replace">L(s)</span> Visualized and Explained
             </div>
 
-            <div class="muse-n-step-lookahead">
-                N-step Lookahead
+
+
+
+            <div class="muse-l-reduces-search-tree center-text">
+                <span class="latex-replace">L(s)</span> Reduces Search Tree
+            </div>
+
+            <div class="muse-n-step-lookahead center-text">
+                <span class="latex-replace">n\text{-step}</span> Lookahead, 
+                <span class="latex-replace"> L(s,n=</span> 
+                <select class="n-step-select">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <span class="latex-replace">)</span>
+                <!-- <input type="number" class="muse-n-step-lookahead-input" value="1" min="1" max="10" /> -->
+            </div>
+
+
+            <div class="muse-recursive-summary-code-text latex-replace">
+                \ldots \newline
+                {localEntropy \gets H(Z_{\sout{A(s)}L(s,n)})}\newline
+                {\textbf{return } localEntropy + \text{min(}childEntropies\text{)}} \newline
+                \ldots
+            </div>
+
+            <div class="remuse-revisit-min-goal-text storybook-text"><svg class="for-story"><text>Minimum Bits to Communicate
+                        Solution</text></svg></div>
+
+
+            <img class="storybook-page remuse-img-easy-paths" src="./assets/images/remuse-story-path-good.jpg" />
+
+            <div class="remuse-easy-paths-question-text storybook-text"><svg class="for-story"><text>
+                Does the Oracle need to tell you anything?
+            </text></svg></div>
+
+
+            <img class="storybook-page remuse-img-bad-paths" src="./assets/images/remuse-story-path-bad.jpg" />
+
+
+
+
+            <div class="puzzle-remuse-already-won"></div>
+
+
+            <div class="remuse-kl-divergence-title">
+                KL Divergence
+            </div>
+            <div class="remuse-kl-divergence-description">
+                <i>Relative</i> Entropy or Uncertainty from using one Probability Distribution to represent another
+            </div>
+
+            <div class="remuse-algorithm-title algorithm-title">
+                <b>ReMUSE</b>: <b>Re</b>lative <b>M</b>inimum <b>U</b>niform <b>S</b>olution <b>E</b>ntropy
+            </div>
+
+
+            <div class="remuse-kl-divergence-formula-text latex-replace">
+                D_{KL}(P||Q) \doteq \sum_{x \in X} P(x) log_{2} \frac{P(x)}{Q(x)}
+            </div>
+
+
+            <div class="remuse-kl-divergence-equal-output latex-replace">
+                \textbf{if } P_{local} = Q_{oracle} \newline \textbf{then } D_{KL}(P_{local}||Q_{oracle}) = 0
             </div>
 
 
 
-            
+
+
+
+
+
+            <svg class="focus-circle-cover" width="3000" height="3000" viewBox="0 0 3000 3000" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M3000 0H0V3000H3000V0ZM1500 1750C1638.07 1750 1750 1638.07 1750 1500C1750 1361.93 1638.07 1250 1500 1250C1361.93 1250 1250 1361.93 1250 1500C1250 1638.07 1361.93 1750 1500 1750Z"
+                    fill="white" />
+                <circle cx="1500" cy="1500" r="250" fill="url(#paint0_radial_535_17)" />
+                <defs>
+                    <radialGradient id="paint0_radial_535_17" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                        gradientTransform="translate(1500 1500) rotate(90) scale(250)">
+                        <stop stop-color="white" stop-opacity="0" />
+                        <stop offset="0.708333" stop-color="white" stop-opacity="0" />
+                        <stop offset="0.854167" stop-color="white" stop-opacity="0.5" />
+                        <stop offset="1" stop-color="white" />
+                    </radialGradient>
+                </defs>
+            </svg>
+
+
+            <div class="remuse-actions-tabletop remuse-actions-tabletop-puzzle-remuse-already-won"></div>
+
+            <table class="remuse-table-puzzle-remuse-already-won">
+                <tr>
+                    <th></th>
+                    <th class="latex-replace">\text{Local}</th>
+                    <th class="latex-replace">\text{Oracle}</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="smaller-table-title latex-replace">\text{Entropies}</div>
+                        <!-- <div class="table-small-description latex-replace">\text{Outcomes}</div> -->
+                    </td>
+                    <td class="local-entropies-value-text latex-replace"></td>
+                    <td class="oracle-entropies-value-text latex-replace"></td>
+                </tr>
+                <tr>
+                    <td class="smaller-table-title">
+                        <div class="remuse-prob-fields-puzzle-remuse-already-won">
+                            <div class=" latex-replace">\text{Probs} =</div>
+                            <div class="softmin-table-title latex-replace">\text{softmin(E)}</div>                        
+                        </div>
+                    </td>
+                    <td>
+                        <div class="local-probs-value-text latex-replace remuse-prob-fields-puzzle-remuse-already-won"></div>
+                    </td>
+                    <td>
+                        <div class="oracle-probs-value-text latex-replace remuse-prob-fields-puzzle-remuse-already-won"></div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="remuse-results-bottom remuse-results-bottom-puzzle-remuse-already-won">
+
+                <div class="remuse-muse-algorithm-section">
+
+                    <div class="muse-results-title results-title">
+                        <b>MUSE</b> Algorithm @
+                        <span class="latex-replace">s</span>
+                    </div>
+                    <div>
+                        <!-- <span class="latex-replace">= H(Z_{L(s)}) + \text{min}(childEntropies)</span>  -->
+    
+    
+                        <span class="latex-replace">= </span>
+                        <span class="latex-replace"> H(Z_{L(s)}) </span> 
+                        <span class="latex-replace"> + \text{ min}(</span><span class="latex-replace" style="color: blue;">childEntropies</span><span class="latex-replace">)</span>
+                    </div>
+                    <div>
+                        <span class="muse-puzzle-results-value-text"></span> 
+                    </div>
+                </div>
+
+                <div class="remuse-remuse-algorithm-section">
+                    <div class="remuse-results-title results-title">
+                        <b>ReMUSE</b> Algorithm @
+                        <span class="latex-replace">s</span>
+                    </div>
+                    <div>
+                        <span class="latex-replace"> = D_{KL}(P || Q) + \text{min}(</span><span class="latex-replace" style="color: blue;">childEntropies</span><span class="latex-replace">)</span>
+                    </div>
+                    <div>
+                        <span class="remuse-puzzle-results-value-text"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="remuse-bad-paths-question-text storybook-text"><svg class="for-story"><text>
+                <tspan>What if only 1 path leads to treasure,</tspan>
+                <tspan x="0" y="100"> or both paths never do?</tspan>
+            </text></svg></div>
+
+
+
+
+
+
+
+            <div class="puzzle-remuse-only-one-solution"></div>
+
+
+            <div class="remuse-actions-tabletop remuse-actions-tabletop-puzzle-remuse-only-one-solution"></div>
+
+            <table class="remuse-table-puzzle-remuse-only-one-solution">
+                <tr>
+                    <th></th>
+                    <th class="latex-replace">\text{Local}</th>
+                    <th class="latex-replace">\text{Oracle}</th>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="smaller-table-title latex-replace">\text{Entropies}</div>
+                        <!-- <div class="table-small-description latex-replace">\text{Outcomes}</div> -->
+                    </td>
+                    <td class="local-entropies-value-text latex-replace"></td>
+                    <td class="oracle-entropies-value-text latex-replace"></td>
+                </tr>
+                <tr>
+                    <td class="smaller-table-title">
+                        <div class="remuse-prob-fields-puzzle-remuse-only-one-solution">
+                            <div class=" latex-replace">\text{Probs} =</div>
+                            <div class="softmin-table-title latex-replace">\text{softmin(E)}</div>                        
+                        </div>
+                    </td>
+                    <td>
+                        <div class="local-probs-value-text latex-replace remuse-prob-fields-puzzle-remuse-only-one-solution"></div>
+                    </td>
+                    <td>
+                        <div class="oracle-probs-value-text latex-replace remuse-prob-fields-puzzle-remuse-only-one-solution"></div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="remuse-results-bottom remuse-results-bottom-puzzle-remuse-only-one-solution">
+
+                <div class="remuse-muse-algorithm-section">
+
+                    <div class="muse-results-title results-title">
+                        <b>MUSE</b> Algorithm @
+                        <span class="latex-replace">s</span>
+                    </div>
+                    <div>
+                        <!-- <span class="latex-replace">= H(Z_{L(s)}) + \text{min}(childEntropies)</span>  -->
+    
+    
+                        <span class="latex-replace">= </span>
+                        <span class="latex-replace"> H(Z_{L(s)}) </span> 
+                        <span class="latex-replace"> + \text{ min}(</span><span class="latex-replace" style="color: blue;">childEntropies</span><span class="latex-replace">)</span>
+                    </div>
+                    <div>
+                        <span class="muse-puzzle-results-value-text"></span> 
+                    </div>
+                </div>
+
+                <div class="remuse-remuse-algorithm-section">
+                    <div class="remuse-results-title results-title">
+                        <b>ReMUSE</b> Algorithm @
+                        <span class="latex-replace">s</span>
+                    </div>
+                    <div>
+                        <span class="latex-replace"> = D_{KL}(P || Q) + \text{min}(</span><span class="latex-replace" style="color: blue;">childEntropies</span><span class="latex-replace">)</span>
+                    </div>
+                    <div>
+                        <span class="remuse-puzzle-results-value-text"></span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <iframe class="results-windmill-iframe windmill-page-allElements" src="https://windmill.thefifthmatt.com/" frameborder="0" allowfullscreen></iframe>
+
+            <a class="results-windmill-link windmill-page-allElements" href="https://windmill.thefifthmatt.com/" target="_blank">The Windmill</a>
+
+
+            <iframe class="results-dotplot-iframe dotplot-page-allElements" src="https://ideaowl.com/remuse" frameborder="0" allowfullscreen></iframe>
+
+            <a class="results-dotplot-link dotplot-page-allElements" href="https://ideaowl.com/remuse" target="_blank">ideaowl.com/remuse</a>
+
+
+            <img class="results-windmill-main-table" src="assets/images/results-windmill-table.png">
+
+            <img class="results-compare-remuse-and-soln-length-img" src="assets/images/results-compare-remuse-and-soln-length.png">
+
+            <img class="results-puzzle-ordering-game-img" src="assets/images/results-puzzle-ordering-game.png">
+            <img class="results-puzzle-ordering-equidistant-img" src="assets/images/results-puzzle-ordering-equidistant.png">
+            <img class="results-distribution-3x3-img" src="assets/images/results-distribution-3x3.png">
+            <img class="results-distribution-3x4-img" src="assets/images/results-distribution-3x4.png">
+            <img class="results-triangle-img" src="assets/images/results-triangle.png">
+
 
 
 

@@ -412,7 +412,6 @@ html, body, #page-canvas {
         
     }
 
-
     .states-and-actions-valid-action-text {
         position: relative;
         padding-top: 20px;
@@ -455,6 +454,8 @@ html, body, #page-canvas {
         top: 573px;
         left: 232px;
     }
+
+
 
 
     .entropy-explanations-text {
@@ -677,9 +678,9 @@ html, body, #page-canvas {
 
 
     .muse-recursive-code-text {
-            top: 230px;
-            font-size: 50px; 
-            width: 600px;
+        top: 230px;
+        font-size: 50px; 
+        width: 600px;
     }
 
 
@@ -698,8 +699,376 @@ html, body, #page-canvas {
     }
 
 
+    .muse-question-do-both-actions-text, 
+    .muse-introducing-l-text,
+    .muse-visualizing-l-text,
+    .muse-l-reduces-search-tree,
+    .muse-n-step-lookahead {
+        top: 810px;
+        select {
+            font-size: 50px;
+            margin-top: -15px;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+    }
+
+    .muse-entropy-a-and-l-text-container, 
+    .remuse-table-puzzle-remuse-already-won,
+    .remuse-table-puzzle-remuse-only-one-solution  {
+        table-layout: fixed;
+        position: absolute;
+        top: 180px;
+        font-size: 50px;
+        width: 900px !important; 
+
+        border-collapse: collapse;
+
+        tr th:nth-child(1), tr td:nth-child(1) {
+            width: 250px;
+        }
+
+        tr th:nth-child(2), tr td:nth-child(2) {
+            width: 350px;
+        }
+
+        tr th:nth-child(3), tr td:nth-child(3) {
+            width: 300px;
+        }
+
+        tr:nth-child(2) {
+            height: 260px;
+            td {
+                height: 180px;
+            }
+        }
+
+        td div, th div {
+            // margin: 25px;
+        }
+
+        td, th {
+            border: 1px solid black;
+            border-spacing: 0px;
+            padding: 0px;
+        }
+        
+        td, tr {
+            padding: 25px;
+        }
+
+        td:first-child,
+        th:first-child {
+            border-left: none;
+        }
+
+        td:nth-child(3),
+        th:nth-child(3) {
+            border-right: none;
+        }
+
+        tr:nth-child(4) {
+            td {
+                border-bottom: none;
+            }
+        }
+
+        .smaller-table-title {
+            font-size: 40px;
+        }
+
+        th {
+            border-top: none;
+        }
+
+        div {
+            position: relative;
+            display: inline-block;
+        }
+
+        .table-small-description {
+            font-size: 30px;
+        }
+        
+    }
+    // .states-and-actions-states-text {
+    //     position: relative;
+    //     min-height: 350px;
+
+    // }
+
+    .muse-recursive-summary-code-text {
+        top: 230px;
+        font-size: 50px;
+        width: 600px;
+    }
+
+
+    .remuse-revisit-min-goal-text.storybook-text svg.for-story text {
+        font-size: 90px;
+        stroke-width: 11px;
+    }
+
+
+    .remuse-revisit-min-goal-text {
+        top: 573px;
+        left: 356px;
+    }
+
+
+
+    .remuse-easy-paths-question-text.storybook-text svg.for-story text {
+        font-size: 90px;
+        stroke-width: 11px;
+    }
+
+
+    .remuse-easy-paths-question-text {
+        top: 573px;
+        left: 256px;
+    }
+
 
     
+    .puzzle-remuse-already-won {
+        left: 336px;
+        top: 321px;
+        scale: 2.5;
+    }
+
+
+    .puzzle-remuse-only-one-solution {
+        left: 336px;
+        top: 321px;
+        scale: 2.5;
+    }
+
+
+    .focus-circle-cover {
+        width: 1200px;
+        height: 1200px;
+        position: absolute;
+        top: 110px;
+        left: -115px;
+        // display: none;
+
+    }
+
+    .puzzle-remuse-already-won {
+        // top: 360px;
+        // left: 400px;
+        // scale: 2.5;
+    }
+
+    .remuse-kl-divergence-title {
+        top: 100px;
+        left: 300px;
+        font-size: 100px;
+    }
+
+    .remuse-kl-divergence-description {
+        top: 240px;
+        left: 300px;
+        font-size: 50px;
+        width: 1200px;
+    }
+
+    .remuse-kl-divergence-formula-text {
+        top: 590px;
+        left: 300px;
+        font-size: 60px;
+    }
+
+    .remuse-kl-divergence-equal-output {
+        top: 770px;
+        left: 300px;
+        font-size: 44px;
+    }
+
+    .remuse-algorithm-title {
+        top: 430px;
+    }
+
+    .remuse-puzzle-entropy-text-container {
+        font-size: 50px;
+
+        div {
+            position: relative;
+        }
+    }
+
+
+
+    .remuse-table-puzzle-remuse-already-won,
+    .remuse-table-puzzle-remuse-only-one-solution {
+        left: 900px;
+        top: 110px;
+
+        tr th:nth-child(1),
+        tr td:nth-child(1) {
+            width: 250px;
+        }
+
+        tr th:nth-child(2),
+        tr td:nth-child(2) {
+            width: 325px;
+        }
+
+        tr th:nth-child(3),
+        tr td:nth-child(3) {
+            width: 325px;
+        }
+        tr td {
+            text-align: center;
+            font-size: 40px;
+        } 
+
+        tr:nth-child(2) {
+            height: 70px;
+            td {
+                height: 70px;
+            }
+        }
+
+        tr:nth-child(3) {
+            td {
+                border-bottom: none;
+            }
+        }
+
+        .softmin-table-title {
+            font-size: 30px;
+        }
+        .oracle-entropies-value-text {
+            color: blue;
+        }
+    }
+
+    .remuse-actions-tabletop {
+        text-align: center;
+        width: 654px;
+        font-size: 50px;
+        bottom: 187px;
+        left: 147px;
+    }
+
+    .remuse-results-bottom {
+        top: 520px;
+        right: 200px;
+        font-size: 40px;
+        width: 800px;
+
+        .results-title {
+            font-size: 50px;
+        }
+
+        .remuse-results-title {
+            margin-top: 30px;
+        }
+
+        div {
+            position: relative;
+        }
+    }
+
+
+    .remuse-bad-paths-question-text.storybook-text svg.for-story text {
+        font-size: 90px;
+        stroke-width: 11px;
+    }
+
+
+    .remuse-bad-paths-question-text {
+        top: 523px;
+        left: 340px;
+    }
+
+
+    .results-windmill-iframe, .results-dotplot-iframe {
+        width: 1800px;
+        left: calc((1920 - 1800)/2);
+        height: 800px;
+        top: 50px;
+        position: absolute;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .results-dotplot-iframe {
+        width: 1200px;
+        left: 510px;
+        top: 120px;
+        html {
+
+            overflow: hidden;
+        }
+
+    }
+
+    .results-windmill-link, .results-dotplot-link {
+        position: absolute;
+        bottom: 80px;
+        width: 1920px;
+        left: 0px;
+        font-size: 100px;
+        text-align: center;
+    }
+
+    a, a:hover, a:visited {
+        text-decoration: none;
+        color: black;
+    }
+
+    .results-windmill-main-table {
+        width: 1400px;
+        left: calc((1920 - 1400)/2);
+        top: 200px;
+    }
+
+
+    .results-compare-remuse-and-soln-length-img {
+        width: 1800px;
+        left: calc((1920 - 1800)/2);
+        top: 230px;
+
+    }
+
+    .results-puzzle-ordering-game-img {
+        width: 1700px;
+        left: calc((1920 - 1700)/2);
+        top: 100px;
+    }
+    .results-puzzle-ordering-equidistant-img {
+        width: 1700px;
+        left: calc((1920 - 1700)/2);
+        top: 100px;
+    }
+    .results-distribution-3x3-img {
+        width: 1600px;
+        left: calc((1920 - 1600)/2);
+        top: 200px;
+    }
+    .results-distribution-3x4-img {
+        width: 1600px;
+        left: calc((1920 - 1600)/2);
+        top: 240px;
+    }
+    .results-triangle-img {
+        width: 1600px;
+        left: calc((1920 - 1600)/2);
+        top: 110px;
+    }
+
+
+
+
+
+
+
+
+
+
+
 }
 
 #fullpage {
@@ -717,7 +1086,7 @@ html, body, #page-canvas {
 }
 #fp-nav ul li,
 .fp-slidesNav ul li {
-    margin: -4px !important;
+    margin: -6px !important;
     height: 11px !important;
 }
 

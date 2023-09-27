@@ -16,7 +16,7 @@ let g = {
         //   currValidActions: 0,
         //   currLegalActions: 0,
         //   trajectory: [
-        //     {numValidActions: _, numLegalActions: _}
+        //     {numValidActions: _, numLogicalActions: _}
         //   ]
         // }
     },

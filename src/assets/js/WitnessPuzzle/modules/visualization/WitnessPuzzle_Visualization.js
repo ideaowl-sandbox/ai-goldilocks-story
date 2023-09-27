@@ -428,6 +428,10 @@ class WitnessPuzzle_Visualization {
 
         }
 
+        if (self._core._settings.options.renderNLookAhead === false){
+            svg.select('.witnessPuzzle').selectAll('.possibleNStepLines, .possibleNStepText').remove();
+        }
+
 
         if (self._core._settings.options.renderNLookAhead) {
 
@@ -444,7 +448,6 @@ class WitnessPuzzle_Visualization {
 
             if (puzzle.history.nStepActions !== undefined && puzzle.history.nStepActions.length > 0) {
 
-
                 // possibleNStepLines.exit().remove();
                 // debugger;
     
@@ -457,6 +460,7 @@ class WitnessPuzzle_Visualization {
                     .attr('x2', d => (puzzle.history.lastSnakePosition[0] + 1 + (d.dirn.dir[0]) * 0.25) * dSettings.spacing) //(Math.abs(d.dir[1]) > 0 ? 0.2 : 1)
                     .attr('y2', d => self._state.canvasSize - (puzzle.history.lastSnakePosition[1] + 1 + (d.dirn.dir[1]) * 0.25) * dSettings.spacing)
                     .attr('stroke', d => {
+                        if (!d.isLegal) return 'rgba(0,0,0,0)';
                         if (d.assessment === -1) return '#880000';
                         if (d.assessment === 2) return 'black';
                         if (d.assessment > 0) return '#3f3';
@@ -470,6 +474,7 @@ class WitnessPuzzle_Visualization {
                     .enter()
                     .append('g')
                     .attr('fill', d => {
+                        if (!d.isLegal) return 'rgba(0,0,0,0)';
                         if (d.assessment === -1) return '#880000';
                         if (d.assessment === 2) return 'black';
                         if (d.assessment > 0) return 'darkgreen';
