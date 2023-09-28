@@ -3,6 +3,7 @@
     "source": "src/index.html",
     "scripts": {
         "start": "parcel",
+        "startPublic": "parcel --public-url ./",
         "build": "parcel build"
     },
     "devDependencies": {

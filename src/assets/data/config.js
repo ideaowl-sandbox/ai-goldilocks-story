@@ -120,10 +120,10 @@ export const config = {
                     title: 'Empty 2x2 grid'
                 },
 
-                {
-                    id: 'combinations-two-sized-grid',
-                    title: 'Combinations in a 2x2 Grid'
-                },
+                // {
+                //     id: 'combinations-two-sized-grid',
+                //     title: 'Combinations in a 2x2 Grid'
+                // },
 
 
                 {
@@ -217,13 +217,13 @@ export const config = {
                     title: 'Use bits to communicate solution'
                 },
                 {
-                    id: 'states-and-actions',
-                    title: 'States and Actions'
+                    id: 'intuition-bits-coin',
+                    title: 'Intuition: Using 1 Bit for Coin'
                 },
                 {
-                    id: 'states-and-valid-actions',
-                    title: 'Valid Actions'
-                }
+                    id: 'intuition-bits-communicating',
+                    title: 'Intuition: Using bits to communicate direction'
+                },
             ]
         },
 
@@ -256,23 +256,24 @@ export const config = {
                     title: 'Entropy of a Coin Flip'
                 },
                 {
-                    id: 'entropy-coin-what-is-1-bit',
-                    title: 'What is 1 Bit of Entropy of a Coin?'
-                },
-                {
-                    id: 'entropy-coin-heads-representation',
-                    title: 'Heads is 0'
-                },
-                {
                     id: 'entropy-coin-tails-representation',
-                    title: 'Tails is 1'
+                    title: 'Entropy Coin Representation'
                 },
 
+                {
+                    id: 'states-and-actions',
+                    title: 'States and Actions'
+                },
+                {
+                    id: 'states-and-valid-actions',
+                    title: 'Valid Actions'
+                },
 
                 {
                     id: 'entropy-communications-explanation',
                     title: 'Using Entropy to Communicate'
                 },
+
                 {
                     id: 'entropy-puzzle-intro',
                     title: 'Puzzle Example Introduction'
@@ -285,19 +286,15 @@ export const config = {
                     id: 'entropy-puzzle-probabilities',
                     title: 'Prbabilities of 4 Puzzle Actions'
                 },
+
                 {
                     id: 'entropy-puzzle-full-calculation',
                     title: 'Entropy of a State with 4 Actions'
                 },
                 {
-                    id: 'entropy-puzzle-what-is-2-bits',
-                    title: 'What is 1 Bit of Entropy of a Coin?'
-                },
-                {
                     id: 'entropy-puzzle-representation',
-                    title: 'Heads is 0'
+                    title: 'Puzzle Comms Representation'
                 },
-
 
 
                 {
@@ -384,10 +381,10 @@ export const config = {
                     id: 'puzzle-to-use-l',
                     title: 'Concept of using L(s) instead of A(s)'
                 },
-                {
-                    id: 'comparing-a-and-l',
-                    title: 'Compare Valid and Logical actions'
-                },
+                // {
+                //     id: 'comparing-a-and-l',
+                //     title: 'Compare Valid and Logical actions'
+                // },
                 {
                     id: 'showing-l',
                     title: 'Showing L(s) visually'
@@ -423,6 +420,14 @@ export const config = {
                     title: 'Does the Oracle Need to Tell You Anything?'
                 },
                 {
+                    id: 'remuse-intuition-local',
+                    title: 'Intuition with Puzzle (Local)'
+                },
+                {
+                    id: 'remuse-intuition-oracle',
+                    title: 'Intuition with Puzzle (Oracle)'
+                },
+                {
                     id: 'kl-divergence',
                     title: 'KL-Divergence'
                 },
@@ -446,10 +451,10 @@ export const config = {
                     id: 'remuse-first-puzzle-first-example',
                     title: 'ReMUSE Puzzle Example'
                 },
-                {
-                    id: 'remuse-first-puzzle-slight-reveal',
-                    title: 'ReMUSE Puzzle Slight Reveal'
-                },
+                // {
+                //     id: 'remuse-first-puzzle-slight-reveal',
+                //     title: 'ReMUSE Puzzle Slight Reveal'
+                // },
                 {
                     id: 'remuse-first-puzzle-show-entropies',
                     title: 'ReMUSE Show Entropies'
@@ -512,14 +517,14 @@ export const config = {
                     id: 'ordering-of-puzzles-to-the-levi-research',
                     title: 'Equidistant vs ReMUSE Puzzle Ordering'
                 },
-                {
-                    id: 'distribution-3x3-puzzles',
-                    title: 'Distribution of 3x3 Puzzle Scores'
-                },
-                {
-                    id: 'distribution-3x4-puzzles',
-                    title: 'Distribution of 3x4 Puzzle Scores'
-                },
+                // {
+                //     id: 'distribution-3x3-puzzles',
+                //     title: 'Distribution of 3x3 Puzzle Scores'
+                // },
+                // {
+                //     id: 'distribution-3x4-puzzles',
+                //     title: 'Distribution of 3x4 Puzzle Scores'
+                // },
                 {
                     id: 'triangle-constraint-puzzle-scores',
                     title: 'Triangle Constraint Puzzles Correlation'
@@ -539,14 +544,14 @@ export const config = {
                     id: 'contribution-start',
                     title: 'Original Contribution'
                 },
-                {
-                    id: 'fill-two-algorithms-contribution',
-                    title: 'Two Algorithms Filled'
-                },
-                {
-                    id: 'fill-results-contribution',
-                    title: 'Results Filled'
-                },
+                // {
+                //     id: 'fill-two-algorithms-contribution',
+                //     title: 'Two Algorithms Filled'
+                // },
+                // {
+                //     id: 'fill-results-contribution',
+                //     title: 'Results Filled'
+                // },
                 {
                     id: 'future-work-other-games',
                     title: 'Future Work Other Games'
@@ -559,14 +564,14 @@ export const config = {
                     id: 'future-work-co-design-tool',
                     title: 'Future work Co-Design Tools'
                 },
-                {
-                    id: 'thoughts-on-game-and-education',
-                    title: 'Game and Education'
-                },
-                {
-                    id: 'educational-game-example',
-                    title: 'Education + Game Example'
-                },
+                // {
+                //     id: 'thoughts-on-game-and-education',
+                //     title: 'Game and Education'
+                // },
+                // {
+                //     id: 'educational-game-example',
+                //     title: 'Education + Game Example'
+                // },
             ]
         },
 
@@ -575,13 +580,13 @@ export const config = {
             id: 'questions-section',
             pages: [
                 {
-                    id: 'questions',
-                    title: 'Questions'
+                    id: 'questions-and-thank-you',
+                    title: 'Questions and Thank You'
                 },
-                {
-                    id: 'thank-you',
-                    title: 'Thank You and Suggestions'
-                },
+                // {
+                //     id: 'thank-you',
+                //     title: 'Thank You and Suggestions'
+                // },
             ]
         },
 

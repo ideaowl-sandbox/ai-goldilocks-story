@@ -591,7 +591,7 @@ export const pieces = [
             duration: defaultDuration,
             styles: {
                 left: 300,
-                top: 430,
+                top: 480,
                 scale: 1
             }
         },
@@ -602,10 +602,10 @@ export const pieces = [
             duration: defaultDuration,
             styles: {
                 left: 160,
-                top: 150,
+                top: 250,
                 color: 'black',
                 scale: 0.6
-            }
+            },
         },
     
     ]
@@ -648,6 +648,10 @@ export const pieces = [
                 top: 980,
                 'font-size': 20,
                 color: 'grey'
+            },
+            toggleClasses: {
+                on: ['smallest-bullet'],
+                off: ['smaller-bullet']
             }
         },
         
@@ -658,9 +662,13 @@ export const pieces = [
             duration: defaultDuration,
             styles: {
                 left: 306,
-                top: 420,
+                top: 440,
                 'font-size': 70,
                 color: 'black'
+            },
+            toggleClasses: {
+                off: ['smallest-bullet'],
+                on: ['smaller-bullet']
             }
         },
         ]
@@ -694,6 +702,10 @@ export const pieces = [
                 top: 980,
                 'font-size': 20,
                 color: 'grey'
+            },
+            toggleClasses: {
+                on: ['smallest-bullet'],
+                off: ['smaller-bullet']
             }
         },
         
@@ -704,9 +716,13 @@ export const pieces = [
             duration: defaultDuration,
             styles: {
                 left: 306,
-                top: 520,
+                top: 540,
                 'font-size': 70,
                 color: 'black'
+            },
+            toggleClasses: {
+                off: ['smallest-bullet'],
+                on: ['smaller-bullet']
             }
         },
         ]
@@ -740,7 +756,12 @@ export const pieces = [
                 top: 980,
                 'font-size': 20,
                 color: 'grey'
+            },
+            toggleClasses: {
+                on: ['smallest-bullet'],
+                off: ['smaller-bullet']
             }
+            
         },
         
         {
@@ -750,9 +771,13 @@ export const pieces = [
             duration: defaultDuration,
             styles: {
                 left: 306,
-                top: 620,
+                top: 640,
                 'font-size': 70,
                 color: 'black'
+            },
+            toggleClasses: {
+                off: ['smallest-bullet'],
+                on: ['smaller-bullet']
             }
         },
         ]
@@ -769,7 +794,7 @@ export const pieces = [
             duration: defaultDuration,
             styles: {
                 left: 306,
-                top: 720,
+                top: 740,
                 'font-size': 70,
                 color: 'black'
             }
@@ -807,17 +832,17 @@ export const pieces = [
       ]
     },
 
-    {
-        selector: '.puzzle-1x1-combination .combinations path',
-        states: [
-        {
-            inPages: ['combinations-two-sized-grid', 'results-two-sized-grid'],
-            exitType: 'fade',
-            delay: 0,
-            duration: defaultDuration,
-        },
-        ]
-    },
+    // {
+    //     selector: '.puzzle-1x1-combination .combinations path',
+    //     states: [
+    //     {
+    //         inPages: ['combinations-two-sized-grid', 'results-two-sized-grid'],
+    //         exitType: 'fade',
+    //         delay: 0,
+    //         duration: defaultDuration,
+    //     },
+    //     ]
+    // },
 
     {
         selector: '.puzzle-1x1-combination-result',
@@ -1162,7 +1187,7 @@ export const pieces = [
     {
         selector: '.toc-contribution',
         states: [{
-            inPages: ['contributions-title'],
+            inPages: ['contributions-title', ],
             exitType: 'fly-left',
             delay: -0,
             duration: defaultDuration,
@@ -1174,7 +1199,9 @@ export const pieces = [
             }
         },
         {
-            inPages: ['contribution-two-measures','contribution-validation'],
+            inPages: ['contribution-two-measures','contribution-validation',
+            'contribution-start'
+        ],
             exitType: 'fly-left',
             delay: 0,
             duration: defaultDuration,
@@ -1186,7 +1213,11 @@ export const pieces = [
             }
         },
         {
-            inPages: ['how-title-section', 'experiment-and-results-title-section'],
+            inPages: [
+                'how-title-section', 
+                'experiment-and-results-title-section',
+                'conclusion-title-slide'
+            ],
             exitType: 'fly-left',
             delay: 0,
             duration: defaultDuration,
@@ -1204,7 +1235,11 @@ export const pieces = [
     {
         selector: '.contribution-two-measures-text',
         states: [{
-            inPages: ['contribution-two-measures','contribution-validation'],
+            inPages: [
+                'contribution-two-measures',
+                'contribution-validation',
+                'contribution-start'
+            ],
             exitType: 'fly-left',
             delay: -0,
             duration: defaultDuration,
@@ -1220,13 +1255,13 @@ export const pieces = [
     {
         selector: '.contribution-validation-text',
         states: [{
-            inPages: ['contribution-validation',],
+            inPages: ['contribution-validation','contribution-start'],
             exitType: 'fly-left',
             delay: -0,
             duration: defaultDuration,
             styles: {
-                left: 250,
-                top: 560,
+                left: 280,
+                top: 550,
             }
         },
 
@@ -1238,7 +1273,10 @@ export const pieces = [
         selector: '.toc-title',
         states: [
             {
-            inPages: ['how-title-section','experiment-and-results-title-section'],
+            inPages: ['how-title-section',
+                'experiment-and-results-title-section',
+                'conclusion-title-slide'
+            ],
             exitType: 'fly-left',
             delay: -0,
             duration: defaultDuration,
@@ -1259,7 +1297,10 @@ export const pieces = [
         selector: '.toc-intro',
         states: [
             {
-                inPages: ['how-title-section','experiment-and-results-title-section'],
+                inPages: ['how-title-section',
+                'experiment-and-results-title-section',
+                'conclusion-title-slide'
+                ],
             exitType: 'fly-left',
             delay: 0,
             duration: defaultDuration,
@@ -1278,7 +1319,10 @@ export const pieces = [
         selector: '.toc-why',
         states: [
             {
-                inPages: ['how-title-section', 'experiment-and-results-title-section'],
+                inPages: ['how-title-section', 
+                'experiment-and-results-title-section',
+                'conclusion-title-slide'
+            ],
             exitType: 'fly-left',
             delay: 0,
             duration: defaultDuration,
@@ -1311,7 +1355,8 @@ export const pieces = [
             }
         },
         {
-            inPages: ['experiment-and-results-title-section',],
+            inPages: ['experiment-and-results-title-section',
+                'conclusion-title-slide'],
             exitType: 'fly-left',
             delay: 0,
             duration: defaultDuration,
@@ -1340,7 +1385,7 @@ export const pieces = [
             }
         },
         {
-            inPages: ['experiment-and-results-title-section',],
+            inPages: ['experiment-and-results-title-section'],
             exitType: 'fly-left',
             delay: 0,
             duration: defaultDuration,
@@ -1350,7 +1395,19 @@ export const pieces = [
                 'font-size': 150,
                 color: 'black'
             }
-        },
+            },
+            {
+                inPages: ['conclusion-title-slide'],
+                exitType: 'fly-left',
+                delay: 0,
+                duration: defaultDuration,
+                styles: {
+                    left: 300,
+                    top: 440,
+                    'font-size': 50,
+                    color: '#AAA'
+                }
+            },
 
         ]
     },
@@ -1381,6 +1438,18 @@ export const pieces = [
                 color: '#777'
             }
         },
+        {
+            inPages: ['conclusion-title-slide'],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 292,
+                top: 540,
+                'font-size': 150,
+                color: 'black'
+            }
+            },
 
         ]
     },
@@ -1411,6 +1480,18 @@ export const pieces = [
                 color: '#777'
             }
         },
+        {
+            inPages: ['conclusion-title-slide',],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 300,
+                top: 800,
+                'font-size': 50,
+                color: '#777'
+            }
+        },
 
         ]
     },
@@ -1419,7 +1500,7 @@ export const pieces = [
 
 
     {
-        selector: '.how-img-oracle',
+        selector: '.how-img-oracle, .puzzles-orb',
         states: [
         {
             inPages: [
@@ -1627,8 +1708,6 @@ export const pieces = [
         selector: '.explanation-coin-1-bit',
         states: [{
             inPages: [
-                'entropy-coin-what-is-1-bit',
-                'entropy-coin-heads-representation',
                 'entropy-coin-tails-representation'
             ],
             exitType: 'fade',
@@ -1644,7 +1723,7 @@ export const pieces = [
         selector: '.entropy-coin-heads-img, .bit-representation-coin-0',
         states: [{
             inPages: [
-                'entropy-coin-heads-representation',
+                'intuition-bits-coin',
                 'entropy-coin-tails-representation'
             ],
             exitType: 'fade',
@@ -1660,6 +1739,7 @@ export const pieces = [
         selector: '.entropy-coin-tails-img, .bit-representation-coin-1',
         states: [{
             inPages: [
+                'intuition-bits-coin',
                 'entropy-coin-tails-representation'
             ],
             exitType: 'fade',
@@ -1792,7 +1872,6 @@ export const pieces = [
         selector: '.explanation-puzzle-2-bits',
         states: [{
             inPages: [
-                'entropy-puzzle-what-is-2-bits',
                 'entropy-puzzle-representation'
                 // 'entropy-puzzle-heads-representation',
                 // 'entropy-puzzle-tails-representation'
@@ -1811,7 +1890,8 @@ export const pieces = [
         selector: '.entropy-puzzle-rep-allElements',
         states: [{
             inPages: [
-                'entropy-puzzle-representation'
+                'entropy-puzzle-representation',
+                'intuition-bits-communicating'
                 // 'entropy-puzzle-heads-representation',
                 // 'entropy-puzzle-tails-representation'
             ],
@@ -2391,7 +2471,6 @@ export const pieces = [
             {
                 inPages: [
                     'remuse-first-puzzle-first-example',
-                    'remuse-first-puzzle-slight-reveal',
                     'remuse-first-puzzle-show-entropies',
                     'remuse-first-puzzle-show-probabilities',
                     'remuse-first-puzzle-show-muse',
@@ -2431,7 +2510,6 @@ export const pieces = [
             {
                 inPages: [
                     'remuse-first-puzzle-first-example',
-                    'remuse-first-puzzle-slight-reveal',
                     'remuse-first-puzzle-show-entropies',
                     'remuse-first-puzzle-show-probabilities',
                     'remuse-first-puzzle-show-muse',
@@ -2453,17 +2531,9 @@ export const pieces = [
         states: [
             {
                 inPages: [
-                    'remuse-first-puzzle-first-example',
-                    'remuse-first-puzzle-slight-reveal',
-                    'remuse-first-puzzle-show-entropies',
-                    'remuse-first-puzzle-show-probabilities',
-                    'remuse-first-puzzle-show-muse',
-                    'remuse-first-puzzle-show-remuse',
+                    'remuse-intuition-local',
                 ],
                 exitType: 'fade',
-                enterOffset: {
-                    opacity: 0.95
-                },
                 delay: 0,
                 duration: defaultDuration / 2,
             },
@@ -2491,6 +2561,37 @@ export const pieces = [
     },
 
 
+
+    {
+        selector: '.puzzle-remuse-intuition',
+        states: [{
+            inPages: [
+                'remuse-intuition-local',
+                'remuse-intuition-oracle'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+            runOnEnter: function ({ appInst }) {
+                console.log('---------')
+                appInst.puzzlesByClassTarget['puzzle-remuse-intuition']
+                    .setOption('renderNLookAhead', false)
+
+                appInst.puzzlesByClassTarget['puzzle-remuse-intuition']
+                    .attemptMove([0, 0])
+
+                d3.select('.puzzle-remuse-intuition svg .snakeHeadCircle')
+                    .attr('r', 13)
+                    .attr('fill', 'rgb(102, 102, 238)')
+            },
+        },
+
+        ]
+    },
+
+
+
+    
 
     {
         selector: '.remuse-prob-fields-puzzle-remuse-already-won',
@@ -2741,6 +2842,51 @@ export const pieces = [
         states: [{
             inPages: [
                 'triangle-constraint-puzzle-scores',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.future-work-01',
+        states: [{
+            inPages: [
+                'future-work-other-games',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.future-work-02',
+        states: [{
+            inPages: [
+                'future-work-inference-rules',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.future-work-03',
+        states: [{
+            inPages: [
+                'future-work-co-design-tool',
             ],
             exitType: 'fade',
             delay: 0,

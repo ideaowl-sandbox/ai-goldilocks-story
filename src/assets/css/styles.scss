@@ -64,9 +64,25 @@ html, body, #page-canvas {
 
 
     .but-why-reason {
-        left: -1080px;
-        // font-size: 90px;
+        .reason-bullet {
+            transition: 1s width;
+            width: 60px;
+            display: inline-block;
+        }
     }
+
+    .but-why-reason.smallest-bullet {
+        .reason-bullet {
+            width: 20px;
+        }
+    }
+    .but-why-reason.smaller-bullet {
+        .reason-bullet {
+            width: 60px;
+        }
+    }
+
+
 
     .but-why-reason-img {
         position: absolute;
@@ -431,8 +447,12 @@ html, body, #page-canvas {
         top: 47%;
     }
 
-    .contribution-two-measures-text, .contribution-validation-text {
+    .contribution-two-measures-text {
         font-size: 70px;
+    }
+
+    .contribution-validation-text {
+        font-size: 55px;
     }
 
 // .but-why-reason-img.but-why-reason-img-4 {
@@ -546,50 +566,50 @@ html, body, #page-canvas {
 
     .entropy-puzzle-0-img {
         position: absolute;
-        top: 360px;
+        top: 300px;
         left: 200px;
         width: 300px;
     }
 
     .bit-representation-puzzle-0 {
-        top: 740px;
+        top: 680px;
         left: 255px;
     }
 
     .entropy-puzzle-1-img {
         position: absolute;
-        top: 360px;
+        top: 300px;
         left: 600px;
         width: 300px;
     }
 
     .bit-representation-puzzle-1 {
-        top: 740px;
+        top: 680px;
         left: 655px;
     }
 
 
     .entropy-puzzle-2-img {
         position: absolute;
-        top: 360px;
+        top: 300px;
         left: 1000px;
         width: 300px;
     }
 
     .bit-representation-puzzle-2 {
-        top: 740px;
+        top: 680px;
         left: 1055px;
     }
 
     .entropy-puzzle-3-img {
         position: absolute;
-        top: 360px;
+        top: 300px;
         left: 1400px;
         width: 300px;
     }
 
     .bit-representation-puzzle-3 {
-        top: 740px;
+        top: 680px;
         left: 1455px;
     }
 
@@ -836,6 +856,12 @@ html, body, #page-canvas {
         scale: 2.5;
     }
 
+    .puzzle-remuse-intuition {
+        left: 810px;
+        top: 321px;
+        scale: 3;
+    }
+
 
     .puzzle-remuse-only-one-solution {
         left: 336px;
@@ -848,16 +874,9 @@ html, body, #page-canvas {
         width: 1200px;
         height: 1200px;
         position: absolute;
-        top: 110px;
-        left: -115px;
-        // display: none;
-
-    }
-
-    .puzzle-remuse-already-won {
-        // top: 360px;
-        // left: 400px;
-        // scale: 2.5;
+        top: 160px;
+        left: 362px;
+        scale: 1.4;
     }
 
     .remuse-kl-divergence-title {
@@ -1027,9 +1046,9 @@ html, body, #page-canvas {
 
 
     .results-compare-remuse-and-soln-length-img {
-        width: 1800px;
-        left: calc((1920 - 1800)/2);
-        top: 230px;
+        width: 1600px;
+        left: calc((1920 - 1600)/2);
+        top: 210px;
 
     }
 
@@ -1058,6 +1077,31 @@ html, body, #page-canvas {
         left: calc((1920 - 1600)/2);
         top: 110px;
     }
+
+
+    .future-work-01 {
+        width: 1600px;
+        left: calc((1920 - 1600)/2);
+        top: 70px;
+    }
+    .future-work-02 {
+        // width: 1600px;
+        left: calc((1920 - 1097)/2);
+        top: 230px;
+    }
+    .future-work-03 {
+        width: 1600px;
+        left: calc((1920 - 1600)/2);
+        top: 110px;
+    }
+
+    .puzzles-orb {
+        position: absolute;
+        width: 500px;
+        left: calc((1920 - 500)/2 - 15);
+        top: 295px;
+    }
+
 
 
 

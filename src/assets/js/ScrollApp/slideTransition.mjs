@@ -83,7 +83,25 @@ export function transitionPieces({ pieces, transitionType, pageTarget, from, to 
      ) {
       pieceState.runOnEnter({appInst});
       
+    } 
+
+    if (pieceState.toggleClasses) {
+      Object.entries(pieceState.toggleClasses).forEach(([onOrOff, toggleClasses]) => {
+        if (transitionType === 'exit') { // toggle off regardless of on or off
+          toggleClasses.forEach((toggleClass) => {
+            pieceBeforeTransition.classed(toggleClass, false);
+          })
+        }
+        else {
+          toggleClasses.forEach((toggleClass) => {
+            pieceBeforeTransition.classed(toggleClass, onOrOff === 'on' ? true : false);
+          })
+          // pieceBeforeTransition.classed(toggleClass, false);
+        }
+      })
     }
+
+
 
     // There is no run on exit, just on enter for now.
     // if (transitionType === 'exit' && pieceState.runOnExit) {
@@ -139,11 +157,11 @@ export function transitionPieces({ pieces, transitionType, pageTarget, from, to 
         })
       }
 
-      if (pieceState.toggleClasses) {
-        pieceState.toggleClasses.forEach((toggleClass) => {
-          pieceBeforeTransition.classed(toggleClass.class, toggleClass.toggle);
-        })
-      }
+      // if (pieceState.toggleClasses) {
+      //   pieceState.toggleClasses.forEach((toggleClass) => {
+      //     pieceBeforeTransition.classed(toggleClass.class, toggleClass.toggle);
+      //   })
+      // }
 
       // Transitions to apply
       const transitioningPiece =
