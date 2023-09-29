@@ -408,6 +408,7 @@ html, body, #page-canvas {
     .num-5x5-combinations-text {
         bottom: 2080px;
         left: 200px;
+        width: 3000px;
     }
 
     .puzzle-from-witness-game {
@@ -724,6 +725,7 @@ html, body, #page-canvas {
     .muse-introducing-l-text,
     .muse-visualizing-l-text,
     .muse-l-reduces-search-tree,
+    .muse-straight-line-policy,
     .muse-n-step-lookahead {
         top: 810px;
         select {
@@ -845,7 +847,7 @@ html, body, #page-canvas {
 
 
     .remuse-easy-paths-question-text {
-        top: 573px;
+        top: 555px;
         left: 256px;
     }
 
@@ -1008,7 +1010,7 @@ html, body, #page-canvas {
 
 
     .remuse-bad-paths-question-text {
-        top: 523px;
+        top: 484px;
         left: 340px;
     }
 

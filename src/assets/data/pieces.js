@@ -1102,7 +1102,8 @@ export const pieces = [
                 inPages: [
                     'showing-l',
                     'l-reduces-search-tree',
-                    'n-step-lookahead'
+                    'n-step-lookahead',
+                    'straight-line-policy'
                 ],
                 exitType: 'fly-left',
                 delay: 0,
@@ -2339,6 +2340,20 @@ export const pieces = [
         states: [
             {
                 inPages: ['n-step-lookahead'],
+                exitType: 'fade',
+                delay: 100,
+                duration: defaultDuration,
+            },
+
+        ]
+    },
+
+
+    {
+        selector: '.muse-straight-line-policy',
+        states: [
+            {
+                inPages: ['straight-line-policy'],
                 exitType: 'fade',
                 delay: 100,
                 duration: defaultDuration,

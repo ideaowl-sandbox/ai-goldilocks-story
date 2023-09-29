@@ -398,6 +398,10 @@ export const config = {
                     title: 'n-step lookahead'
                 },
                 {
+                    id: 'straight-line-policy',
+                    title: 'Straight Line Policy'
+                },
+                {
                     id: 'muse-summary',
                     title: 'MUSE Summary'
                 }

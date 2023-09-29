@@ -7,7 +7,7 @@
         "buildRel": "parcel build --public-url replacethislinewithadot && sed -i \"s/replacethislinewithadot/./g\" ./dist/index.html",
         "startRelBuild": "parcel --public-url replacethislinewithadot",
         "updateRel": "sed -i \"s/replacethislinewithadot/./g\" ./dist/index.html",
-        "startIdeaOwlBuild": "parcel --public-url /thesis"
+        "startIdeaOwlBuild": "parcel --public-url /thesis/slides"
     },
     "devDependencies": {
         "@parcel/transformer-sass": "^2.9.3",

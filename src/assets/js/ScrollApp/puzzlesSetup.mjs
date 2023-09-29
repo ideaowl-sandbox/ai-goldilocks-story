@@ -8,13 +8,13 @@ export function puzzlesSetup(g) {
   let puzzlesByClassTarget = {};
 
   katex.render(
-    String.raw`4 \text{x} 4 \text{ grid combinations} = 4 \times 4 \times ... \times 4 = 4^{16} = 4.3\text{B}`, 
+    String.raw`4 \text{x} 4 \text{ grid} = 4 \times 4 \times ... \times 4 = 4^{16} = 4,294,967,296 = 4.3\text{B}`, 
     d3.select('.num-4x4-combinations-text').node(), 
     {throwOnError: false}
   );
 
   katex.render(
-    String.raw`6 \text{x} 6 \text{ grid combinations} = 4 \times 4 \times ... \times 4 = 4^{36} = 4.7 \times 10^{21}`,
+    String.raw`6 \text{x} 6 \text{ grid} = 4 \times 4 \times ... \times 4 = 4^{36} = 4,722,366,482,869,645,213,696 = 4.7 \times 10^{21}`,
     d3.select('.num-5x5-combinations-text').node(),
     { throwOnError: false }
   );
