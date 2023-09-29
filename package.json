@@ -3,8 +3,11 @@
     "source": "src/index.html",
     "scripts": {
         "start": "parcel",
-        "startPublic": "parcel --public-url ./",
-        "build": "parcel build"
+        "build": "parcel build",
+        "buildRel": "parcel build --public-url replacethislinewithadot && sed -i \"s/replacethislinewithadot/./g\" ./dist/index.html",
+        "startRelBuild": "parcel --public-url replacethislinewithadot",
+        "updateRel": "sed -i \"s/replacethislinewithadot/./g\" ./dist/index.html",
+        "startIdeaOwlBuild": "parcel --public-url /thesis"
     },
     "devDependencies": {
         "@parcel/transformer-sass": "^2.9.3",

@@ -1547,7 +1547,7 @@ export const pieces = [
             styles: {
                 left: 160,
                 top: 440,
-                'font-size': 60
+                'font-size': 54
             }
         },{
             inPages: [
@@ -1569,7 +1569,7 @@ export const pieces = [
             styles: {
                 left: 160,
                 top: 160,
-                'font-size': 60
+                'font-size': 54
             }
         },
 

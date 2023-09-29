@@ -904,8 +904,17 @@ html, body, #page-canvas {
         font-size: 44px;
     }
 
+    .muse-algorithm-title {
+        b {
+            color: darkred;
+        }
+    }
+
     .remuse-algorithm-title {
         top: 430px;
+        b {
+            color: darkred;
+        }
     }
 
     .remuse-puzzle-entropy-text-container {

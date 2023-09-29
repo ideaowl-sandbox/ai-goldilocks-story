@@ -553,16 +553,16 @@ export const config = {
                 //     title: 'Results Filled'
                 // },
                 {
-                    id: 'future-work-other-games',
-                    title: 'Future Work Other Games'
-                },
-                {
                     id: 'future-work-inference-rules',
                     title: 'Future Work Inference Rules'
                 },
                 {
                     id: 'future-work-co-design-tool',
                     title: 'Future work Co-Design Tools'
+                },
+                {
+                    id: 'future-work-other-games',
+                    title: 'Future Work Other Games'
                 },
                 // {
                 //     id: 'thoughts-on-game-and-education',

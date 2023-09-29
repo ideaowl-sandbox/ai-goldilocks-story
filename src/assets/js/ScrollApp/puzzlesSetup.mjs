@@ -509,21 +509,36 @@ export const puzzles = {
     }
   },
 
-  'puzzle-intro-medium':
-  {
-    "size": [4, 4],
-    "startPosition": [0, 0],
-    "endPosition": [4, 4, 2],
-    "constraints": {
+  // 'puzzle-intro-medium':
+  // {
+  //   "size": [4, 4],
+  //   "startPosition": [0, 0],
+  //   "endPosition": [4, 4, 2],
+  //   "constraints": {
+  //     "regionConstraints": [
+  //       [1, 4, 1],            [3, 4, 0],             
+  //       [1, 3, 0], [2, 3, 1], [3, 3, 1], [4, 3, 0],
+  //       [1, 2, 0],            [3, 2, 1], 
+  //       [1, 1, 1], [2, 1, 0],            [4, 1, 1],
+  //     ]
+  //   }
+  // },
+
+  'puzzle-intro-medium': {
+    "size": [4,4],
+      "startPosition": [0,0],
+        "endPosition": [4,4,2],
+          "constraints": {
       "regionConstraints": [
-        [1, 4, 1],            [3, 4, 0],             
-        [1, 3, 0], [2, 3, 1], [3, 3, 1], [4, 3, 0],
-        [1, 2, 0],            [3, 2, 1], 
-        [1, 1, 1], [2, 1, 0],            [4, 1, 1],
+        [1,4,1],[1,3,0],
+        [1,2,1],[1,1,0],
+        [4,4,0],[4,3,1],
+        [4,2,0],[4,1,1]
       ]
     }
   },
 
+  
 
 
   'puzzle-state-and-actions':
