@@ -526,8 +526,20 @@ export const config = {
                 //     title: 'Distribution of 3x4 Puzzle Scores'
                 // },
                 {
-                    id: 'triangle-constraint-puzzle-scores',
-                    title: 'Triangle Constraint Puzzles Correlation'
+                    id: 'triangle-slitherlink',
+                    title: 'Slitherlink Puzzles'
+                },
+                {
+                    id: 'triangle-constraint-puzzle',
+                    title: 'Triangle Constraint Puzzles'
+                },
+                {
+                    id: 'triangle-remuse-correlation',
+                    title: 'Triangle Constraint ReMUSE Correlation'
+                },
+                {
+                    id: 'triangle-average-length-correlation',
+                    title: 'Triangle Constraint Average Solution Length Correlation'
                 },
             ]
         },

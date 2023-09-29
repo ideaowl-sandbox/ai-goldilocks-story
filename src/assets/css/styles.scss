@@ -410,7 +410,7 @@ html, body, #page-canvas {
     }
 
     .puzzle-from-witness-game {
-        top: 50%;
+        top: 48%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
@@ -1081,6 +1081,8 @@ html, body, #page-canvas {
         left: calc((1920 - 1600)/2);
         top: 240px;
     }
+
+    
     .results-triangle-img {
         width: 1600px;
         left: calc((1920 - 1600)/2);
@@ -1136,10 +1138,38 @@ html, body, #page-canvas {
         text-decoration: underline;
     }
 
+    .puzzle-instruction {
+        top: 400px;
+    }
+
+    .puzzle-square-color-constraints {
+        top: 400px;
+    }
 
 
+    .puzzle-instruction-text {
+        font-size: 80px;
+        width: 1220px;
+        left: calc((1920 - 1220)/2);
+        bottom: 150px;
+    }
 
 
+    .puzzle-instruction-constraints {
+        font-size: 80px;
+        width: 1120px;
+        left: calc((1920 - 1120)/2);
+        bottom: 150px;
+    }
+
+
+    .puzzles-to-solve-text {
+        font-size: 80px;
+        width: 1920px;
+        text-align: center;
+        // left: calc((1920 - 1120)/2);
+
+    }
 
 
 

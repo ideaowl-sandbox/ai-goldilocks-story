@@ -445,7 +445,23 @@ export const pieces = [
     //     }]
     // },
 
+    
 
+
+    {
+        selector: '.puzzles-to-solve-text',
+        states: [
+            {
+                inPages: ['puzzles-to-solve'],
+                exitType: 'fly-top',
+                delay: 0,
+                duration: defaultDuration,
+                styles: {
+                    top: 150,
+                }
+            },
+        ]
+    },
 
 
     {
@@ -2850,10 +2866,13 @@ export const pieces = [
     },
 
     {
-        selector: '.results-triangle-img',
+        selector: '.results-triangle-1-img',
         states: [{
             inPages: [
-                'triangle-constraint-puzzle-scores',
+                'triangle-slitherlink',
+                'triangle-constraint-puzzle',
+                'triangle-remuse-correlation',
+                'triangle-average-length-correlation'
             ],
             exitType: 'fade',
             delay: 0,
@@ -2862,6 +2881,54 @@ export const pieces = [
 
         ]
     },
+
+    {
+        selector: '.results-triangle-2-img',
+        states: [{
+            inPages: [
+                'triangle-constraint-puzzle',
+                'triangle-remuse-correlation',
+                'triangle-average-length-correlation'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.results-triangle-3-img',
+        states: [{
+            inPages: [
+                'triangle-remuse-correlation',
+                'triangle-average-length-correlation'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.results-triangle-4-img',
+        states: [{
+            inPages: [
+                'triangle-average-length-correlation',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
 
 
     {
