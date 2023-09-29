@@ -16,6 +16,8 @@ export class ScrollApp {
     self.puzzlesByClassTarget = puzzlesSetup(self.g);
     self.setupOtherControls();
     scaleAndCenterContent();
+    d3.select('#page-canvas')
+      .style('opacity', 1);
     return self;
   }
 

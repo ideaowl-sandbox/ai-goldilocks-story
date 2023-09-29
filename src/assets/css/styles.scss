@@ -11,6 +11,7 @@ html, body, #page-canvas {
     width: 100vw;
     height: 100vh;
     position: fixed;
+    opacity: 0;
 
 
 
@@ -1082,7 +1083,7 @@ html, body, #page-canvas {
         top: 240px;
     }
 
-    
+
     .results-triangle-img {
         width: 1600px;
         left: calc((1920 - 1600)/2);
