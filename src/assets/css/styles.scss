@@ -1088,7 +1088,7 @@ html, body, #page-canvas {
     }
 
 
-    .future-work-01 {
+    .future-work-01, .future-work-01-02 {
         width: 1600px;
         left: calc((1920 - 1600)/2);
         top: 70px;
@@ -1110,6 +1110,33 @@ html, body, #page-canvas {
         left: calc((1920 - 500)/2 - 15);
         top: 295px;
     }
+
+
+    .presentation-qr-code {
+        position: absolute;
+        width: 700px;
+        right: 180px;
+        top: 190px;
+    }
+
+    .questions-slides-online-text {
+        font-size: 90px;
+        font-weight: bold;
+        width: 800px;
+        right: 12px;
+        top: 120px;
+    }
+
+
+    .questions-slides-link-text {
+        font-size: 77px;
+        width: 800px;
+        right: 10px;
+        bottom: 150px;
+        text-decoration: underline;
+    }
+
+
 
 
 
@@ -1324,3 +1351,6 @@ html, body, #page-canvas {
 .left-side h2 span:last-child {
     font-family: acumin-pro, sans-serif;
 }
+
+
+

@@ -564,6 +564,10 @@ export const config = {
                     id: 'future-work-other-games',
                     title: 'Future Work Other Games'
                 },
+                {
+                    id: 'future-work-implications',
+                    title: 'Future Work Implications'
+                },
                 // {
                 //     id: 'thoughts-on-game-and-education',
                 //     title: 'Game and Education'

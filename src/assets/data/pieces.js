@@ -1492,6 +1492,18 @@ export const pieces = [
                 color: '#777'
             }
         },
+        {
+            inPages: ['questions-and-thank-you',],
+            exitType: 'fly-left',
+            delay: 0,
+            duration: defaultDuration,
+            styles: {
+                left: 200,
+                top: 400,
+                'font-size': 150,
+                color: 'black'
+            }
+        },
 
         ]
     },
@@ -2857,6 +2869,7 @@ export const pieces = [
         states: [{
             inPages: [
                 'future-work-other-games',
+                'future-work-implications'
             ],
             exitType: 'fade',
             delay: 0,
@@ -2897,6 +2910,63 @@ export const pieces = [
     },
 
 
+    // {
+    //     selector: '.future-work-03',
+    //     states: [{
+    //         inPages: [
+    //             'future-work-implications',
+    //         ],
+    //         exitType: 'fade',
+    //         delay: 0,
+    //         duration: defaultDuration,
+    //     },
+
+    //     ]
+    // },
+
+
+    {
+        selector: '.future-work-01-02',
+        states: [{
+            inPages: [
+                'future-work-implications',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.presentation-qr-code',
+        states: [{
+            inPages: [
+                'questions-and-thank-you',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+    {
+        selector: '.thesis-link > svg, .thesis-link div',
+        states: [{
+            inPages: [
+                'questions-and-thank-you',
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
 
 
 
