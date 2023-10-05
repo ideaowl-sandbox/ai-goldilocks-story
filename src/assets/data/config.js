@@ -8,14 +8,14 @@ export const config = {
                     id: 'start',
                     title: 'Start'
                 },
-                {
-                    id: 'initial-thank-you',
-                    title: 'Supervisors Thank You'
-                },
-                {
-                    id: 'organization-thank-you',
-                    title: 'Organizations Thank You'
-                }
+                // {
+                //     id: 'initial-thank-you',
+                //     title: 'Supervisors Thank You'
+                // },
+                // {
+                //     id: 'organization-thank-you',
+                //     title: 'Organizations Thank You'
+                // }
             ]
         },
         {
@@ -29,10 +29,10 @@ export const config = {
                 //     id: 'goldilocks-walking',
                 //     title: 'Goldilocks in the Woods'
                 // },
-                {
-                    id: 'goldilocks-finds-cabin',
-                    title: 'Goldilocks Finds a Cabin'
-                },
+                // {
+                //     id: 'goldilocks-finds-cabin',
+                //     title: 'Goldilocks Finds a Cabin'
+                // },
                 {
                     id: 'text-once-upon-a-time',
                     title: 'Once upon a time...'
@@ -53,26 +53,26 @@ export const config = {
                     id: 'text-soup-just-right',
                     title: 'Soup is just right!'
                 },
-                {
-                    id: 'goldilocks-finds-two-beds',
-                    title: 'Goldilocks Sees Two Beds'
-                },
-                {
-                    id: 'text-bed-too-hard',
-                    title: 'Bed is too hard...'
-                },
-                {
-                    id: 'text-bed-too-soft',
-                    title: 'Bed is too soft...'
-                },
-                {
-                    id: 'goldilocks-finds-good-bed',
-                    title: 'Goldilocks Finds Good Bed'
-                },
-                {
-                    id: 'text-bed-just-right',
-                    title: 'Bed is just right'
-                },
+                // {
+                //     id: 'goldilocks-finds-two-beds',
+                //     title: 'Goldilocks Sees Two Beds'
+                // },
+                // {
+                //     id: 'text-bed-too-hard',
+                //     title: 'Bed is too hard...'
+                // },
+                // {
+                //     id: 'text-bed-too-soft',
+                //     title: 'Bed is too soft...'
+                // },
+                // {
+                //     id: 'goldilocks-finds-good-bed',
+                //     title: 'Goldilocks Finds Good Bed'
+                // },
+                // {
+                //     id: 'text-bed-just-right',
+                //     title: 'Bed is just right'
+                // },
                 {
                     id: 'goldilocks-finds-laptop',
                     title: 'Goldilocks Finds Laptop with Puzzle Instruction'
@@ -115,10 +115,10 @@ export const config = {
                     id: 'evaluate-puzzles',
                     title: 'Help Designers Test Puzzles'
                 },
-                {
-                    id: 'empty-two-sized-grid',
-                    title: 'Empty 2x2 grid'
-                },
+                // {
+                //     id: 'empty-two-sized-grid',
+                //     title: 'Empty 2x2 grid'
+                // },
 
                 // {
                 //     id: 'combinations-two-sized-grid',
@@ -162,10 +162,10 @@ export const config = {
                     id: 'pick-puzzles-for-game',
                     title: 'Pick Puzzles for Game'
                 },
-                {
-                    id: 'dynamic-goldilocks',
-                    title: 'Goldilocks / Flow Zone'
-                },
+                // {
+                //     id: 'dynamic-goldilocks',
+                //     title: 'Goldilocks / Flow Zone'
+                // },
                 {
                     id: 'reasons-summary',
                     title: 'Reasons Summary'
@@ -231,34 +231,30 @@ export const config = {
         {
             id: 'how-entropy',
             pages:[
-                {
-                    id: 'entropy-formula',
-                    title: 'Entropy Formula'
-                }, 
-                {
-                    id: 'entropy-basic-explanation',
-                    title: 'Basic Explanation of Entropy Formula'
-                },
-                {
-                    id: 'entropy-coin-intro',
-                    title: 'Coin Example Introduction'
-                },
-                {
-                    id: 'entropy-coin-outcomes',
-                    title: 'Outcomes of a Coin Flip'
-                },
-                {
-                    id: 'entropy-coin-probabilities',
-                    title: 'Prbabilities of a Coin Flip'
-                },
-                {
-                    id: 'entropy-coin-full-calculation',
-                    title: 'Entropy of a Coin Flip'
-                },
-                {
-                    id: 'entropy-coin-tails-representation',
-                    title: 'Entropy Coin Representation'
-                },
+                // {
+                //     id: 'entropy-basic-explanation',
+                //     title: 'Basic Explanation of Entropy Formula'
+                // },
+                // {
+                //     id: 'entropy-coin-intro',
+                //     title: 'Coin Example Introduction'
+                // },
+                // {
+                //     id: 'entropy-coin-outcomes',
+                //     title: 'Outcomes of a Coin Flip'
+                // },
+                // {
+                //     id: 'entropy-coin-probabilities',
+                //     title: 'Prbabilities of a Coin Flip'
+                // },
+                // {
+                //     id: 'entropy-coin-full-calculation',
+                //     title: 'Entropy of a Coin Flip'
+                // },
+                // {
+                //     id: 'entropy-coin-tails-representation',
+                //     title: 'Entropy Coin Representation'
+                // },
 
                 {
                     id: 'states-and-actions',
@@ -269,6 +265,10 @@ export const config = {
                     title: 'Valid Actions'
                 },
 
+                {
+                    id: 'entropy-formula',
+                    title: 'Entropy Formula'
+                }, 
                 {
                     id: 'entropy-communications-explanation',
                     title: 'Using Entropy to Communicate'
@@ -361,18 +361,18 @@ export const config = {
                     id: 'must-we-communicate-all-actions',
                     title: 'Are all of these actions necessary to communicate?'
                 },
-                {
-                    id: 'jigsaw-example',
-                    title: 'Jigsaw Example'
-                },
-                {
-                    id: 'jigsaw-question-mark',
-                    title: 'Which pieces would you check?'
-                },
-                {
-                    id: 'introducing-inference-rules',
-                    title: 'Inference Rules as Player Information'
-                },
+                // {
+                //     id: 'jigsaw-example',
+                //     title: 'Jigsaw Example'
+                // },
+                // {
+                //     id: 'jigsaw-question-mark',
+                //     title: 'Which pieces would you check?'
+                // },
+                // {
+                //     id: 'introducing-inference-rules',
+                //     title: 'Inference Rules as Player Information'
+                // },
                 {
                     id: 'inference-rule-puzzle-example',
                     title: 'Inference Rule Puzzle Example'
