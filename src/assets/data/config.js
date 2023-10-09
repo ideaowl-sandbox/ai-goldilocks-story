@@ -517,10 +517,10 @@ export const config = {
                     id: 'ordering-of-puzzles-to-the-game',
                     title: 'Game vs ReMUSE Puzzle Ordering'
                 },
-                {
-                    id: 'ordering-of-puzzles-to-the-levi-research',
-                    title: 'Equidistant vs ReMUSE Puzzle Ordering'
-                },
+                // {
+                //     id: 'ordering-of-puzzles-to-the-levi-research',
+                //     title: 'Equidistant vs ReMUSE Puzzle Ordering'
+                // },
                 // {
                 //     id: 'distribution-3x3-puzzles',
                 //     title: 'Distribution of 3x3 Puzzle Scores'
@@ -529,10 +529,10 @@ export const config = {
                 //     id: 'distribution-3x4-puzzles',
                 //     title: 'Distribution of 3x4 Puzzle Scores'
                 // },
-                {
-                    id: 'triangle-slitherlink',
-                    title: 'Slitherlink Puzzles'
-                },
+                // {
+                //     id: 'triangle-slitherlink',
+                //     title: 'Slitherlink Puzzles'
+                // },
                 {
                     id: 'triangle-constraint-puzzle',
                     title: 'Triangle Constraint Puzzles'
@@ -568,22 +568,6 @@ export const config = {
                 //     id: 'fill-results-contribution',
                 //     title: 'Results Filled'
                 // },
-                {
-                    id: 'future-work-inference-rules',
-                    title: 'Future Work Inference Rules'
-                },
-                {
-                    id: 'future-work-co-design-tool',
-                    title: 'Future work Co-Design Tools'
-                },
-                {
-                    id: 'future-work-other-games',
-                    title: 'Future Work Other Games'
-                },
-                {
-                    id: 'future-work-implications',
-                    title: 'Future Work Implications'
-                },
                 // {
                 //     id: 'thoughts-on-game-and-education',
                 //     title: 'Game and Education'
@@ -609,6 +593,30 @@ export const config = {
                 // },
             ]
         },
+
+        {
+            id: 'future-work',
+            pages: [
+                
+                {
+                    id: 'future-work-inference-rules',
+                    title: 'Future Work Inference Rules'
+                },
+                {
+                    id: 'future-work-co-design-tool',
+                    title: 'Future work Co-Design Tools'
+                },
+                {
+                    id: 'future-work-other-games',
+                    title: 'Future Work Other Games'
+                },
+                {
+                    id: 'future-work-implications',
+                    title: 'Future Work Implications'
+                },
+            ]
+
+        }
 
 
 
