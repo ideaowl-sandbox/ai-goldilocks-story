@@ -197,7 +197,7 @@ html, body, #page-canvas {
             height: 150px;
             margin-bottom: -24px;
         }
-        .intro-logo-moving-ai {
+        .intro-logo-moving-ai, .intro-logo-aiide {
             height: 100px;
         }
         img {
@@ -1175,10 +1175,54 @@ html, body, #page-canvas {
     }
 
 
+    .conclusion-left-side {
+        width: 750px;
+        font-size: 50px;
+        left: 230px;
+        // list-style-position: outside;
+    }
+
+    .conclusion-left-side li  {
+        margin-left: 1em;
+    }
+
+    .conclusion-measure-name {
+        font-weight: bold;
+    }
 
 
+    .conclusion-title {
+        top: 100px;
+        font-size: 120px;   
+        left: 220px;
+    }
+
+    .conclusion-measures {
+        top: 300px;
+
+    }
+
+    .conclusion-positive-correlation {
+        top: 400px;
+    }
 
 
+    .conclusion-better-correlation {
+        top: 500px;
+    }
+
+    // .conclusion-conclusion-ordering {
+    //     top: 750px;
+    // }
+
+
+    .conclusion-ordering {
+        top: 670px;
+    }
+
+    .conclusion-final-thought {
+        top: 840px;
+    }
 
 
 

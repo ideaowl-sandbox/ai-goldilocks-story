@@ -154,18 +154,18 @@ export const config = {
                 },                
                 
 
-                {
-                    id: 'find-interest-puzzles',
-                    title: 'Finding Interesting Puzzles'
-                },
+                // {
+                //     id: 'find-interest-puzzles',
+                //     title: 'Finding Interesting Puzzles'
+                // },
                 {
                     id: 'pick-puzzles-for-game',
                     title: 'Pick Puzzles for Game'
                 },
-                // {
-                //     id: 'dynamic-goldilocks',
-                //     title: 'Goldilocks / Flow Zone'
-                // },
+                {
+                    id: 'dynamic-goldilocks',
+                    title: 'Goldilocks / Flow Zone'
+                },
                 {
                     id: 'reasons-summary',
                     title: 'Reasons Summary'
@@ -365,14 +365,14 @@ export const config = {
                 //     id: 'jigsaw-example',
                 //     title: 'Jigsaw Example'
                 // },
-                // {
-                //     id: 'jigsaw-question-mark',
-                //     title: 'Which pieces would you check?'
-                // },
-                // {
-                //     id: 'introducing-inference-rules',
-                //     title: 'Inference Rules as Player Information'
-                // },
+                {
+                    id: 'jigsaw-question-mark',
+                    title: 'Which pieces would you check?'
+                },
+                {
+                    id: 'introducing-inference-rules',
+                    title: 'Inference Rules as Player Information'
+                },
                 {
                     id: 'inference-rule-puzzle-example',
                     title: 'Inference Rule Puzzle Example'
@@ -576,6 +576,35 @@ export const config = {
                 //     id: 'educational-game-example',
                 //     title: 'Education + Game Example'
                 // },
+
+
+                
+
+                
+                {
+                    id: 'conclusion-summary',
+                    title: 'Conclusion Start'
+                },
+                {
+                    id: 'conclusion-measures',
+                    title: 'Conclusion Measures'
+                },
+                {
+                    id: 'conclusion-positive-correlation',
+                    title: 'Conclusion Positive Correlation'
+                },
+                {
+                    id: 'conclusion-better-correlation',
+                    title: 'Conclusion Better Correlation'
+                },
+                {
+                    id: 'conclusion-ordering',
+                    title: 'Conclusion Ordering of Puzzles'
+                },
+                {
+                    id: 'conclusion-final-thought',
+                    title: 'Final thoughts'
+                },
             ]
         },
 

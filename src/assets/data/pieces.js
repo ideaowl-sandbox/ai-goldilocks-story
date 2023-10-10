@@ -165,8 +165,8 @@ export const pieces = [
             duration: defaultDuration,
             styles: {
                 bottom: 100,
-                right: 80,
-                scale: 1
+                right: 34,
+                scale: 0.9
             }
         }, {
             inPages: ['organization-thank-you'],
@@ -708,7 +708,7 @@ export const pieces = [
         },
         {
             inPages: [
-                'pick-puzzles-for-game', 'dynamic-goldilocks'
+                // 'pick-puzzles-for-game', 'dynamic-goldilocks'
             ],
             exitType: 'fly-left',
             delay: 0,
@@ -726,7 +726,9 @@ export const pieces = [
         },
         
         {
-            inPages: ['reasons-summary'],
+            inPages: [
+                // 'reasons-summary'
+            ],
             exitType: 'fly-left',
             delay: 0,
             duration: defaultDuration,
@@ -768,7 +770,7 @@ export const pieces = [
             delay: 0,
             duration: defaultDuration,
             styles: {
-                left: 840,
+                left: 500,
                 top: 980,
                 'font-size': 20,
                 color: 'grey'
@@ -786,10 +788,15 @@ export const pieces = [
             delay: 0,
             duration: defaultDuration,
             styles: {
+
                 left: 306,
-                top: 640,
+                top: 540,
                 'font-size': 70,
                 color: 'black'
+                // left: 306,
+                // top: 640,
+                // 'font-size': 70,
+                // color: 'black'
             },
             toggleClasses: {
                 off: ['smallest-bullet'],
@@ -810,9 +817,14 @@ export const pieces = [
             duration: defaultDuration,
             styles: {
                 left: 306,
-                top: 740,
+                top: 640,
                 'font-size': 70,
                 color: 'black'
+
+                // left: 306,
+                // top: 740,
+                // 'font-size': 70,
+                // color: 'black'
             }
         },
         ]
@@ -1245,6 +1257,21 @@ export const pieces = [
                 color: '#AAA',
             }
         },
+        
+        // {
+        //     inPages: [
+        //         'questions-and-thank-you'
+        //     ],
+        //     exitType: 'fly-left',
+        //     delay: 0,
+        //     duration: defaultDuration,
+        //     styles: {
+        //         left: 220,
+        //         top: 100,
+        //         'font-size': 120,
+        //         color: 'black',
+        //     }
+        // },
 
         ]
     },
@@ -3047,8 +3074,121 @@ export const pieces = [
             duration: defaultDuration,
         },
 
+        ] 
+    },
+
+
+
+    {
+        selector: '.conclusion-title',
+        states: [{
+            inPages: [
+                'conclusion-summary',
+                'conclusion-measures',
+                'conclusion-positive-correlation',
+                'conclusion-better-correlation',
+                'conclusion-ordering',
+                'conclusion-final-thought',
+                'questions-and-thank-you'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
         ]
     },
+
+
+    {
+        selector: '.conclusion-measures',
+        states: [{
+            inPages: [
+                'conclusion-measures',
+                'conclusion-positive-correlation',
+                'conclusion-better-correlation',
+                'conclusion-ordering',
+                'conclusion-final-thought',
+                'questions-and-thank-you'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+
+    {
+        selector: '.conclusion-positive-correlation',
+        states: [{
+            inPages: [
+                'conclusion-positive-correlation',
+                'conclusion-better-correlation',
+                'conclusion-ordering',
+                'conclusion-final-thought',
+                'questions-and-thank-you'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+    {
+        selector: '.conclusion-better-correlation',
+        states: [{
+            inPages: [
+                'conclusion-better-correlation',
+                'conclusion-ordering',
+                'conclusion-final-thought',
+                'questions-and-thank-you'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+    {
+        selector: '.conclusion-ordering',
+        states: [{
+            inPages: [
+                'conclusion-ordering',
+                'conclusion-final-thought',
+                'questions-and-thank-you'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+    {
+        selector: '.conclusion-final-thought',
+        states: [{
+            inPages: [
+                'conclusion-final-thought',
+                'questions-and-thank-you'
+            ],
+            exitType: 'fade',
+            delay: 0,
+            duration: defaultDuration,
+        },
+
+        ]
+    },
+
+
+
 
 
 
