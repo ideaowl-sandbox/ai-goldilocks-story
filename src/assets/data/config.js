@@ -126,32 +126,32 @@ export const config = {
                 // },
 
 
-                {
-                    id: 'results-two-sized-grid',
-                    title: 'Results of 4 colour squares a 2x2 Grid'
-                },
+                // {
+                //     id: 'results-two-sized-grid',
+                //     title: 'Results of 4 colour squares a 2x2 Grid'
+                // },
 
-                {
-                    id: 'blank-four-sized-grid',
-                    title: 'Blank 4x4 Grid Combinations discussion'
-                },
+                // {
+                //     id: 'blank-four-sized-grid',
+                //     title: 'Blank 4x4 Grid Combinations discussion'
+                // },
 
-                {
-                    id: 'combinations-four-sized-grid',
-                    title: 'Combinations in a 4x4 Grid'
-                },
+                // {
+                //     id: 'combinations-four-sized-grid',
+                //     title: 'Combinations in a 4x4 Grid'
+                // },
 
-                {
-                    id: 'combinations-five-sized-grid',
-                    title: 'Combinations in a 5x5 Grid'
-                },
+                // {
+                //     id: 'combinations-five-sized-grid',
+                //     title: 'Combinations in a 5x5 Grid'
+                // },
 
 
 
-                {
-                    id: 'showing-puzzle-from-witness-game',
-                    title: '8x8 Puzzle from Witness Game'
-                },                
+                // {
+                //     id: 'showing-puzzle-from-witness-game',
+                //     title: '8x8 Puzzle from Witness Game'
+                // },                
                 
 
                 // {
@@ -162,10 +162,10 @@ export const config = {
                     id: 'pick-puzzles-for-game',
                     title: 'Pick Puzzles for Game'
                 },
-                {
-                    id: 'dynamic-goldilocks',
-                    title: 'Goldilocks / Flow Zone'
-                },
+                // {
+                //     id: 'dynamic-goldilocks',
+                //     title: 'Goldilocks / Flow Zone'
+                // },
                 {
                     id: 'reasons-summary',
                     title: 'Reasons Summary'
@@ -510,10 +510,6 @@ export const config = {
                     title: 'Table of Correlations'
                 },
                 {
-                    id: 'comparing-solution-length-with-remuse',
-                    title: 'Comparing Solution Length with ReMUSE'
-                },
-                {
                     id: 'ordering-of-puzzles-to-the-game',
                     title: 'Game vs ReMUSE Puzzle Ordering'
                 },
@@ -533,18 +529,6 @@ export const config = {
                 //     id: 'triangle-slitherlink',
                 //     title: 'Slitherlink Puzzles'
                 // },
-                {
-                    id: 'triangle-constraint-puzzle',
-                    title: 'Triangle Constraint Puzzles'
-                },
-                {
-                    id: 'triangle-remuse-correlation',
-                    title: 'Triangle Constraint ReMUSE Correlation'
-                },
-                {
-                    id: 'triangle-average-length-correlation',
-                    title: 'Triangle Constraint Average Solution Length Correlation'
-                },
             ]
         },
 
@@ -624,6 +608,25 @@ export const config = {
         },
 
         {
+            id: 'triangle-constraints',
+            pages: [
+
+                {
+                    id: 'triangle-constraint-puzzle',
+                    title: 'Triangle Constraint Puzzles'
+                },
+                {
+                    id: 'triangle-remuse-correlation',
+                    title: 'Triangle Constraint ReMUSE Correlation'
+                },
+                {
+                    id: 'triangle-average-length-correlation',
+                    title: 'Triangle Constraint Average Solution Length Correlation'
+                },                
+            ]
+        },
+
+        {
             id: 'future-work',
             pages: [
                 
@@ -642,6 +645,11 @@ export const config = {
                 {
                     id: 'future-work-implications',
                     title: 'Future Work Implications'
+                },
+                
+                {
+                    id: 'comparing-solution-length-with-remuse',
+                    title: 'Comparing Solution Length with ReMUSE'
                 },
             ]
 

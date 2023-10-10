@@ -811,7 +811,9 @@ export const pieces = [
         selector: '.but-why-reason-4',
         states: [
         {
-            inPages: ['reasons-summary'],
+            inPages: [
+                // 'reasons-summary'
+            ],
             exitType: 'fly-left',
             delay: 0,
             duration: defaultDuration,
@@ -1203,7 +1205,9 @@ export const pieces = [
         selector: '.but-why-reason-img-4',
         states: [
             {
-                inPages: ['dynamic-goldilocks'],
+                inPages: [
+                    'dynamic-goldilocks'
+                ],
                 exitType: 'fade',
                 delay: 0,
                 duration: defaultDuration
