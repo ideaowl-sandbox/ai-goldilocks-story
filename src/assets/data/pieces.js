@@ -165,8 +165,8 @@ export const pieces = [
             duration: defaultDuration,
             styles: {
                 bottom: 100,
-                right: 34,
-                scale: 0.9
+                right: -27,
+                scale: 0.8
             }
         }, {
             inPages: ['organization-thank-you'],

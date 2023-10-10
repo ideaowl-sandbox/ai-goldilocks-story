@@ -197,8 +197,12 @@ html, body, #page-canvas {
             height: 150px;
             margin-bottom: -24px;
         }
-        .intro-logo-moving-ai, .intro-logo-aiide {
+        .intro-logo-moving-ai {
             height: 100px;
+        }
+        .intro-logo-aiide {
+            height: 60px;
+            margin-bottom: 10px;
         }
         img {
             display: inline-block;
